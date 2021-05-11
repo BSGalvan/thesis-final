@@ -1,17 +1,23 @@
 \documentclass[ms,thesis,twoside]{iist}
 
-\usepackage{float}
-\usepackage[backend=biber, citestyle=authoryear, style=nature]{biblatex}
-\usepackage{csquotes}
-\usepackage{colortbl}
-\usepackage{booktabs}
-\usepackage{pdflscape}
-\usepackage[normalem]{ulem}
-\usepackage{subcaption}
-\usepackage{layouts}
+%% ---- Packages of use ---- %%
+
 \usepackage[pdftex]{graphicx}
+\usepackage[backend=biber, citestyle=authoryear, style=nature]{biblatex}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{csquotes}
+\usepackage{float}
+\usepackage{layouts}
+\usepackage{pdflscape}
+\usepackage{subcaption}
+\usepackage[normalem]{ulem}
+
+%% ---- Figure Management ---- %%
 
 \graphicspath{{./figures/}}
+
+%% ---- Bibliography Management ---- %%
 
 \addbibresource{doct.bib}
 
@@ -27,44 +33,50 @@
 %% ---- Document starts here ---- %%
 \begin{document}
 
-\raggedbottom
-%% ---- Make the initial set of pages ---- %%
-\maketitle % Title page
-\makecertificate % Certificate
-\makedeclaration % Declaration
-\makededication % Dedication
-\makeacknowledgements % Acknowledgements
-\makeabstract % Abstract
-\maketableofcontents % Table of contents
-\makelistoffigures % List of figures
-\makelistoftables % List of tables
-\makelistofalgorithms % List of algorithms
-\makeabbreviations % List of abbreviations
-\makenomenclature % Nomenclature (for symbols used)
+    \raggedbottom
 
-% Initialize chapter settings; DO NOT comment this line
-\makechaptersettings
+    %% ---- Make the initial set of pages ---- %%
 
+    \maketitle % Title page
+    \makecertificate % Certificate
+    \makedeclaration % Declaration
+    \makededication % Dedication -- TODO
+    \makeacknowledgements % Acknowledgements -- TODO
+    \makeabstract % Abstract -- TODO
+    \maketableofcontents % Table of contents -- TODO
+    \makelistoffigures % List of figures -- TODO
+    \makelistoftables % List of tables -- TODO
+    \makelistofalgorithms % List of algorithms -- TODO
+    \makeabbreviations % List of abbreviations -- TODO
+    \makenomenclature % Nomenclature (for symbols used) -- TODO
 
-%% ---- Start chapters here ---- %%
-\input{chapter1}
-\input{chapter2}
-\input{chapter3}
+    % Initialize chapter settings; DO NOT comment this line
 
+    \makechaptersettings
 
-%% ---- Bibliography addition ----%%
-\printbibliography[heading=bibintoc, title={References}]
+    %% ---- Start chapters here ---- %%
 
-%% ---- List of Publications ----%%
-%\makepublications
+    \input{chapter1} % -- TODO
+    \input{chapter2} % -- TODO
+    \input{chapter3} % -- TODO
 
-%% ---- Appendices starts here ---- %%
-%\makeappendixsettings
-%\input{appendixA}
-%\input{appendixB}
+    %% ---- Bibliography addition ----%%
 
-%% ---- Index starts here ---- %%
-\makeindexsettings
+    \printbibliography[heading=bibintoc, title={References}]
+
+    %% ---- List of Publications ----%%
+
+    %\makepublications
+
+    %% ---- Appendices starts here ---- %%
+    % -- TODO
+    %\makeappendixsettings
+    %\input{appendixA}
+    %\input{appendixB}
+
+    %% ---- Index starts here ---- %%
+
+    \makeindexsettings
 
 
 \end{document}
