@@ -1,6 +1,5 @@
----
 # Guidelines for iist.cls LaTeX Template
----
+
 Original Source : [Sarath Babu's IIST Thesis template](https://github.com/4sarathbabu/IISTThesis)
 
 
@@ -9,7 +8,6 @@ for undergraduate, graduate, and PhD students with minimal effort in
 scripting.
 
 ## How to Start?
----
 
 The template is defined in LaTeX class file 'iist.cls' included in the
 folder. The main LaTeX source file that needs to be built/compiled is
@@ -36,7 +34,7 @@ use default LaTeX font, i.e., Computer Modern, comment the line
 
 
 ## Specifying Credentials of the Report/Thesis
----
+
 
 Provisions for specifying the report/thesis credentials are made
 simple that you need to mention them only once in the file
@@ -55,7 +53,7 @@ the report credentials are as follows:
 
 
 ## Creating Initial Pages of the Report/Thesis
----
+
 
 The initial pages of the report/thesis include Title Page, Certificate,
 Declaration, Dedication, and Acknowledgements. The content of these
@@ -87,7 +85,7 @@ NOT* comment the line \makechaptersettings.
 
 
 ## Addition of Chapters, Appendices, and List of Publications
----
+
 
 In order to include chapters, it is recommended to organize chapters
 into different TeX files. For example, 'chapter1.tex', 'chapter2.tex',
@@ -113,10 +111,10 @@ include the entire content in 'chapter1.tex' and include it in
 
 
 ## Writing Theorems, Proofs, Lemmas, Definitions, Remarks,
----
+
 
 ### Assumptions, and Propositions
----
+
 
 For writing different math environments such as theorems and proofs
 the following environments are defined.
@@ -138,7 +136,7 @@ the following environments are defined.
 
 
 ## Addition of Bibliography
----
+
 
 Bibliographies can be added using BibTeX tool with the appropriate
 citation style. A separate file named 'doct.bib' is provided to specify
@@ -156,7 +154,6 @@ and apa.
 
 
 ## Building the LaTeX Source
----
 
 If you have installed the tool 'latexmk', just build 'doct.tex'
 using latexmk. Otherwise, you need to follow the default LaTeX
