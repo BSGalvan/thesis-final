@@ -16,12 +16,12 @@ mentioned as the custom style 'iist'. Options to the document class vary
 depending on your degree and the type of report that you are writing.
 The variations are as follows:
 
--  B.Tech Internship: \documentclass[btech,internship,twoside]{iist}
--  B.Tech Project: \documentclass[btech,project,twoside]{iist}
--  M.Tech Thesis: \documentclass[mtech,thesis,twoside]{iist}
--  M.S Thesis: \documentclass[ms,thesis,twoside]{iist}
--  PhD Thesis: \documentclass[phd,thesis,twoside]{iist}
--  PhD Synopsis: \documentclass[phd,synopsis,twoside]{iist}
+-  B.Tech Internship: ``` \documentclass[btech,internship,twoside]{iist} ```
+-  B.Tech Project: ```\documentclass[btech,project,twoside]{iist}```
+-  M.Tech Thesis: ```\documentclass[mtech,thesis,twoside]{iist}```
+-  M.S Thesis: ```\documentclass[ms,thesis,twoside]{iist}```
+-  PhD Thesis: ```\documentclass[phd,thesis,twoside]{iist}```
+-  PhD Synopsis: ```\documentclass[phd,synopsis,twoside]{iist}```
 
 **Notes**:
 
@@ -30,7 +30,7 @@ a. If you want to create single sided report, remove the option
 
 b. The template uses Times as the default font. Instead, if you want to
 use default LaTeX font, i.e., Computer Modern, comment the line
-'\usepackage{times}' in 'doct.tex'.
+```\usepackage{times}``` in 'doct.tex'.
 
 
 ## Specifying Credentials of the Report/Thesis
@@ -43,13 +43,13 @@ pages of the document, such as Title Page, Certificate, Declaration,
 and Acknowledgements, wherever required.  The commands for providing
 the report credentials are as follows:
 
-  Document Title: \title{}
-  Author: \author{}
-  Author ID: \studentid{}
-  Project/Thesis Advisor: \advisor{}
-  Specialization: \specialization{}
-  Department: \department{}
-  Date: \date{}
+- Document Title: ```\title{}```
+- Author: ```\author{}```
+- Author ID: ```\studentid{}```
+- Project/Thesis Advisor: ```\advisor{}```
+- Specialization: ```\specialization{}```
+- Department: ```\department{}```
+- Date: ```\date{}```
 
 
 ## Creating Initial Pages of the Report/Thesis
@@ -119,20 +119,20 @@ include the entire content in 'chapter1.tex' and include it in
 For writing different math environments such as theorems and proofs
 the following environments are defined.
 
-- Theorem     :    \begin{theorem}     ... \end{theorem}
-- Proof       :    \begin{proof}       ... \end{proof}
-- Lemma       :    \begin{lemma}       ... \end{lemma}
-- Corollary   :    \begin{corollary}   ... \end{corollary}
-- Proposition :    \begin{proposition} ... \end{proposition}
-- Conjecture  :    \begin{conjecture}  ... \end{conjecture}
-- Definition  :    \begin{definition}  ... \end{definition}
-- Condition   :    \begin{condition}   ... \end{condition}
-- Assumption  :    \begin{assumption}  ... \end{assumption}
-- Example     :    \begin{example}     ... \end{example}
-- Problem     :    \begin{problem}     ... \end{problem}
-- Remark      :    \begin{remark}      ... \end{remark}
-- Claim       :    \begin{claim}       ... \end{claim}
-- Note        :    \begin{note}        ... \end{note}
+- Theorem     :   ``` \begin{theorem}     ... \end{theorem} ```
+- Proof       :   ``` \begin{proof}       ... \end{proof} ```
+- Lemma       :   ``` \begin{lemma}       ... \end{lemma} ```
+- Corollary   :   ``` \begin{corollary}   ... \end{corollary} ```
+- Proposition :   ``` \begin{proposition} ... \end{proposition} ```
+- Conjecture  :   ``` \begin{conjecture}  ... \end{conjecture} ```
+- Definition  :   ``` \begin{definition}  ... \end{definition} ```
+- Condition   :   ``` \begin{condition}   ... \end{condition} ```
+- Assumption  :   ``` \begin{assumption}  ... \end{assumption} ```
+- Example     :   ``` \begin{example}     ... \end{example} ```
+- Problem     :   ``` \begin{problem}     ... \end{problem} ```
+- Remark      :   ``` \begin{remark}      ... \end{remark} ```
+- Claim       :   ``` \begin{claim}       ... \end{claim} ```
+- Note        :   ``` \begin{note}        ... \end{note} ```
 
 
 ## Addition of Bibliography
@@ -165,9 +165,6 @@ building process using the following steps:
 4. Build doct.tex using pdflatex
 
 Thank you!
-
-The latest version of the LaTeX template can be downloaded from
-https://github.com/4sarathbabu/IISTThesis
 
 If you find any errors or have any suggestions, feel free to open an
 issue, or submit a pull request.
