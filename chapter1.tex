@@ -584,3 +584,136 @@
             \beta \cos \alpha_v]}$$ where $\alpha_v$ is the angle between the jet
             element at $(\theta, \phi)$ and the observer's direction.
     \end{itemize}
+
+\section{NS mergers in GW regime}
+
+    Consider any astrophysical source emitting gravitational waves, which come in two
+    polarizations, namely the \emph{plus} $h_{+}(t; \mathbf{\Theta}_{GW})$ and the
+    \emph{cross} $h_{\times}(t; \mathbf{\Theta}_{GW})$ polarizations. Here
+    $\mathbf{\Theta}_{GW}$ is the parameter vector, and is typically $\{m_1, m_2,
+    \mathbf{\chi}_1, \mathbf{\chi}_2, D_L, \iota, t_c, \phi_c\}$ which are the component
+    masses, component spins, the binary's luminosity distance, the inclination angle
+    of the orbital plane with respect to the line of sight, and two constants of
+    integration: the time and phase of coalescence.\\
+    A detector's response is recorded as the GW strain such waveforms produce, but in
+    the frequency domain and so the input waveforms are Fourier transformed before
+    processing. Also the detector's antenna patterns (sensitivity as a function of the
+    source location on the sky) and location phase factor (effect of the earth's
+    rotation) play a role in the response. Thus, the detector response to these
+    gravitational waves is of the form:
+    \begin{equation}
+        H(f; \mathbf{\Theta}) =
+            F_{lp}(f; \alpha, \delta) \cdot
+            [
+                H_{+}(f; \mathbf{\Theta}_{GW}) F_{+}(f; \alpha, \delta, \psi) +
+                H_{\times}(f; \mathbf{\Theta}_{GW}) F_{\times}(f; \alpha, \delta, \psi)
+            ]
+    \end{equation}
+    where $F_{lp}$ is the location phase factor as a function of the frequency and the
+    source RA and declination, $H_{+/\times}$ are the frequency domain waveforms, and
+    $F_{+/\times}$ are the detector antenna patterns for each polarization. Also
+    $\mathbf{\Theta} = \{\mathbf{\Theta}_{GW}, \alpha, \delta, \psi\}$.\\
+    The sensitivity of a detector is given by the detector's noise $n(t)$ and its
+    autocorrelation $\kappa = \overline{n(t_1)n(t_2)}$. Usually, the noise is assumed to
+    be stationary, zero-mean and Gaussian. Thus, one can define the one-sided power
+    spectral density $S_n(f)$ as the Fourier transform of the autocorrelation.\\
+    From this, one can define the `overlap' between two GW signals (for eg.: the
+    detector responses for two different waveforms) using the noise-weighted scalar
+    product:
+    \begin{equation}
+        \langle H, G \rangle =
+            2 \int_{0}^{\infty} \dfrac{H(f)G^{\ast}(f) + H^{\ast}(f)G(f)}{S_n(f)} df
+    \end{equation}
+    And using this definition of the scalar product, the signal-to-noise ratio is
+    defined as :
+    \begin{equation}
+        \rho^2 =
+            \langle H, H \rangle =
+                4 \int_0^\infty \dfrac{|H(f)|^2}{S_n(f)} df
+    \end{equation}
+    Now, since the noise $n(t) = s(t) - h(t)$ is assumed to a zero-mean Gaussian, its
+    Fourier transform also behaves the same way, and thus the probability of noise can
+    be written down as :
+    \begin{equation}
+        \label{eq:probability}
+        p(\mathbf{\Theta}) =
+            p^0(\mathbf{\Theta})
+            e^{
+                -\frac{1}{2}
+                \langle S - H(\mathbf{\Theta}), S - H(\mathbf{\Theta}) \rangle
+            }
+    \end{equation}
+    where $p^0$ is the prior on the parameter vector of the detector response. Assuming
+    that an event signal S has a high SNR, the value of $\mathbf{\Theta}$ at peak
+    probability is a good estimate of the true value $\mathbf{\Theta}^{\ast}$.
+    Additionally peak probability occurs when the exponential $E = \langle S - H, S - H
+    \rangle$ is the largest. Expanding it around the maximum value:
+    \begin{equation}
+        E(\mathbf{\Theta}) =
+            E(\mathbf{\Theta}^{\ast}) +
+            \dfrac{1}{2}
+            \dfrac{\partial^2 E(\mathbf{\Theta})}{\partial \Theta_i \partial \Theta_j}
+            \bigg\rvert_{\mathbf{\Theta} =
+                \mathbf{\Theta}^{\ast}}
+                \Delta\Theta_i \Delta\Theta_j +
+                \cdots
+    \end{equation}
+    where $\Delta \Theta_i = \Theta_i - \Theta_i^\ast$. The Hessian given by:
+    \begin{equation}
+        \dfrac{\partial^2 E(\mathbf{\Theta})}{\partial \Theta_i \partial \Theta_j} =
+            2 \langle
+                  \partial_{\Theta_i} H(\mathbf{\Theta}),
+                  \partial_{\Theta_j} H(\mathbf{\Theta})
+              \rangle +
+              \langle
+                  \partial_{\Theta_i} \partial_{\Theta_j} H(\mathbf{\Theta}),
+                  N
+              \rangle
+    \end{equation}
+    can be simplified for large SNR, where second-order differentials become negligible.
+    This leads to the definition of the Fisher Information Matrix $\Gamma$:
+    \begin{equation}
+        \Gamma_{ij} =
+            \langle
+                \partial_{\Theta_i} H(\mathbf{\Theta}),
+                \partial_{\Theta_j} H(\mathbf{\Theta})
+            \rangle
+    \end{equation}
+    And hence, Eqn. \ref{eq:probability} becomes:
+    \begin{equation}
+        p(\mathbf{\Theta}) \sim
+            \exp\left(
+                         -\dfrac{1}{2}
+                          \Gamma_{ij}
+                          \Delta\Theta_i
+                          \Delta\Theta_j
+                \right)
+    \end{equation}
+    which implies that the assumption of Gaussian noise helps associate the FIM to the
+    inverse of the covariance matrix $\Sigma \equiv \Gamma^{-1}$. This also means that
+    the diagonal and off-diagonal elements of $\Gamma^{-1}$ denote the variances and
+    covariances of the parameters, respectively, with 1$\sigma$ estimates of the error
+    are given as $\sigma_{\Theta_i} = \sqrt{\Sigma_{ii}}$.\\
+    This Fisher Information Matrix (FIM) formalism\footnote{
+        Sometimes also referred to as the Fisher Information Formalism (FIF), in which
+        case the Fisher information is not a matrix but is instead the variance of the
+        partial derivative with respect to the parameter vector, of the natural
+        logarithm of the likelihood function for the random variable whose parameters
+        are to be estimated.
+    } is a method of rapid GW data analysis, which approaches the accuracy of
+    traditional Bayesian parameter estimation for events with large SNR.\\
+    \textbf{GWBENCH} (see \cite{borhanian_2020}) is a GW benchmarking tool, which can
+    compute the Fisher matrix for a particular NS merger, given the network
+    configuration and binary parameters. In this way, it enables rapid calculations to
+    benchmark detector upgrades as well as forecast the confidence with which parameters
+    may be estimated for the NS mergers in question.\\
+
+\section{Summary}
+
+    NS mergers can present an ideal testing environment for physical theories under
+    extreme gravity, and by observing them in both the EM and GW windows, current
+    theories can be better understood and refined. Several questions also remain about
+    the exact mechanisms which power the outflows from these NS mergers.\\
+    In this report, we focus mainly on SGRB jets from NSBH mergers and perform
+    population synthesis studies to infer the conditions for and implications of
+    observing a SGRB jet from NSBH mergers.
