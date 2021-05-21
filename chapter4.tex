@@ -1,3 +1,191 @@
 \chapter{NS Merger Candidates in GWTC-2}\label{ch:candidates}
 
+\section{About GWTC-2}
+
+    The first half of the third observing run (O3a) of the LVC started on the 1st of
+    April 2019, and went on till 30th of September, 2019.  Following this, instrumental
+    upgrades were made during the month of October and the second half of the third
+    observing run (O3b) was started on the 1st of November. Due to the global pandemic,
+    the observing run had to be prematurely suspended on 30th of March, 2020.\\ Starting
+    with O3, alerts were distributed via the public alerts section of Gravitational-wave
+    Candidate Event Database (GRACE-DB). If triggers were registered that passed the
+    detection threshold of the LVC network during observational runs, online parameter
+    estimation was done using the raw GW data, and low latency estimates of the rough
+    sky position, component masses and luminosity distance was made available for
+    observers in the EM regime. This allowed for rapid follow-up in various bands of the
+    electromagnetic spectrum, and these observations were reported and cross-verified
+    using NASA's GRB Coordinates Network (GCN). Using the circulars reported in the GCN
+    for NSBH/BNS events of interest, along with the low-latency information from
+    GRACE-DB, O3a's non-BBH candidate events have been collected in table \ref{tab:gcns}
+    \\ More detailed analysis of these events in the months following has led to at
+    least 53 events in the third observing run alone. These can be classified as:
+    \begin{itemize}
+
+        \item 37 Binary Black Hole (BBH) merger candidates.
+
+        \item 7 BNS merger candidates. Of these, only 1 corresponds to O3a, which is the
+            event GW190425 discussed in the chapter \textbf{sec:190425}.
+
+        \item 4 events in the mass gap, which are events with compact objects with
+            masses of 3-5 $M_{\odot}$.
+
+        \item 5 NSBH merger candidates. Of these, only 1 has been confirmed officially,
+            which is the event GW190814.
+
+    \end{itemize}
+
+    Of these, 26 events were officially confirmed and 13 new events were reported for
+    the first time in \cite{abbott_2020}, and it is from there that the posterior
+    distributions of the various parameters (such as inclination angle $\iota$,
+    luminosity distance $D_L$ etc) are used for further analysis.  Note also that there
+    are several marginal events that have been reported, in that they have
+    non-negligible probability distributed between two classifications. For example, the
+    event GW190426\_152155 has significant probability split between it being a
+    terrestrial event (58 \%) and a NSBH/BNS/Mass Gap event (cumulatively 42\%). Without
+    a significant EM counterpart, this event cannot be confidently placed in either of
+    the classes, and thus warrants further analysis. This is the subject of chapter
+    \textbf{sec:190426}.
+
+    \begin{table}[H]  % now this is how you format a table ;)
+        \centering
+        \setlength{\extrarowheight}{0pt}
+        \addtolength{\extrarowheight}{\aboverulesep}
+        \addtolength{\extrarowheight}{\belowrulesep}
+        \setlength{\aboverulesep}{0pt}
+        \setlength{\belowrulesep}{0pt}
+        \begin{tabular}{cccccc}
+            \toprule
+            \rowcolor[rgb]{0.71,0.851,1}
+            \begin{tabular}[c]{@{}>{\cellcolor[rgb]{0.71,0.851,1}}c@{}}
+                \textbf{GRACE-DB} \\
+                \textbf{Superevent} \\
+                \textbf{ID}
+            \end{tabular} &
+            \textbf{$\mathcal{P}$(BBH)} & \textbf{$\mathcal{P}$(BNS)} &
+            \textbf{$\mathcal{P}$(MassGap)} & \textbf{$\mathcal{P}$(NSBH)} &
+            \textbf{$\mathcal{P}$(Terr)}  \\
+            \hline \uline{S190426c} & 0 & 24 & 12 & 6 & 58\\
+            S190910h & 0 & 61 & 0 & 0 & 39 \\
+            S200213t & 0 & 63 & 0 & 0 & 37 \\
+            S191213g & 0 & 77 & 0 & 0 & 23 \\
+            S190901ap & 0 & 86 & 0 & 0 & 14 \\
+            \uline{S190425z} & 0 & \textbf{\textgreater{}99} & 0 & 0 & 0 \\
+            S190930s & 0 & 0 & 95 & 0 & 5 \\
+            S190923y & 0 & 0 & 0 & 68 & 32 \\
+            S190930t & 0 & 0 & 0 & 74 & 26 \\
+            S191205ah & 0 & 0 & 0 & 93 & 7 \\
+            S190910d & 0 & 0 & 0 & 98 & 2 \\
+            S190814bv & 0 & 0 & 0 & \textbf{\textgreater{}99} & 0 \\
+            \bottomrule
+        \end{tabular}
+        \caption[Candidate Merger Events and GRACE-DB Superevent IDs]{
+                List of candidate merger events and the probability of
+                classification (reported in \%) for each non-BBH event reported
+                during O3a. Here the GRACE-DB superevent ID is used (instead of the
+                GWTC-2 event ID), since for a particular GW event, the superevent
+                collects both the EM followup as well as GW trigger information
+                within GRACE-DB. The probabilities are assigned using the process
+                described in \cite{kapadia_2020}, and are reported
+                in GRACE-DB. The events underlined are discussed in more detail in
+                later chapters.
+            }
+    \end{table}
+
+
+    \begin{table}[H]
+        \centering
+        \setlength{\extrarowheight}{0pt}
+        \addtolength{\extrarowheight}{\aboverulesep}
+        \addtolength{\extrarowheight}{\belowrulesep}
+        \setlength{\aboverulesep}{0pt}
+        \setlength{\belowrulesep}{0pt}
+        \begin{tabular}{cccc}
+            \toprule
+            \rowcolor[rgb]{0.71,0.851,1}
+            \textbf{UID} & \textbf{FAR} & \textbf{$D_L$ (Mpc)} &
+            \begin{tabular}[c]{@{}>{\cellcolor[rgb]{0.71,0.851,1}}c@{}}
+                \textbf{Error in $D_L$} \\
+                \textbf{(Mpc)}
+            \end{tabular}  \\
+            \hline
+            \uline{S190426c} & 1 per 1.6276 yr & 377 & 100 \\
+            S190910h & 1.1312 per yr & 230 & 88 \\
+            S200213t & 1 per 1.7934 yr & 201 & 80 \\
+            S191213g & 1.1197 per yr & 201 & 81 \\
+            S190901ap & 1 per 4.5093 yr & 241 & 79 \\
+            \uline{S190425z} & 1 per 69834 yr & 158 & 43 \\
+            S190930s & 1 per 10.534 yr & 709 & 191 \\
+            S190923y & 1.5094 per yr & 438 & 133 \\
+            S190930t & 1 per 2.0536 yr & 108 & 38 \\
+            S191205ah & 1 per 2.5383 years & 385 & 164 \\
+            S190910d & 1 per 8.5248 years & 606 & 197 \\
+            S190814bv & 1 per 1.559e+25 years & 241 & 26 \\
+            \bottomrule
+        \end{tabular}
+        \caption[Candidate Merger Events and FARs]{
+                List of candidate merger events and the probability of
+                classification for each non-BBH event reported during O3a. FAR
+                refers to the False Alarm Rate (in number of events per year or
+                equivalently in Hz$^{-1}$), and $D_L$ is the luminosity distance.
+                Both these values are those reported in GRACE-DB corresponding to
+                each event. The events underlined are discussed in more detail in
+                later chapters.
+            }
+    \end{table}
+
+    \begin{table}[H]
+        \centering
+        \setlength{\extrarowheight}{0pt}
+        \addtolength{\extrarowheight}{\aboverulesep}
+        \addtolength{\extrarowheight}{\belowrulesep}
+        \setlength{\aboverulesep}{0pt}
+        \setlength{\belowrulesep}{0pt}
+        \begin{tabular}{ccccc}
+            \toprule
+            \rowcolor[rgb]{0.71,0.851,1}
+            \textbf{UID} &
+            \textbf{FERMI-LAT} &
+            \textbf{FERMI-GBM} &
+            \textbf{SWIFT/BAT} &
+            \textbf{INTEGRAL} \\
+            \hline
+            \uline{S190426c} & 24342 & 24248 & 24255 & 24242\\
+            S190910h & 25742 & 25714 & 25718 & 25709 \\
+            S200213t &
+                27062 &
+                {\cellcolor[rgb]{1,0.749,0.749}} \textcolor{red}{27056} &
+                {\cellcolor[rgb]{1,0.749,0.749}} \textcolor{red}{27058} &
+                27050 \\
+            S191213g & 26412 & 26409 & 26410 & 26401 \\
+            S190901ap & 25625 & 25610 & 25617 & 25605 \\
+            \uline{S190425z} &
+                24266 &
+                24185 &
+                24184, 24296 &
+                \begin{tabular}{c}
+                    24169, 24170 \\
+                    24178, 24181
+                \end{tabular} \\
+            S190930s & 25895 & 25886 & 25889 & 25872 \\
+            S190923y & 25834 & 25823 & 25846 & 25815, 25825 \\
+            S190930t & 25898 & 25887 & 25888 & 25880 \\
+            S191205ah & 26363 & 26359 & 26365 & 26531 \\
+            S190910d & 25717 & 25699 & 25704 & 25698 \\
+            S190814bv & 25385 & 25326 & 25341 & 25323 \\
+            \bottomrule
+        \end{tabular}
+        \caption[Candidate merger events and relevant GCNs]
+            {
+                List of candidate merger events and the probability of
+                classification for each non-BBH event reported during O3a. Here the
+                GCN Circular number reporting the findings of the particular
+                instrument in the column heading is reported, corresponding to each
+                event. The events underlined are discussed in more detail in later
+                chapters. GCNs marked with red should be ignored during analysis
+                since they correspond to times when the respective instruments were
+                in the South Atlantic Anomaly (SAA).
+            }
+        \label{tab:gcns}
+    \end{table}
+
 \section{Summary}
