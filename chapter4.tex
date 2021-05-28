@@ -6,25 +6,26 @@
     April 2019, and went on till 30th of September, 2019.  Following this, instrumental
     upgrades were made during the month of October and the second half of the third
     observing run (O3b) was started on the 1st of November. Due to the global pandemic,
-    the observing run had to be prematurely suspended on 30th of March, 2020.\\ Starting
-    with O3, alerts were distributed via the public alerts section of Gravitational-wave
-    Candidate Event Database (GRACE-DB). If triggers were registered that passed the
-    detection threshold of the LVC network during observational runs, online parameter
-    estimation was done using the raw GW data, and low latency estimates of the rough
-    sky position, component masses and luminosity distance was made available for
-    observers in the EM regime. This allowed for rapid follow-up in various bands of the
-    electromagnetic spectrum, and these observations were reported and cross-verified
-    using NASA's GRB Coordinates Network (GCN). Using the circulars reported in the GCN
-    for NSBH/BNS events of interest, along with the low-latency information from
-    GRACE-DB, O3a's non-BBH candidate events have been collected in table \ref{tab:gcns}
-    \\ More detailed analysis of these events in the months following has led to at
-    least 53 events in the third observing run alone. These can be classified as:
+    the observing run had to be prematurely suspended on 30th of March, 2020.\\
+    Starting with O3, alerts were distributed via the public alerts section of
+    Gravitational-wave Candidate Event Database (GRACE-DB). If triggers were registered
+    that passed the detection threshold of the LVC network during observational runs,
+    online parameter estimation was done using the raw GW data, and low latency
+    estimates of the rough sky position, component masses and luminosity distance was
+    made available for observers in the EM regime. This allowed for rapid follow-up in
+    various bands of the electromagnetic spectrum, and these observations were reported
+    and cross-verified using NASA's GRB Coordinates Network (GCN). Using the circulars
+    reported in the GCN for NSBH/BNS events of interest, along with the low-latency
+    information from GRACE-DB, O3a's non-BBH candidate events have been collected in
+    table \ref{tab:gcns}.\\
+    More detailed analysis of these events in the months following has led to at least
+    53 events in the third observing run alone. These can be classified as:
     \begin{itemize}
 
         \item 37 Binary Black Hole (BBH) merger candidates.
 
         \item 7 BNS merger candidates. Of these, only 1 corresponds to O3a, which is the
-            event GW190425 discussed in the chapter \textbf{sec:190425}.
+            event GW190425 discussed in the chapter \ref{sec:190425}.
 
         \item 4 events in the mass gap, which are events with compact objects with
             masses of 3-5 $M_{\odot}$.
@@ -44,7 +45,7 @@
     terrestrial event (58 \%) and a NSBH/BNS/Mass Gap event (cumulatively 42\%). Without
     a significant EM counterpart, this event cannot be confidently placed in either of
     the classes, and thus warrants further analysis. This is the subject of chapter
-    \textbf{sec:190426}.
+    \ref{sec:190426}.
 
     \begin{table}[H]  % now this is how you format a table ;)
         \centering
@@ -134,6 +135,7 @@
     \end{table}
 
     \begin{table}[H]
+        \label{tab:gcns}
         \centering
         \setlength{\extrarowheight}{0pt}
         \addtolength{\extrarowheight}{\aboverulesep}
@@ -185,7 +187,560 @@
                 since they correspond to times when the respective instruments were
                 in the South Atlantic Anomaly (SAA).
             }
-        \label{tab:gcns}
     \end{table}
+
+\section{Analysis of GW190425}\label{sec:190425}
+
+    GW190425 (or S190425z in GRACE-DB) is a GW trigger which was recorded by the LVC on
+    25th April, 2019 at 08:18 UTC. At the time of this trigger, the Hanford site of LIGO
+    (H1) was undergoing maintenance, whereas the Livingston site (L1) of LIGO and the
+    VIRGO detector were both operational. However, at the VIRGO detector this event was
+    sub-threshold, effectively making this event a single-detector trigger. As a
+    consequence, the LVC sky localisation area was wider than as compared to GW170817,
+    and EM follow-up was constrained to serendipitious observations by satellites which
+    happened to be observing the same area of the sky, or to diminished coverage by
+    satellites due to observational schedules.
+
+    Initial work was carried out to reproduce the results of \cite{saleem_2020}, where
+    the authors use a frequentist approach to discuss the possibility of a relativistic
+    jet from the binary neutron star (BNS) merger event GW190425\footnote{
+        At the time of the writing of the paper, this event was still not confirmed as a
+        bona-fide GW event, and so it was denoted by GRACE-DB as S190425z. Consequently,
+        several key pieces of information (such as the luminosity distance and
+        inclination angle posteriors) from the GW inference was not yet public, and had
+        to be worked around. See text for more details.
+    }. In \cite{saleem_2020}, three key ideas  are developed which are described in
+    detail in the following sections.
+
+    \subsection{Constraints on the \texorpdfstring{$D_L-\iota$}{dL-iota} Posterior}
+    \label{sec:dl-iota_posterior}
+
+    At the time of writing of \cite{saleem_2020b}, only the low-latency information was
+    made public. Consequently, information about the inclination angle of this event was
+    not released. However, both the luminosity distance ($D_L$) and inclination angle
+    ($\iota$) of the event are required for the electromagnetic analysis of the
+    event\footnote{
+        The former is used to calculate the fluence, and the latter is directly related
+        to the viewing angle, which in turn decides the observed isotropic equivalent
+        energy (see Eq. \ref{eq:6})
+    }. To solve this issue, a known correlation between the luminosity distance $D_L$
+    and $\iota$ (see \cite{schutz_2011}, \cite{seto_2015}) was used to infer the
+    distribution of $\iota$ for this event, which was possible since the former was
+    publicly known.\\
+    The following are the other publicly released information relevant to the problem,
+    and can be used to constrain the $D_L-\iota$ joint distribution:
+    \begin{itemize}
+
+        \item The posterior probability of the event being a BNS merger is $>$ 99 \%,
+
+        \item The event was observed by the LIGO Livingston (L1), and Virgo (V1)
+            detectors, whereas the LIGO Hanford (H1) detector was not observing.
+            However, at V1 the signal-to-noise ratio (SNR) was below the threshold and
+            thus this event was a single detector trigger.
+
+        \item The preliminary luminosity distance estimate is given by $D_L$ = 155 $\pm$
+            41 Mpc.
+
+    \end{itemize}
+
+    Using these inputs the $D_L-\iota$ space is constrained as follows.
+    \begin{enumerate}
+
+        \item A population of BNS mergers is simulated, such that they are uniformly
+            distributed in the comoving volume, with the inclination angle of the
+            binaries being such that $\cos \iota \in [-1, 1]$. This also means that the
+            luminosity distance is initially distributed such that $\mathcal{P}(D)
+            \propto D^2$ upto some threshold distance. For the purposes of the
+            simulations, this threshold distance is set to be the distance corresponding
+            to the 99\% percentile of a Gaussian with a mean of 155 Mpc and a standard
+            deviation of 41 Mpc. In practice, it is the maximum distance up till which
+            the comoving and the luminosity distances can be used interchangeably, which
+            corresponds to a redshift of roughly 0.1.
+
+        \item The NS masses are uniformly distributed between 1-2 $M_{\odot}$. This
+            enforces the constraint that from the analysis of the GW waveform, the event
+            has > 99 \% probability of being a BNS merger.
+
+        \item Then, the optimal SNR is computed for each realisation using the
+            restricted post-Newtonian (PN) waveform (RWF) (see \cite{cutler_1994},
+            \cite{kastha_2020}). Usually, the process of matched filtering is
+            done to detect GW signals amongst background noise, where various template
+            waveforms are cross-correlated with the observed data. These templates all
+            correspond to mergers with various signal parameters such as masses, spins
+            etc., and the template which maximizes the SNR is the optimal template, with
+            the corresponding SNR being the optimal SNR, defined as :
+            \begin{equation}
+                \rho = \sqrt{4 \int_0^\infty \dfrac{|\tilde{h}(f)|^2}{S_h(f)} df}
+            \end{equation}
+            where $S_h(f)$ is the detector's power spectral density (PSD) and
+            $\tilde{h}(f)$ is the frequency domain gravitational waveform.  For the RWF,
+            this is given as $\tilde{h}(f) = \mathcal{A} f^{-7/6} e^{i \psi(f)}$, where
+            $\mathcal{A}$ is the amplitude and $\psi(f)$ is the frequency domain GW
+            phase.  In this scheme, the PN corrections to the amplitude of the waveform
+            are ignored but the phase is accurately accounted for, since GW parameter
+            estimations are most sensitive to the phase of the waveform
+            (\cite{poisson_1995}). Using the RWF, the optimal SNR for compact binary
+            coalescences can be written as :
+            \begin{equation}
+                \rho(m_1, m_2, D_L, \theta, \phi, \psi, \iota) =
+                    \sqrt{
+                        4 \dfrac{\mathcal{A}^2}{D_L^2}
+                        \left[
+                                 F_{+}^2(\theta, \phi, \psi)(1 + \cos^2\iota)^2 +
+                                 4F_{\times}^2(\theta, \phi, \psi)\cos^2\iota
+                        \right]
+                        I(M)
+                    }
+            \end{equation}
+            where $F_{+, \times}(\theta, \phi, \psi)$ are the antenna pattern functions
+            for the 'plus' and 'cross' polarisations, $\mathcal{A} = \sqrt{5/96}
+            \pi^{-2/3} \mathcal{M}^{5/6}$. Here, $\mathcal{M}$ is the chirp mass, which
+            is related to the total mass M by $\mathcal{M} = M \eta^{3/5}$, where $\eta
+            = \frac{m_1 m_2}{M^2}$ is the symmetric mass ratio of the system and $m_1,
+            m_2$ are the component masses. The four angles $(\theta, \phi, \psi, \iota)$
+            describe the location and orientation of the source with respect to the
+            detector. $I(M)$ is the frequency integral defined as :
+            \begin{equation}
+                I(M) =
+                    \int_0^\infty \dfrac{f^{-7/3}}{S_h(f)} df \approx
+                    \int_{f_{low}}^{f_{LSO}} \dfrac{f^{-7/3}}{S_h(f)}
+            \end{equation}
+            where, $f_{low}$ is the lower seismic cut-off for the detectors and $f_{LSO}
+            = \dfrac{1}{6^{3/2}\pi M}$, which is the GW frequency at the last stable
+            orbit for a BBH merger with total mass M.  To compute the optimal SNR in L1
+            and V1, the best reported O2 sensitivities were used as conservative O3
+            sensitivities, as an input for $S_h(f)$.  As the trigger is an L1
+            single-detector trigger, the conditions that SNR < 4 at V1 and the network
+            SNR > 9 are enforced. The former is motivated by the single-detector
+            threshold of the GstLAL pipeline, whereas the latter is motivated by the
+            fact that the network SNR of all O1/O2 events were > 9.
+
+        \item From the resulting population, a sub-population is extracted such that the
+            luminosity distance follows a Gaussian distribution with a mean of 155 Mpc
+            and a standard deviation of 41 Mpc. This is done so as to impose the
+            constraint applied by the luminosity distance posterior distribution
+            released by the LVC.
+
+    \end{enumerate}
+
+        The resulting 2D distribution of $D_L-\iota$ of this sub-population is shown in
+        the figure below. This is used further on, as the prior for studying the
+        possibility of a sGRB from GW190425.
+
+    \begin{figure}[H]
+        \centering
+        \def\svgwidth{0.9\textwidth}
+        \input{figures/saleem+Fig1.pdf_tex}
+        \caption[$D_L-\iota$ Posterior distribution.]{
+                    Constraints on the $D_L-\iota$ joint distribution, obtained from
+                    imposing the observed properties of S190425z/GW190425.
+        }
+        \label{fig:dl_iota}
+    \end{figure}
+
+    \subsection{Calculation of the Apparent structure}
+
+    Assuming the intrinsic jet structure models described before (in Sec.
+    \ref{sec:bns}), the apparent isotropic equivalent energy is calculated using the
+    equation (as in \cite{salafia_2015} and
+    \cite{biscoveanu_2020}):
+
+     \begin{equation}
+         \label{eq:6}
+         E_{iso}(\theta_v) =
+             \dfrac{1}{2\pi}
+             \int_{0}^{2\pi} d\phi \int_{0}^{\theta_{max}} d\theta
+             \sin \theta
+             \dfrac{\epsilon(\theta)}{\Gamma(\theta)^4
+             [1 - \beta(\theta) \cos \alpha_v]^3}
+     \end{equation}
+
+    where:
+    \begin{itemize}
+
+        \item $\theta_v$ is the viewing angle of the observer.
+
+        \item $\epsilon(\theta)$ is the normalised energy profile function.
+
+        \item $\alpha_v$ is the angle between the line of sight and the direction to the
+            jet element at $(\theta, \phi)$, given by $\cos \alpha_v = \cos \theta_v
+            \cos \theta + \sin \theta_v \sin \theta \cos \phi$.
+
+        \item $\theta_{max}$ is the upper cut-off of polar integration\footnote{
+                Such a cutoff can occur because the edge of the jet has been reached, or
+                that the gamma-ray emission efficiency is lowered below a threshold, and
+                so emission is negligible beyond $\theta_{max}$.
+            }.
+
+    \end{itemize}
+
+    Thus, depending on the underlying intrinsic structure assumed (be it Gaussian or
+    tophat jet), using Eq. \ref{eq:6} one can infer the apparent structure of the jet.
+    Note that this is the variation of the (apparent) isotropic equivalent energy
+    ($E_{iso}$) at various viewing angles ($\theta_v$), and hence gives how the sGRB
+    jet, if launched, would appear to an observer at an angle to the jet's axis. This
+    variation is shown in Fig. \ref{fig:e_iso}, and is used a prior for further
+    analysis.
+
+    \begin{figure}
+        \centering
+        \def\svgwidth{\textwidth}
+        \input{figures/e_iso.pdf_tex}
+        \caption[Variation of the apparent isotropic equivalent energy,
+                 for observers at different viewing angles]{
+                 Variation of the apparent isotropic equivalent energy, for observers at
+                 different viewing angles. The figure shows both the top-hat (dark red)
+                 and Gaussian (dark green) jet structures, with $E_{tot., \gamma} =
+                 10^{49}$ ergs. $\theta_j$ for the top-hat jet and $\theta_c$ for the
+                 Gaussian jet are both $5^{\circ}$ (marked with vertical solid bright
+                 red line), and $\Gamma_0$ in both cases is 100. The horizontal dashed
+                 black line denotes $E_{iso}(0)$. The orange, dash-dotted line and the
+                 blue dotted lines are the tophat and Gaussian intrinsic jet structures,
+                 represented as $4\pi\epsilon(\theta_v)$. For the solid green curve, the
+                 entire jet emits gamma-rays, whereas for the dashed and dashed-dotted
+                 green curves the emission is restricted to regions where $\Gamma \beta
+                 > 15$ and $\Gamma \beta  > 30$, leading to limits in the polar
+                 integration of 9.74$^\circ$ (vertical dashed violet line) and
+                 7.76$^\circ$ (vertical dash-dotted violet line) respectively.
+        }
+        \label{fig:e_iso}
+    \end{figure}
+
+    \subsection{Monte-Carlo simulations}
+    \label{sec:mc_sim}
+
+    Using the information from the previous analyses and further priors motivated from
+    them, a Monte-Carlo simulation was run where $10^5$ realisations of the Gaussian jet
+    were made. Their model fluence was compared with what was reported by INTErnational
+    Gamma-Ray Astrophysics Laboratory (INTEGRAL).\\ Around the time of the GW trigger,
+    INTEGRAL was observing the entire AdvLIGO/VIRGO localisation region and according to
+    \cite{minaev_gcn_2019}, saw a low SNR short duration ($\sim$ 1s) excess roughly 6s
+    after the merger. Further analysis reported a fluence of $(1.6 \pm 0.4) \times
+    10^{-7} \text{ erg/cm}^2$. The priors used for the various parameters of the
+    Gaussian jets realised are as given in table \ref{table:priors}.
+
+    \begin{table}[H]
+        \centering
+        \setlength{\extrarowheight}{0pt}
+        \addtolength{\extrarowheight}{\aboverulesep}
+        \addtolength{\extrarowheight}{\belowrulesep}
+        \setlength{\aboverulesep}{0pt}
+        \setlength{\belowrulesep}{0pt}
+        \begin{tabular}{|c|c|c|c|}
+            \toprule
+            & $E_{tot., \gamma}$ (erg) & $\Gamma_0$ & $\theta_c$ \\
+            \hline
+            \rowcolor[rgb]{0.812,0.812,0.812}
+            \textbf{Uniform Energy Prior} & $ 44 < \log_{10}(E_{tot., \gamma}) < 51$ &
+            $5 < \Gamma_0 < 500$ & $3^{\circ} < \theta_c < 20^{\circ}$ \\
+            \hline
+            \begin{tabular}[c]{@{}c@{}}
+                \textbf{Broken Power Law} \\
+                \textbf{Energy Prior}
+            \end{tabular} &
+            \begin{tabular}[c]{@{}c@{}}
+                BPL \{ [$5 \times 10^{47}, 10^{50}; -0.53$], \\{[}$10^{50}, 5 \times 10^{51}; -3.5$] \}
+            \end{tabular} &
+            $ 100 \Gamma_0 500$ & $3^{\circ} < \theta_c < 20^{\circ}$  \\
+            \bottomrule
+        \end{tabular}
+        \caption{
+            Priors on the total energy emitted in gamma-rays ($E_{tot., \gamma}$), bulk
+            on-axis Lorentz factor ($\Gamma_0$) and core-angle ($\theta_c$). The
+            notation used for the broken power-law distribution is explained below.
+        }
+        \label{table:priors}
+    \end{table}
+
+    Here, BPL$\{[5 \times 10^{47}, 10^{50}; -0.53], [10^{50}, 5 \times 10^{51}; -3.5]\}$
+    is equivalent to:
+    \begin{equation}
+        \label{eq:7}
+         P(E_{tot., \gamma}) \propto
+        \begin{cases}
+            E_{tot., \gamma}^{-0.53}, &
+                5 \times 10^{47} \text{ ergs } <
+                E_{tot., \gamma} <
+                10^{50} \text{ ergs }  \\
+            E_{tot., \gamma}^{-3.5}, &
+                10^{50} \text{ ergs } <
+                E_{tot., \gamma} <
+                5 \times 10^{51} \text{ ergs }
+        \end{cases}
+    \end{equation}
+
+    \begin{figure}[H]
+        \centering
+        \def\svgwidth{0.5\textwidth}
+        \input{figures/bpl_demo.pdf_tex}
+        \caption[Broken power law distribution from \cite{ghirlanda_2016}.]{
+            The broken power law distribution as described in Eq. \ref{eq:7}.
+        }
+        \label{fig:bpl_demo}
+    \end{figure}
+
+    This particular distribution for the prior of $E_{tot., \gamma}$ is adopted since it
+    is able to reproduce the fluence distribution observed, for values above the
+    limiting fluence of $2 \times 10^{-7} \text{ erg/cm}^2$ (see \cite{mohan_2019}).
+    Furthermore, the power-law indices are adopted from the luminosity function
+    described in \cite{ghirlanda_2016}.
+
+    In applying these priors, along with the $D_L-\iota$ prior and the fluence values of
+    $2 \times 10^{-7}$ and $(1.6 \pm 0.4) \times 10^{-7}$ erg/cm$^2$ as upper limit and
+    detections respectively, supplied by INTEGRAL, the marginalized posteriors for
+    $\theta_c, \Gamma_0, \theta_v$ and $E_{tot., \gamma}$ are obtained. These are
+    converted into $E_{iso}(0)$. The posterior distributions of the on-axis, apparent
+    isotropic equivalent energy, for the two priors considered, is shown in Fig.
+    \ref{fig:unif_bpl}. As is evident from seeing the figure, the INTEGRAL fluence is a
+    good constraint for the priors. For the uniform prior case, considered as a
+    detection, the posterior $E_{iso}(0)$ is tightly constrained to be between
+    $3.51\times 10^{47} - 6.26 \times 10^{52}$ ergs, which shows that for an on-axis
+    observer, the event would have appeared as a typical sGRB along with the GW event.
+    Even considering as an upper-limit constrains $E_{iso}(0) \leq 1.48\times 10^{51}$,
+    which is broadly in agreement with that observed for typical sGRBS.  On the other
+    hand, the narrower, broken power-law prior is not constrained well with the INTEGRAL
+    fluence. Considered as a detection, the 90\% credible posterior bounds on
+    $E_{iso}(0)$ are $1.17\times10^{49}-1.3\times10^{51}$ ergs, whereas considered as an
+    upper limit, $E_{iso}(0) \leq 7.69 \times 10^{50}$ erg. In both cases, the
+    posteriors are sensitive to the choice of the prior, but nevertheless, one cannot
+    rule out an sGRB jet which would have been seen by an on-axis observer.
+
+    \begin{figure}[H]
+        \begin{subfigure}{0.5\textwidth}
+              \label{fig:unif}
+              \centering
+              \def\svgwidth{\textwidth}
+              \input{figures/unif.pdf_tex}
+        \end{subfigure}%
+        \begin{subfigure}{0.5\textwidth}
+              \label{fig:bpl}
+              \centering
+              \def\svgwidth{\textwidth}
+              \input{figures/bpl_1.9.pdf_tex}
+        \end{subfigure}
+        \caption[Posterior distributions of the apparent on-axis isotropic equivalent
+        energy $E_{iso}(0)$, for two assumed priors on the total energy emitted in
+        gamma-rays, $E_{tot., \gamma}$]{
+            Posterior distributions of the apparent on-axis isotropic equivalent energy
+            $E_{iso}(0)$, for two assumed priors on the total energy emitted in
+            gamma-rays, $E_{tot., \gamma}$. These figures give constraints on the
+            $E_{iso}(0)$ of the sGRB associated with GW190425, assuming a Gaussian
+            structured jet. \textbf{Left:} Grey histogram indicates the uniform priors
+            on $\log_{10}(E_{tot., \gamma}/erg)$ in the range of [44 --- 51], and on
+            $\theta_c$ in [3, 20] degrees.  \textbf{Right:} the same prior is used for
+            $\theta_c$ but a broken power law prior is used for $E_{tot., \gamma}$. The
+            orange histograms in both are a result of considering an INTEGRAL fluence
+            upper limit of $2 \times 10^{-7} \text{ erg/cm}^2$, where the blue
+            histograms in both are a result of considering an INTEGRAL fluence detection
+            of $(1.6 \pm 0.4) \times 10^{-7} \text{ erg/cm}^2$. In both cases, the
+            on-axis energy of a possible associated GRB is within the range of that of
+            the cosmological sGRB population.
+        }
+        \label{fig:unif_bpl}
+    \end{figure}
+
+    %Write about the Monte-Carlo simulations undertaken to use the two pieces of
+    %information from the two previous sections, to constrain the priors input, and see
+    %whether the event S190425c could have possibly been a typical sGRB. Need to get
+    %90\% credible intervals!
+
+    \subsection{Using LIGO posteriors}
+
+    In the time since the analysis in \cite{saleem_2020b} was carried out, the
+    posteriors for the O3a events were released as part of the Gravitational Wave
+    Transient Catalog (GWTC) 2 (see \cite{abbott_2020}). These are now available as part
+    of the event portal at the Gravitational Wave Open Science Center (GWOSC), which
+    lists the files that store samples from posterior distributions for various
+    parameters, for each event in GWTC-2. This allows one to use the actual posteriors
+    for the inclination angle and the luminosity distance reported by the LVC. These are
+    plotted in Fig. \ref{fig:dl-iota_post_updated}, below.\\
+
+    \begin{figure}[H]
+        \centering
+        \def\svgwidth{\textwidth}
+        \input{figures/dL-iota_updated.pdf_tex}
+        \caption[$D_L-\iota$ posterior, with samples from the data released by LVC.]{
+            Similar as \ref{fig:dl_iota}, but with samples for $D_L$ and $\iota$ from
+            the posteriors released by the LVC, as part of the GWTC-2 data release.
+        }
+        \label{fig:dl-iota_post_updated}
+    \end{figure}
+
+    These posteriors for the parameters $\iota$ and $D_L$ will be more accurate than the
+    ones generated in \S\S\ref{sec:dl-iota_posterior}, since those posteriors are
+    generated by approximating the O3a detector noise curves using the conservative best
+    estimate of O2. Hence using the actual detector noise around the time of the event
+    and performing parameter estimation for the parameters of interest (which is done by
+    LVC), and using the resultant posteriors will be more accurate for further
+    analysis.\\
+    Using these posteriors, the constraints on the energetics of a sGRB jet
+    being powered by an event like GW190425 change slightly. This is shown in Fig.
+    \ref{fig:unif_bpl_updated}.
+
+    \begin{figure}[H]
+        \begin{subfigure}{0.5\textwidth}
+              \label{fig:unif_updated}
+              \centering
+              \def\svgwidth{\textwidth}
+              \input{figures/unif_up.pdf_tex}
+        \end{subfigure}%
+        \begin{subfigure}{0.5\textwidth}
+              \label{fig:bpl_updated}
+              \centering
+              \def\svgwidth{\textwidth}
+              \input{figures/bpl_1.9_up.pdf_tex}
+        \end{subfigure}
+        \caption[Posterior distributions of the apparent on-axis isotropic equivalent
+        energy $E_{iso}(0)$, with similar priors as Fig. \ref{fig:unif_bpl} but with LVC
+        posterior samples as input.]{
+            Posterior distributions of the apparent on-axis isotropic equivalent energy
+            $E_{iso}(0)$, with similar priors as Fig.  \ref{fig:unif_bpl} but with LVC
+            posterior samples as input.
+        }
+        \label{fig:unif_bpl_updated}
+    \end{figure}
+
+    Considering the INTEGRAL fluence as a detection, the posterior bounds on
+    $E_{iso}(0)$ are $5.61 \times 10^{47} - 8.48 \times 10^{52}$ ergs. This again leads
+    to the conclusion that for an on-axis observer, the sGRB jet would have been
+    detectable. Considering the INTEGRAL fluence as an upper limit instead, givens that
+    $E_{iso}(0) \leq 7.43 \times 10^{51}$ erg.  Similar to the previous case, the narrow
+    broken-power law prior is not well constrained by the INTEGRAL fluence limits, which
+    places the bounds $1.15 \times 10^{49}-1.11 \times 10^{51}$ ergs (considered as a
+    detection) and $E_{iso}(0) \leq 6.74 \times 10^{50}$ erg (considered as an upper
+    limit). In this case as well, the conclusion is the same, that the possibility of
+    sGRB which would have been visible seen on-axis cannot be ruled out. However, this
+    showcases the usefulness of the method described in \S \ref{sec:dl-iota_posterior},
+    wherein the posterior for the parameter $\iota$ can be approximated and used for
+    further analysis, without having to wait for this information to be released
+    officially.
+
+\section{Preliminary analysis of GW190426\_152155}\label{sec:190426}
+
+    %Talk about the preliminary results of using the GW190426 posteriors, and how that
+    %is not constraining enough. Also put comparison with the other "typical" GRBs.
+
+    The event GW190426\_152155 is listed in GWTC-2 (\cite{abbott_2020}) as an event with
+    a network matched filter signal-to-noise ratio of 10.1, a false-alarm rate of 1
+    event per 1.6276 yr and the component masses are $5.7^{+4.0}_{-2.3}$ $M_{\odot}$ and
+    $1.5^{+0.8}_{-0.5}$ $M_{\odot}$. From GRACE-DB, this event has probabilities 0.58,
+    0.24, 0.12, 0.06 respectively of being a Terrestrial, BNS merger, NSBH merger or
+    MassGap merger event.\\ Although there were no significant excesses reported by any
+    of the Gamma-ray satellites observing the LVC localisation area at the time of the
+    GW trigger, the INTEGRAL satellite reported an upper limit fluence of $1.7 \times
+    10^{-7} \text{ ergs/cm}^2$. With the priors as given in Table \ref{table:priors},
+    this fluence upper limit reported by INTEGRAL is taken as the primary constraint.
+    Similar to the process described in \S\ref{sec:mc_sim}, $10^5$ realisations of the
+    jet are made, the apparent on-axis isotropic equivalent energy calculated, from
+    which the fluence is computed and those realisations with a fluence beyond the upper
+    limit are rejected. The resulting population has a distribution as given in Fig.
+    \ref{fig:nsbh_unif_bpl}.\\
+    As can be seen from Fig.\ref{fig:nsbh_unif_bpl}, at apparent on-axis isotropic
+    equivalent energies below $10^{48}$ erg, the uniform prior differs appreciably from
+    the posterior, whereas at higher energies the posterior and prior exhibit the same
+    behaviour. In the case of the broken power-law prior, at all energies considered,
+    the posterior and prior distributions are  the fluence upper limit offered by
+    INTEGRAl doesn't offer tight constraints. This is because for both the priors, the
+    posterior largely follows the same behaviour as the prior, thus indicating that the
+    constraint applied is a poor one.
+
+    \begin{figure}[H]
+        \begin{subfigure}{0.5\textwidth}
+              \label{fig:nsbh_unif}
+              \centering
+              \def\svgwidth{\textwidth}
+              \input{figures/unif_nsbh.pdf_tex}
+        \end{subfigure}%
+        \begin{subfigure}{0.5\textwidth}
+              \label{fig:nsbh_bpl}
+              \centering
+              \def\svgwidth{\textwidth}
+              \input{figures/bpl_1.9_nsbh.pdf_tex}
+        \end{subfigure}
+        \caption[Posterior distributions of the apparent on-axis isotropic equivalent
+        energy $E_{iso}(0)$, in the case of GW190426\_152155.]{
+            Posterior distributions of the apparent on-axis isotropic equivalent energy
+            $E_{iso}(0)$, for two assumed priors on the total energy emitted in
+            gamma-rays, $E_{tot., \gamma}$. These figures give constraints on the
+            $E_{iso}(0)$ of the sGRB associated with GW190426\_152155, assuming a
+            Gaussian structured jet. \textbf{Left:} Grey histogram indicates the uniform
+            priors on $\log_{10}(E_{tot., \gamma}/erg)$ in the range of [44 --- 51], and
+            on $\theta_c$ in [3, 20] degrees. \textbf{Right:} the same prior is used for
+            $\theta_c$ but a broken power law prior is used for $E_{tot., \gamma}$. The
+            orange histograms in both are a result of considering an INTEGRAL fluence
+            upper limit of $1.7 \times 10^{-7} \text{ erg/cm}^2$.
+        }
+        \label{fig:nsbh_unif_bpl}
+    \end{figure}
+
+    This process sees whether the models used for the analysis of GW190425 also apply to
+    the NSBH event GW190426\_152155. Although the constraint is not very good in either
+    case of the prior, the conclusion that there is the possibility of a sGRB jet which
+    could have been detected had the observer been on-axis, cannot be ruled out
+    completely. In this case, considering the constraint as an upper limit, the bounds
+    are $E_{iso}(0) \leq 4.52 \times 10^{51}$ erg and $E_{iso}(0) \leq 6.81 \times
+    10^{50}$ erg for the uniform prior and the broken power-law prior respectively.  As
+    an additional check, table \ref{table:typical_grbs} lists the parameters for some of
+    the typical, well-studied sGRBs. Comparing what was obtained after the analysis of
+    GW190426\_152155 to the observed isotropic equivalent energy for these sGRBs, it can
+    be seen that this NSBH event is still in the ballpark of cosmological sGRBs.
+
+    \begin{table}
+        \centering
+        \setlength{\extrarowheight}{0pt}
+        \addtolength{\extrarowheight}{\aboverulesep}
+        \addtolength{\extrarowheight}{\belowrulesep}
+        \setlength{\aboverulesep}{0pt}
+        \setlength{\belowrulesep}{0pt}
+        \begin{tabular}{ccccccc}
+            \toprule
+            \rowcolor[rgb]{1,0.741,0}
+            \textbf{GRB ID} &
+            \begin{tabular}[c]{@{}>{\cellcolor[rgb]{1,0.741,0}}c@{}}
+                \textbf{Relevant} \\ \textbf{ GCN} \\ \textbf{ Notices}
+            \end{tabular} &
+            \begin{tabular}[c]{@{}>{\cellcolor[rgb]{1,0.741,0}}c@{}}
+                \textbf{Duration} \\ \textbf{(ms)}
+            \end{tabular} &
+            \begin{tabular}[c]{@{}>{\cellcolor[rgb]{1,0.741,0}}c@{}}
+                \textbf{Fluence} \\ \textbf{($\text{erg/cm}^2$)}
+            \end{tabular} &
+            \textbf{Redshift} &
+            \begin{tabular}[c]{@{}>{\cellcolor[rgb]{1,0.741,0}}c@{}}
+                \textbf{Lum. Dist} \\ \textbf{(Mpc)}
+            \end{tabular} &
+            \begin{tabular}[c]{@{}>{\cellcolor[rgb]{1,0.741,0}}c@{}}
+                \textbf{$E_{iso}$} \\ \textbf{(ergs)}
+            \end{tabular}  \\
+            GRB20050509B &
+            \begin{tabular}[c]{@{}c@{}}
+                3385, \\ 3390
+            \end{tabular} &
+            30 & $2.3^{+0.9}_{-0.9} \times 10^{-8}$ & 0.226 & 1133.2 &
+            $3.53^{+1.38}_{-1.38} \times 10^{48}$ \\
+            GRB20130603B &
+            \begin{tabular}[c]{@{}c@{}}
+                14741, \\ 14744
+            \end{tabular} &
+            180 & $(6.3^{+0.3}_{-0.3}) \times 10^{-7}$ & 0.356 & 1911.9 &
+            $2.76^{+0.044}_{-0.044}\times10^{50}$ \\
+            GRB20160821B &
+            \begin{tabular}[c]{@{}c@{}}
+                19844, \\ 19846
+            \end{tabular} &
+            480 & $(1.0^{+0.1}_{-0.1}) \times 10^{-7}$ & 0.162 & 781.8 &
+            $7.31^{+0.73}_{-0.73}\times 10^{48}$ \\
+            \bottomrule
+        \end{tabular}
+        \caption[List of typical cosmological sGRBs and their source parameters]{
+            List of typical cosmological sGRBs and their source parameters. The
+            luminosity distance was calculated from the redshift using a standard
+            cosmology of $H_0 = 69.6 \text{ km/s/Mpc}$, $\Omega_M = 0.286$ and
+            $\Omega_\Lambda = 0.714$.
+        }
+        \label{table:typical_grbs}
+    \end{table}
+
+    %Also, put in Fisher matrix approach if possible.
 
 \section{Summary}
