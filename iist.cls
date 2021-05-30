@@ -94,8 +94,8 @@
 \usepackage{titlesec}
 \usepackage{xcolor}
 \usepackage{imakeidx}
-\usepackage{hyperref}
 \usepackage{emptypage}
+\usepackage{hyperref}
 \usepackage[labelfont=bf]{caption}
 \usepackage{amsmath}
 \usepackage{amssymb}
