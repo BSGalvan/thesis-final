@@ -189,4 +189,79 @@
         \sim \mathcal{U}(-1, 1)$ and $\psi \sim \mathcal{U}(0, 2\pi)$, from which
         samples are drawn for individual events.
 
+\section{Validation of Population Synthesis Code}\label{sec:popsyn_validation}
+
+    With the population models for the binary component parameters as described in the
+    previous section, 10$^5$ samples are drawn from each model to generate a population.
+    These populations will majorly differ in the black hole spin distribution and are
+    thus distinguished by that very factor.\\
+    Given these populations, several checks were carried out to confirm the consistency
+    of the underlying models and the population generated, with the use of (both EM and
+    GW) theoretical results. The rationale behind these checks and the results are given
+    in the following sections.
+
+    \subsection{GW Checks}\label{sub:gw_checks}
+
+        Firstly, for the samples generated, the optimal GW SNR corresponding to the
+        binary parameter combinations was computed. This was done by using the
+        restricted post-Newtonian (PN) waveform (RWF; see \cite{cutler_1995}) as the GW
+        template for the expected GW strain signal from an actual merger event. For this
+        case, the template is given using the frequency domain representation:
+
+        \begin{equation}
+            $\tilde{h}(f) = \mathcal{A}f^{-7/6}e^{i\phi(f)}$
+            \label{eq:rwf}
+        \end{equation}
+
+        where $\mathcal{A} = \sqrt{5/96}\pi^{-2/3} \mathcal{M}$ is the amplitude,
+        $\mathcal{M} = M \eta^{5/3}$ is the chirp mass, $M$ is the total mass, $\eta =
+        \dfrac{m_1 m_2}{M}$ is the symmetric mass ratio, and $\phi(f)$ is the frequency
+        domain GW phase function. With the RWF template, the PN approximations made
+        ensure maximum accuracy with respect to the phase but ignore the PN corrections
+        to the amplitude of the gravitational waveform.\\
+        For such a template, the optimal SNR at a  detector with a noise power spectral
+        density (PSD) $S_h(f)$, is computed as:
+
+        \begin{equation}
+            \rho &= \sqrt{
+                             4\int_0^\infty
+                             \dfrac{\lvert \tilde{h}(f) \rvert^2}{S_h(f)}
+                             df
+                         } \\
+        \end{equation}
+
+        Substituting the form of $\tilde{h}(f)$ from Eq. \ref{eq:rwf}, one obtains:
+
+        \begin{equation}
+            \rho(m_1, m_2, D_L, \theta, \phi, \psi, \iota) &=
+                \sqrt{
+                         4 \dfrac{\mathcal{A}^2}{D_L^2}
+                         \left[
+                                  F_{+}^2(\theta, \phi, \psi)(1 + \cos^2 \iota)^2
+                                  4 F_{\times}^2(\theta, \phi, \psi) \cos^2 \iota
+                         \right]
+                         I(M)
+                }
+        \end{equation}
+
+        where $F_{+, \times}(\theta, \phi, \psi)$ are the antenna pattern functions for
+        the `plus' and `cross' GW polarizations, and the four angles $\{\theta, \phi,
+        \psi, \iota\}$ prescribe the location and orientation of the source with respect
+        to the detector. Also, $I(M)$ is the frequency integral given by:
+
+        \begin{align}
+                I(M) &= \int_0^\infty \dfrac{f^{-7/3}}{S_h(f)} df \\
+                     &\approx \int_{f_{low}}^{f_{LSO}} \dfrac{f^{-7/3}}{S_h(f)} df
+        \end{align}
+
+        where $f_{low}$ corresponds to the seismic cutoff in the detector noise PSD
+        curve, and $f_{LSO}$ corresponds to the frequency at the last stable orbit,
+        which under the PN approximation is $f_{LSO} = (6^{3/2} \pi M)^{-1}$ for a given
+        total mass M.\\
+        For each sample in the various populations, the optimal SNR was computed using
+        the above formulae with the aid of the PyCBC (\cite{pycbc}) and LALSimulation
+        (\cite{lalsuite}) libraries. Using this, it was verified that the events
+        \textit{are} distributed in luminosity distance and SNR as expected from
+        \ref{eq:lum_dist}. This is given in Fig.\textbf{fig:snr-rho-relation}.
+
 \section{Summary}
