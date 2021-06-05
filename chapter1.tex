@@ -7,7 +7,7 @@
     claim that the central engines of SGRBs are binary neutron star mergers (see
     \cite{narayan_1992}). However, there are other aspects of the process that
     are not as clear. Specifically, several aspects of GW170817 have not been completely
-    explained. The main concerns are as follows \cite{lazzati_2020}:
+    explained. The main concerns are as follows (\cite{lazzati_2020}):
 
     \begin{itemize}
 
@@ -68,7 +68,7 @@
     signal trigger (which roughly is the merger time itself) and the time the gamma-ray
     signals were picked up. This time delay is denoted $\Delta t_{GW-\gamma}$, and was
     around 1.75 seconds for this event.  The components which make up this delay are as
-    follows \cite{lazzati_2020}:
+    follows (\cite{lazzati_2020}):
 
     \begin{itemize}
 
@@ -525,6 +525,7 @@
         E_{\mathrm{K, jet}} =
             \epsilon(1 - \xi_{\mathrm{vis}} - \xi_{\nu})
             M_{\mathrm{disc}} c^2 \Omega_H^2 f(\Omega_H)
+        \label{eq:e_kin_jet}
     \end{equation}
     where:
 
@@ -536,9 +537,11 @@
                 \Omega_H = \dfrac{\chi_{BH}}{2(1 + \sqrt{1 + \chi_{BH}^2}}
             \end{equation}
 
-        \item $f(\Omega_H)$ is a high-spin correction factor given by $$f(\Omega_H) = 1
-            + 1.38\Omega_H^2 - 9.2 \Omega_H^4$$
-
+        \item $f(\Omega_H)$ is a high-spin correction factor given by:
+            \begin{equation}
+               f(\Omega_H) = 1 + 1.38\Omega_H^2 - 9.2 \Omega_H^4
+               \label{eq:Omega_h}
+            \end{equation}
         \item $\epsilon$ is a fudge factor which depends on the large-scale geometry of
             the magnetic field, disc aspect ratio and the ratio of the magnetic field
             energy density to disc pressure at saturation.\\ In order to set it to a
@@ -561,6 +564,7 @@
         \dfrac{dE(\theta)}{d\Omega} =
             \dfrac{E_{\mathrm{k, jet}}}{\pi \theta_{\mathrm{c, E}}^2}
             e^{-(\theta/\theta_{\mathrm{c, E}})^2}
+        \label{eq:dE_dOmega}
     \end{equation}
 
     \begin{equation}
@@ -570,6 +574,7 @@
     \begin{equation}
         E_{\mathrm{iso}}(\theta_v) =
             \eta \int \dfrac{\delta^3}{\Gamma} \dfrac{dE}{d\Omega} d\Omega
+        \label{eq:eiso}
     \end{equation}
     where:
 

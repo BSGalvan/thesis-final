@@ -18,21 +18,21 @@
 \section{Black Hole Population Models}\label{sec:bh_pop}
 
     \subsection{Mass, $M_{BH}$}
-        The masses of the black holes was sampled from the `truncated' mass distribution
-        from \cite{abbott_2020B}. The distribution `produces' black holes with masses
-        between 3--100 M$_\odot$ (as can be seen from Fig.  \ref{fig:bh_mass_gwtc2}).
-        However, NS binaries with extremely massive ($M_{BH} > 20 M_\odot$) black holes
-        will not produce any appreciable EM emission due to the NS companion plunging
-        into the black hole directly without significant tidal disruption. For this
-        reason the population synthesis code imposes an upper limit to the black hole
-        masses sampled.
+        The masses of the black holes was sampled from the \textsc{truncated} mass
+        distribution from \cite{abbott_2020B}. The distribution `produces' black holes
+        with masses between 3--100 M$_\odot$ (as can be seen from Fig.
+        \ref{fig:bh_mass_gwtc2}).  However, NS binaries with extremely massive ($M_{BH}
+        > 20 M_\odot$) black holes will not produce any appreciable EM emission due to
+        the NS companion plunging into the black hole directly without significant tidal
+        disruption. For this reason the population synthesis code imposes an upper limit
+        to the black hole masses sampled.
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=\linewidth]{bh_mass_gwtc2}
+            \includegraphics[width=0.9\linewidth]{bh_mass_gwtc2}
             \caption[Black hole mass distributions from GWTC-2]{
                 Black Hole Mass Distributions from \cite{abbott_2020B}. In the current
-                study the `truncated' mass distribution with an upper limit at 20
+                study the \textsc{truncated} mass distribution with an upper limit at 20
                 M$_\odot$, since more massive black holes would not produce significant
                 EM emission when in a merging NSBH binary.
             }
@@ -49,11 +49,16 @@
             \label{fig:bh_mass}
         \end{figure}
 
-    \subsection{Spin, $chi_{BH}$}\label{sub:spin-dists}
-        The spins of the black holes are sampled from the `default' distribution given
-        in \cite{abbott_2020B}. This distribution is essentially a Beta distribution
-        , which ensures that the spin parameters sampled from this distribution remain
-        within [0, 1).\\
+    \subsection{Spin, $\chi_{BH}$}\label{sub:spin-dists}
+        The spins of the black holes are sampled from the \textsc{default} distribution
+        given in \cite{abbott_2020B}. This distribution is essentially a Beta
+        distribution , which ensures that the spin parameters sampled from this
+        distribution remain within [0, 1).\\
+        However, since there have been no confident NSBH merger detections in the GW
+        regime, this distribution is largely derived from looking at BBH mergers, and so
+        may not represent the true spin distribution of a black hole in a NSBH binary.
+        To circumvent this, the following ans\"{a}tze are used to probe the effect of
+        the spin distribution on the EM outflows:
 
         \begin{figure}[H]
             \centering
@@ -68,17 +73,23 @@
             \label{fig:bh_spin_gwtc2}
         \end{figure}
 
-        However, since there have been no confident NSBH merger detections in the GW
-        regime, this distribution is largely derived from looking at BBH mergers, and so
-        may not represent the true spin distribution of a black hole in a NSBH binary.
-        To circumvent this, the following ans\"{a}tze are used to probe the effect of
-        the spin distribution on the EM outflows:
 
         \begin{itemize}
 
             \item Uniform spin distribution: here $\chi_{BH} \sim \mathcal{U}(0, 1)$.
                 Note also that this distribution will have a higher number of high spin
-                samples as compared to the `default' distribution considered above.
+                samples as compared to the \textsc{default} distribution considered
+                above.
+
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.7\linewidth]{unif_dist}
+                    \caption[Uniform Black Hole Spin Distribution]{
+                        A realisation of the uniform black hole spin distribution
+                        considered here.
+                    }
+                    \label{fig:unif_dist}
+                \end{figure}
 
             \item Gaussian spin distribution: here $\chi_{BH} \sim \mathcal{N}(\mu,
                 \sigma)$, but samples outside of [0, 1) are not considered. For
@@ -88,9 +99,18 @@
                 distributions concentrated around low, medium and high spins
                 respectively.
 
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.8\linewidth]{gauss_dists}
+                    \caption[Gaussian Black Hole Spin Distributions]{
+                        Realisations of the various `Gaussian' black hole spin
+                        distributions considered here.
+                    }
+                    \label{fig:gauss_dists}
+                \end{figure}
+
         \end{itemize}
 
-        % TODO: insert figures for the uniform and gaussian spin distributions!
 
 \section{Neutron Star Population Models}\label{sec:ns_pop}
 
@@ -145,7 +165,7 @@
         \begin{align}
             \mathcal{P}(\rho) &= \mathcal{P}(D_L)
                                   \Big \lvert \dfrac{dD_L}{d\rho} \Big \rvert \\
-                              &= \mathcal{P}{D_c}
+                              &= \mathcal{P}({D_c})
                                   \Big \lvert \dfrac{dD_c}{d\rho} \Big \rvert \\
                               &\propto \dfrac{1}{\rho^2} \dfrac{1}{\rho^2}
                                   = \dfrac{1}{\rho^4} \nonumber\\
@@ -160,7 +180,8 @@
         \begin{align}
             \int_0^{D_{c, max}}
                 \mathcal{P}(D_c) dD_c &= \int_0^{D_{L, max}} \mathcal{P}(D_L) dD_L \\
-                                      &= \int_0^{\rho_{th}} \mathcal{P}(\rho) d\rho \\
+                                      &= \int_\infty^{\rho_{th}} \mathcal{P}(\rho)
+                                          d\rho \\
                                       &= 1
         \end{align}
 
@@ -204,12 +225,12 @@
 
         Firstly, for the samples generated, the optimal GW SNR corresponding to the
         binary parameter combinations was computed. This was done by using the
-        restricted post-Newtonian (PN) waveform (RWF; see \cite{cutler_1995}) as the GW
+        restricted post-Newtonian (PN) waveform (RWF; see \cite{cutler_1994}) as the GW
         template for the expected GW strain signal from an actual merger event. For this
         case, the template is given using the frequency domain representation:
 
         \begin{equation}
-            $\tilde{h}(f) = \mathcal{A}f^{-7/6}e^{i\phi(f)}$
+            \tilde{h}(f) = \mathcal{A}f^{-7/6}e^{i\phi(f)}
             \label{eq:rwf}
         \end{equation}
 
@@ -223,24 +244,23 @@
         density (PSD) $S_h(f)$, is computed as:
 
         \begin{equation}
-            \rho &= \sqrt{
-                             4\int_0^\infty
-                             \dfrac{\lvert \tilde{h}(f) \rvert^2}{S_h(f)}
-                             df
-                         } \\
+            \rho = \sqrt{
+                            4\int_0^\infty
+                            \dfrac{\lvert \tilde{h}(f) \rvert^2}{S_h(f)}
+                            df
+                        }
         \end{equation}
 
         Substituting the form of $\tilde{h}(f)$ from Eq. \ref{eq:rwf}, one obtains:
 
         \begin{equation}
-            \rho(m_1, m_2, D_L, \theta, \phi, \psi, \iota) &=
-                \sqrt{
-                         4 \dfrac{\mathcal{A}^2}{D_L^2}
-                         \left[
-                                  F_{+}^2(\theta, \phi, \psi)(1 + \cos^2 \iota)^2
-                                  4 F_{\times}^2(\theta, \phi, \psi) \cos^2 \iota
-                         \right]
-                         I(M)
+            \rho(m_1, m_2, D_L, \theta, \phi, \psi, \iota) = \sqrt{
+                4 \dfrac{\mathcal{A}^2}{D_L^2}
+                \left[
+                    F_{+}^2(\theta, \phi, \psi)(1 + \cos^2 \iota)^2 +
+                    4 F_{\times}^2(\theta, \phi, \psi) \cos^2 \iota
+                \right]
+                 I(M)
                 }
         \end{equation}
 
@@ -261,7 +281,75 @@
         For each sample in the various populations, the optimal SNR was computed using
         the above formulae with the aid of the PyCBC (\cite{pycbc}) and LALSimulation
         (\cite{lalsuite}) libraries. Using this, it was verified that the events
-        \textit{are} distributed in luminosity distance and SNR as expected from
-        \ref{eq:lum_dist}. This is given in Fig.\textbf{fig:snr-rho-relation}.
+        \textit{are} distributed in luminosity distance (and thus SNR) as expected from
+        \ref{eq:lum_dist}. This is given in Fig.\ref{fig:rho_dist}. Note that
+        in order to verify this relation, one must only consider the events whose
+        network SNR is above the threshold SNR chosen (in this case, 10).\\
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{rho_dist}
+            \caption[Distribution of GW network SNR]{
+                Distribution of GW network SNR, from a particular realisation of a
+                population (specifically one with standard assumpations about binary
+                parameters, except that the spin distribution is uniform). The red line
+                is the curve given by theoretical considerations, which for a threshold
+                SNR of 10, corresponds to $f(\rho) = 3\rho_{th}^3 / \rho^4 = 3000 /
+                \rho^4$.
+            }
+            \label{fig:rho_dist}
+        \end{figure}
+
+
+        Furthermore, for these samples, the GW network SNR is higher in value if:
+
+        \begin{itemize}
+
+            \item The `event' is closer by, i.e. $D_L$ is low.
+
+            \item The binary merges with the orbital plane face on, i.e. $\iota$ is low
+
+            \item Both $D_L$ and $\iota$ are low, although this is a small part of the
+                $D_L-\iota$ parameter space, and hence is less probable.
+
+        \end{itemize}
+
+        This implies a connection between the two parameters, and indeed this $D_L-\iota
+        $ connection is well studied in the literature (see \cite{schutz_2011} \&
+        \cite{seto_2015} for discussions on the same). This relation was also verified
+        to hold within the population generated, which is shown in figure
+        \ref{fig:dl_iota_correlation}. Note that some parts of the $D_L - \iota$
+        parameter space are not at all populated by the samples, which reaffirms the
+        fact that distant, edge-on mergers are disfavoured when such systems are being
+        explored via GW.
+
+        \begin{figure}[htpb]
+            \centering
+            \includegraphics[width=0.8\linewidth]{iota_dl_colorcoded}
+            \caption[$D_L-\iota$ correlation in the population]{
+                Plot of the luminosity distance v/s the inclination angle for events in
+                the population, color coded by the SNR. Note that only events whose SNR
+                > 10 (the SNR threshold) are considered here.  This shows that the
+                generated population also exhibits the relation as expected from theory.
+            }
+            \label{fig:dl_iota_correlation}
+        \end{figure}
+
+    \subsection{EM Checks}\label{sub:em_checks}
+
+    The only EM component which has to be validated is the code which imposes the jet
+    structure (Eq. \ref{eq:dE_dOmega}-\ref{eq:eiso}), once the energetics of the jet are
+    computed via Eq. \ref{eq:e_kin_jet}-\ref{eq:Omega_h}.\\
+    In order do this, one extracts the $\theta_v$ samples from the generated population,
+    which can be done using the relation $\theta_v = \min(\iota, \pi - \iota)$. Then, a
+    common baseline is achieved by setting the value of $E_{kin, jet} = 10^{49} \text{
+    erg}$ for all samples, regardless of the actual value if the binary parameters were
+    to be taken into consideration. This is necessary to remove the variation of the
+    structure with the intrinsic jet energetics, which is intimately related to the
+    binary parameters.\\
+    Then using this constraint, the value of $E_iso(\theta_v)$ is computed using Eq.
+    \ref{eq:dE_dOmega}-\ref{eq:eiso}. It is seen from Fig. \textbf{fig:jet-struct} that
+    jet structure is being imposed correctly and according to what is expected from
+    theory.
 
 \section{Summary}
