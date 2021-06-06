@@ -419,6 +419,7 @@
             M_{NS}^b \cdot
             \max \left( \alpha \dfrac{1-2\rho}{\eta^{1/3}} -
             \beta \hat{R}_{\mathrm{ISCO}} \dfrac{\rho}{\eta} + \gamma, 0 \right)^\delta
+        \label{eq:m_out}
     \end{equation}
     where:
 
@@ -441,18 +442,18 @@
         \item $\hat{R}_{ISCO} = c^2 R_{ISCO} / GM_{BH}$ is the normalized ISCO radius
             for a spinning black hole, given in \cite{bardeen_1972} as :
             \begin{align}
-                \begin{split}
-                    \hat{R}_{ISCO} &=
-                        3 +
-                        Z_2 -
-                        \mathrm{sgn}(\chi_{BH}) \sqrt{(3 - Z_1)(3+Z_1 + 2Z_2)} \\
-                    \hookrightarrow Z_1 &=
-                                    1 +
-                                    (1 - \chi_{BH}^2)^{1/3}
-                                    [(1 + \chi_{BH})^{1/3} + (1 - \chi_{BH})^{1/3}]\\
-                    \hookrightarrow Z_2 &=
-                                    \sqrt{3\chi_{BH}^2 +  Z_1^2}
-                \end{split}
+                \hat{R}_{ISCO} &=
+                    3 +
+                    Z_2 -
+                    \mathrm{sgn}(\chi_{BH}) \sqrt{(3 - Z_1)(3+Z_1 + 2Z_2)} \\
+                \hookrightarrow Z_1 &=
+                                1 +
+                                (1 - \chi_{BH}^2)^{1/3}
+                                [
+                                    (1 + \chi_{BH})^{1/3} + (1 - \chi_{BH})^{1/3}
+                                ] \nonumber \\
+                \hookrightarrow Z_2 &=
+                                \sqrt{3\chi_{BH}^2 +  Z_1^2} \nonumber
             \end{align}
 
         \item $(\alpha, \beta, \gamma, \delta) \equiv (0.308, 0.124, 0.283, 1.536)$ are
@@ -487,6 +488,7 @@
     From these two quantities, we can derive the disc mass $M_{\mathrm{disc}}$ as :
     \begin{equation}
         M_{\mathrm{disc}} = \max\{M_{\mathrm{out}} - M_{\mathrm{dyn}}, 0\}
+        \label{eq:disc_mass}
     \end{equation}
     However, due to the fact that these two fits are derived from simulations over
     different regions of the input parameter space, care must be taken while applying

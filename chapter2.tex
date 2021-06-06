@@ -249,6 +249,7 @@
                             \dfrac{\lvert \tilde{h}(f) \rvert^2}{S_h(f)}
                             df
                         }
+            \label{eq:rho}
         \end{equation}
 
         Substituting the form of $\tilde{h}(f)$ from Eq. \ref{eq:rwf}, one obtains:
@@ -270,8 +271,9 @@
         to the detector. Also, $I(M)$ is the frequency integral given by:
 
         \begin{align}
-                I(M) &= \int_0^\infty \dfrac{f^{-7/3}}{S_h(f)} df \\
-                     &\approx \int_{f_{low}}^{f_{LSO}} \dfrac{f^{-7/3}}{S_h(f)} df
+            I(M) &= \int_0^\infty \dfrac{f^{-7/3}}{S_h(f)} df \\
+                 &\approx \int_{f_{low}}^{f_{LSO}} \dfrac{f^{-7/3}}{S_h(f)} df
+            \label{eq:freq_integral}
         \end{align}
 
         where $f_{low}$ corresponds to the seismic cutoff in the detector noise PSD
@@ -347,9 +349,140 @@
     to be taken into consideration. This is necessary to remove the variation of the
     structure with the intrinsic jet energetics, which is intimately related to the
     binary parameters.\\
-    Then using this constraint, the value of $E_iso(\theta_v)$ is computed using Eq.
-    \ref{eq:dE_dOmega}-\ref{eq:eiso}. It is seen from Fig. \textbf{fig:jet-struct} that
-    jet structure is being imposed correctly and according to what is expected from
-    theory.
+    Then with this constraint applied, the value of $E_{iso}(\theta_v)$ is computed
+    using Eq.  \ref{eq:dE_dOmega}-\ref{eq:eiso}. It is seen from Fig.
+    \ref{fig:jet_struct} that jet structure is being imposed correctly and according to
+    what is expected from theory.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{jet_struct}
+        \caption[Validation of the jet structure code]{
+            Validation of the jet structure code, using the process mentioned in text.
+            The blue scatter points are the values computed for $E_{iso}(\theta_v)$ for
+            parameters from a population with $E_{kin, jet}$ set to $10^{49}$ erg,
+            whereas the red line is that computed from theory for a jet with the same
+            kinetic energy.
+        }
+        \label{fig:jet_struct}
+    \end{figure}
+
+    One additional check was performed to confirm the distribution of simulated binary
+    mergers which led to jets. The number of  mergers which launched a jet with a
+    fluence greater than some particular value was plotted, as a function of the
+    particular fluence value. In other words, if $\mathcal{N}(>\mathcal{F})$ is the
+    number of simulated mergers with a fluence greater than $\mathcal{F}$, then the
+    behaviour of $\mathcal{N}(> \mathcal{F})$ was investigated in the simulated
+    population.\\
+    If the jet structure and spatial distribution codes were working to mimic what is
+    observed in reality, the resulting structure should be isotropic but inhomogenous,
+    as the sources would be cosmological in nature but appear isotropically distributed
+    in the local universe. As for the expected behaviour of $\mathcal{N}(>
+    \mathcal{F})$, this would mean that for large values of $\mathcal{F}$ it would
+    behave as $\mathcal{F}^{-1.5}$ but would significantly deviate from this behaviour
+    for lower values of $\mathcal{F}$.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.9\linewidth]{number_fluence}
+        \caption[Variation of $\mathcal{N}(> \mathcal{F})$ with $\mathcal{F}$]{
+            Variation of $\mathcal{N}(> \mathcal{F})$ with the fluence $\mathcal{F}$.
+            Note the significant deviation of this function from the $\sim
+            \mathcal{F}^{-1.5}$ behaviour at lower values of the fluence.
+        }
+        \label{fig:number_fluence}
+    \end{figure}
+
+    From Fig.\ref{fig:number_fluence}, it is seen that the distribution of simulated
+    mergers which launch a jet mimics the observed distribution of SGRBs in the
+    Universe, and so the jet structure and source distribution codes are satisfactory.
+
+    As an additional check for the jet structure imposition, a few prototypical binary
+    mergers are considered, where each prototype is identified by the mass ratio,
+    $\mathcal{Q}$, varied as $\mathcal{Q} = \frac{3}{1.4}, \frac{5}{1.4},
+    \frac{10}{1.4}$. The variation of the fluence with the black hole spin, $\chi_{BH}$
+    and the viewing angle, $\theta_v$ is what is studied in each prototypical case.
+    These are given in Figs.\ref{fig:fluence_thetav+spin(3)} --
+    \ref{fig:fluence_thetav+spin(5)}.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{fluence_thetav+spin(3)}
+        \caption[Variation of $\mathcal{F}(\chi_{BH}, \theta_{v})$ for a
+        $\mathcal{Q}=3:1.4$ NSBH binary merger]{
+            The variation of fluence with the viewing angle and the black hole spin for
+            a binary merger with a mass ratio of $\mathcal{Q}=3:1.4$. Here the regions
+            of the $\chi_{BH}-\theta_v$ parameter space in white are those regions where
+            no disc is produced, and hence the outgoing fluence is 0.
+        }
+        \label{fig:fluence_thetav+spin(3)}
+    \end{figure}
+
+    As can be seen from these figures:
+
+    \begin{itemize}
+
+        \item The higher the mass ratio of the merging NSBH system, the lower the
+            probability for a jet to be launched. This is because the inspiralling NS
+            plunges into the BH more often than not, thus undergoing little to no tidal
+            disruption. Thus, the possibility of disc formation, and thus jet launching
+            is very low in very asymmetric binaries.
+
+        \item With asymmetric binary mergers, only if the black hole spin is high enough
+            will there be any possibility of jet launching. This is because with a high
+            enough black hole spin, the inspiralling NS can become tidally disrupted,
+            and thus a massive disc can be formed using which a jet can be launched.
+            However, it is highly unlikely that such high black hole spins are actually
+            physical.
+
+    \end{itemize}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.8\linewidth]{fluence_thetav+spin(5)}
+        \caption[Variation of $\mathcal{F}(\chi_{BH}, \theta_{v})$ for a
+        $\mathcal{Q}=5:1.4$ NSBH binary merger]{
+            The variation of fluence with the viewing angle and the black hole spin for
+            a binary merger with a mass ratio of $\mathcal{Q}=5:1.4$. Note that in this
+            case the region where a disc is not produced is a much larger fraction of
+            the parameter space, compared to Fig.\ref{fig:fluence_thetav+spin(3)}.
+        }
+        \label{fig:fluence_thetav+spin(5)}
+    \end{figure}
+
+    Thus, from Figs.\ref{fig:fluence_thetav+spin(3)} --
+    \ref{fig:fluence_thetav+spin(5)}, it can be seen that symmetric binary mergers will
+    produce much brighter jets for a given black hole spin, and these jets will be seen
+    out to higher viewing angles. This fact will be useful while discussing the analysis
+    of the various populations synthesized, their EM/GW/joint detectabilities.
+    Furthermore, from these figures, it is also verified that the code which imposes the
+    jet structure and energetics is working correctly, since these conclusions about the
+    EM detectabilities of NSBH binary mergers are the ones reached in literature as
+    well (see \ref{sec:nsbh} for a brief overview of the literature discussing
+    these results)
+
+    \begin{figure}[ht]
+        \centering
+        \includegraphics[width=0.8\linewidth]{fluence_thetav+spin(10)}
+        \caption[Variation of $\mathcal{F}(\chi_{BH}, \theta_{v})$ for a
+        $\mathcal{Q}=10:1.4$ NSBH binary merger]{
+            The variation of fluence with the viewing angle and the black hole spin for
+            a binary merger with a mass ratio of $\mathcal{Q}=10:1.4$. Here the region
+            of parameter space where the jet is launched is extremely restricted, as the
+            NSBH binary in question is very asymmetric in its masses.
+        }
+        \label{fig:fluence_thetav+spin(10)}
+    \end{figure}
 
 \section{Summary}
+
+    In this chapter, the various populations that will be used to probe the EM
+    counterparts of NSBH mergers were briefly explained. Along with this exposition, a
+    summary of the various tests carried out was given, wherein the tests made sure that
+    the internal code that computes the GW SNR, calculates jet energetics (from formulae
+    derived as fits to numerical relativity simulations), imposes jet structures etc.,
+    gave preliminary results which align with the theoretical results.\\
+    In the coming chapters, the framework set up in this and the previous chapters for
+    the synthesis and analysis of the populations and NSBH merger events will be used to
+    derive results about the properties of NSBH binary mergers and their subsequent EM
+    prompt counterparts.
