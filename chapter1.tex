@@ -5,47 +5,53 @@
     neutron star merger event GW1701817 (see \cite{abbott_2018}), there has
     been renewed interest in SGRBs.  Specifically, this detection gives credence to the
     claim that the central engines of SGRBs are binary neutron star mergers (see
-    \cite{narayan_1992}). However, there are other aspects of the process that
-    are not as clear. Specifically, several aspects of GW170817 have not been completely
+    \cite{narayan_1992}). There are however other aspects of the process that are not as
+    clear. In particular, several aspects of GW170817 have not been completely
     explained. The main concerns are as follows (\cite{lazzati_2020}):
 
     \begin{itemize}
 
-        \item The outflow of GRB170817A was lower in energy than a typical cosmological
-            SGRB, by a factor of $10^4 - 10^5$, even though the event was one of the
-            closest GW events recorded, at a distance of $\sim$ 40 Mpc. This could be
-            due to two factors :
+        \item The outflow of GRB170817A (the gamma-ray counterpart event to GW170817)
+            was lower in energy than a typical cosmological SGRB, by a factor of $10^4 -
+            10^5$, even though the event was one of the closest GW events recorded, at a
+            distance of $\sim$ 40 Mpc. The reasons for this could be twofold:
 
             \begin{itemize}
 
-                \item The structured jet was off-axis with respect to the observer.
+                \item The structured jet was viewed off-axis with respect to the
+                    observer.
 
                 \item The internal engine powering this SGRB was intrinsically less
                     energetic, and differs from the one observed in other typical SGRBs.
 
             \end{itemize}
 
-        \item A clear consensus has not been reached on how the gamma-ray prompt
-            emission was produced. The uncertainty partly comes from the fact that the
-            various delays involved before the prompt emission is observed are not
-            accurately constrained. Models which have been considered include :
+        \item A clear consensus has not been reached on \emph{how} the gamma-ray prompt
+            emission was produced. Models which have been considered to explain the jet
+            launching include :
 
             \begin{itemize}
 
                 \item The structured outflow model, characterised by functions for the
                     Lorentz factor and the energy per unit solid angle, both of which
-                    vary with the angle made with the polar jet axis ($\theta$). This
+                    vary with the angle made with the polar jet axis, $\theta$. This
                     model produces detectable signals even at moderately large off-axis
                     angles.
 
-                \item The shock breakout model, wherein the leading edge of the wind
-                    emits the prompt emission as it breaks out of the cocoon of nuclear
-                    matter ejected before the jet was launched. This model has been
-                    shown to explain the energetics and spectrum of the prompt emission,
-                    although it does require a setup in which the wind is fast enough so
-                    that it can reach a large enough distance at breakout.
+                \item The shock breakout model (\cite{gottlieb_2018}), wherein the
+                    leading edge of the wind emits the prompt emission as it breaks out
+                    of the cocoon of nuclear matter ejected before the jet was launched.
+                    This model has been shown to explain the energetics and spectrum of
+                    the prompt emission, although it does require a setup in which the
+                    wind is fast enough so that it can reach a large enough distance at
+                    breakout.
 
             \end{itemize}
+
+            The uncertainty in the jet production mechanism partly comes from the fact
+            that the various delays which play major roles \emph{before} the observation
+            of the prompt emission have not been accurately constrained, although rough
+            estimates for each component exist.
 
     \end{itemize}
 
@@ -54,31 +60,35 @@
     possibility of joint detections are slim, due to the fact that the EM observations
     are highly dependent on the viewing angle of the system with respect to the observer
     (due to relativistic beaming), whereas GW signal amplitudes depend on the distance
-    to the event (see ).\\
+    to the event (see \cite{seto_2015}).\\
     Given that this is the case, it would be expedient to look for constraints on the
-    structure parameters of various models.  Furthermore, it would be useful to develop
-    models which are resilient to non-detections, and can produce constraints on the
-    parameters using even upper limits on the flux/fluence observed by the various EM
-    follow-up satellites, such as INTEGRAL, Fermi or Swift.\\
+    structure parameters of various models. Furthermore, it would be ideal to develop
+    models which are resilient to \emph{non}-detections, i.e. those that can produce
+    constraints on the parameters using even upper limits on the flux/fluence observed
+    by the various EM follow-up satellites, such as INTEGRAL, FERMI-GBM or Swift/BAT.
+    For this purpose, the structured jet model is adopted in this report and used as a
+    starting point. Using this model as a springboard, the properties of prompt
+    emissions from NS mergers are investigated.\\
 
     \subsection{Modelling outflows from BNS Mergers}\label{ssec:bns-outflows}
 
     As mentioned before, the electromagnetic follow-up of the binary neutron star merger
-    event GW170817 helped measure the various time delays between the time of the GW
-    signal trigger (which roughly is the merger time itself) and the time the gamma-ray
-    signals were picked up. This time delay is denoted $\Delta t_{GW-\gamma}$, and was
-    around 1.75 seconds for this event.  The components which make up this delay are as
-    follows (\cite{lazzati_2020}):
+    event GW170817 helped (roughly) measure the various time delays between the time of
+    the GW signal trigger (which roughly is the merger time itself) and the time the
+    gamma-ray signals were picked up. This time delay is denoted $\Delta t_{GW-\gamma}$,
+    and was around 1.75 seconds for this event.  The components which make up this delay
+    are as follows (\cite{lazzati_2020}):
 
     \begin{itemize}
 
-        \item \textbf{Engine Delay} -- this is the delay due to a transition mechanism
-            in the central engine which powers the jet (such as a metastable, fast
-            spinning neutron star collapsing into a black hole when its rotation period
-            increases; this process can take years) or due to the time elapsed in
-            amplifying the magnetic field to a value large enough for jet launching
-            (this process is significantly faster, taking only seconds). This is denoted
-            by $\Delta t_{eng}$.
+        \item \textbf{Engine Delay} -- this is the delay due to a transition in the
+            central engine mechanism which powers the jet. For example, such a
+            transition could be a metastable, fast spinning neutron star collapsing,
+            post-merger, into a black hole when its rotation period increases (a process
+            that can take years). Or it could be the time elapsed in amplifying the
+            magnetic field to a value large enough for jet launching (a process which is
+            significantly faster, taking only seconds). This delay is denoted by $\Delta
+            t_{eng}$.
 
         \item \textbf{Wind Delay} -- this is simply a delay in the launching of a
             non-relativistic wind due to the neutron-rich matter from the progenitor(s)
@@ -90,21 +100,23 @@
             latter will have to propagate through the former. This happens at a
             sub-relativistic speed, whereas the GW signal travels at a relativistic
             speed. The delay due to this crossing is the breakout delay, and is denoted
-            $\Delta t_{bo}$. During this time, jet-wind interactions cause the
+            $\Delta t_{BO}$. During this time, jet-wind interactions cause the
             development of a structured outflow that maintains a bright core but also
             has energetic wings at large polar angles.
 
         \item \textbf{Photospheric Delay} --  once the jet has crossed the wind, it
             still needs to propagate out to the photospheric radius, where the outflow
             becomes transparent and the prompt gamma-ray emission is radiated. The delay
-            from the breakout radius to the photospheric radius is $\Delta t_{ph}$. This
-            is given by (for GW170817):
+            from the breakout radius to the photospheric radius is $\Delta t_{ph}$. For
+            GW170817, this is given by:
 
             \begin{equation}
                 \label{eq:4}
                 \Delta t_{ph} \sim \dfrac{R_{ph}}{c \Gamma^2} =
                     1.4 \dfrac{R_{ph}}{2 \times 10^{12} \text{ cm}}
-                    \left( \dfrac{7} {\Gamma} \right)^2 \text{ s}
+                    \left(
+                            \dfrac{7}{\Gamma}
+                    \right)^2 \text{ s}
             \end{equation}
 
         \item \textbf{Dissipation Delay} -- this is a requirement in some models, such
@@ -117,9 +129,9 @@
     \end{itemize}
 
     Several attempts to constrain the various time delay components have been made.
-    However, except for relative comparisons, no conclusions have been arrived upon.
-    For example, one can only say that the photospheric delay is the major component out
-    of all the delays, and that wind delay (if non-zero) has to be lesser than the jet
+    However, no conclusions have been arrived upon except for relative comparisons.  For
+    example, one can only say that the photospheric delay is the major component out of
+    all the delays, and that wind delay (if non-zero) has to be lesser than the jet
     delay, so that the jet catches up to the wind and the jet-wind interaction generates
     the structured outflow. Fig. \ref{fig:jet_delay} summarises these delays in the
     broader context.
@@ -134,7 +146,7 @@
                     requirement of a structured outflow, GW170817 possibly follows the
                     top timeline. The relative contributions of the various delays are
                     debated, but it is agreed that $\Delta t_{wind} < \Delta t_{jet} \ll
-                    1$ s, $\Delta t_{bo} \ll 1$ s, $\Delta t_{\gamma} \sim 0$ and
+                    1$ s, $\Delta t_{BO} \ll 1$ s, $\Delta t_{\gamma} \sim 0$ and
                     $\Delta t_{ph} \sim \Delta t_{GW-\gamma}$.
              }
         \label{fig:jet_delay}
