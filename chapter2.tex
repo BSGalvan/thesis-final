@@ -1,15 +1,17 @@
 \chapter{Population Synthesis}\label{ch:synthesis}
+
     In order to derive meaningful conclusions about the outflows from NS mergers, given
-    the models described in \ref{ch:introduction}, it was necessary to carry out
-    population synthesis studies. In these, population models which are physically or
-    observationally motivated are taken from the literature and used to compute the
-    statistical properties of the outflows from NS mergers created with these
-    properties. If no confident or relevant model exists in literature, physically
-    motivated ans\"{a}tze are used (see for example, \S\S\ref{sub:spin-dists}).\\
+    the models described in Chapter \ref{ch:introduction}, it was necessary to carry out
+    population synthesis studies. In these studies, population models which are
+    physically or observationally motivated are taken from the literature and used to
+    compute the statistical properties of outflows from NS binaries synthesized from
+    these models. If no confident or relevant model was yet described in literature,
+    physically motivated ans\"{a}tze are used (see for example,
+    \S\S\ref{sub:spin-dists}).\\
     In each study which uses (slightly) different population models, 10$^5$ samples were
-    drawn from the relevant parameter distributions. Using these as inputs the expected
-    outflows were calculated using the fit formulae described in
-    \ref{ch:introduction}.\\
+    drawn from the relevant parameter distributions. Using these as inputs, the expected
+    outflows were calculated using the fit formulae described in Chapter
+    \ref{ch:introduction} for the outflows from NSBH mergers.\\
     In this chapter, the various population models are briefly described along with
     their pertinence. Furthermore, preliminary checks for the population synthesis code
     are also discussed, which help verify the consistency of the code with theoretical
@@ -22,43 +24,45 @@
         distribution from \cite{abbott_2020B}. The distribution `produces' black holes
         with masses between 3--100 M$_\odot$ (as can be seen from Fig.
         \ref{fig:bh_mass_gwtc2}).  However, NS binaries with extremely massive ($M_{BH}
-        > 20 M_\odot$) black holes will not produce any appreciable EM emission due to
-        the NS companion plunging into the black hole directly without significant tidal
-        disruption. For this reason the population synthesis code imposes an upper limit
-        to the black hole masses sampled.
-
-        \begin{figure}[H]
-            \centering
-            \includegraphics[width=0.9\linewidth]{bh_mass_gwtc2}
-            \caption[Black hole mass distributions from GWTC-2]{
-                Black Hole Mass Distributions from \cite{abbott_2020B}. In the current
-                study the \textsc{truncated} mass distribution with an upper limit at 20
-                M$_\odot$, since more massive black holes would not produce significant
-                EM emission when in a merging NSBH binary.
-            }
-            \label{fig:bh_mass_gwtc2}
-        \end{figure}
+        > 20 M_\odot$) black holes will not produce any appreciable EM emission, due to
+        the NS companion plunging into the black hole directly. For this reason, an
+        upper limit of 20 M$_\odot$ is imposed on the black hole masses sampled in the
+        population synthesis code.
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.8\linewidth]{bh_mass}
-            \caption[Black hole mass distribution with upper limit]{
+            \caption[Black hole mass distribution with upper limit]
+            {
                 Black hole mass distribution as used in the current report, with an
                 upper limit of 20 M$_\odot$.
             }
             \label{fig:bh_mass}
         \end{figure}
 
+        \begin{figure}
+            \centering
+            \includegraphics[width=0.9\linewidth]{bh_mass_gwtc2}
+            \caption[Black hole mass distributions from GWTC-2]
+            {
+                Black Hole Mass Distributions from \cite{abbott_2020B}. In the current
+                study, the \textsc{truncated} mass distribution with an upper limit at
+                20 M$_\odot$, since more massive black holes would not produce
+                significant EM emission when in a merging NSBH binary.
+            }
+            \label{fig:bh_mass_gwtc2}
+        \end{figure}
+
     \subsection{Spin, $\chi_{BH}$}\label{sub:spin-dists}
         The spins of the black holes are sampled from the \textsc{default} distribution
         given in \cite{abbott_2020B}. This distribution is essentially a Beta
-        distribution , which ensures that the spin parameters sampled from this
+        distribution, which ensures that the spin parameters sampled from this
         distribution remain within [0, 1).\\
-        However, since there have been no confident NSBH merger detections in the GW
-        regime, this distribution is largely derived from looking at BBH mergers, and so
-        may not represent the true spin distribution of a black hole in a NSBH binary.
-        To circumvent this, the following ans\"{a}tze are used to probe the effect of
-        the spin distribution on the EM outflows:
+        However, since there have been not many confident NSBH merger detections in the
+        GW regime, this distribution is largely derived from observing BBH mergers, and
+        thus may not represent the true spin distribution of black holes in NSBH
+        binaries.  To circumvent this, the following ans\"{a}tze are used to probe the
+        effect of the spin distribution on the EM outflows:
 
         \begin{figure}[H]
             \centering
@@ -77,9 +81,9 @@
         \begin{itemize}
 
             \item Uniform spin distribution: here $\chi_{BH} \sim \mathcal{U}(0, 1)$.
-                Note also that this distribution will have a higher number of high spin
-                samples as compared to the \textsc{default} distribution considered
-                above.
+                Note also that this distribution will have a \emph{higher number of high
+                spin samples} as compared to the \textsc{default} distribution
+                considered above.
 
                 \begin{figure}[H]
                     \centering
@@ -91,13 +95,14 @@
                     \label{fig:unif_dist}
                 \end{figure}
 
-            \item Gaussian spin distribution: here $\chi_{BH} \sim \mathcal{N}(\mu,
-                \sigma)$, but samples outside of [0, 1) are not considered. For
-                simplicity and to cover a representative sample of the possible
-                distributions, samples were taken from $\mathcal{N}(0.2, 0.2)$,
-                $\mathcal{N}(0.5, 0.2)$ and $\mathcal{N}(0.7, 0.2)$. These represent
-                distributions concentrated around low, medium and high spins
-                respectively.
+            \item Gaussian spin distributions: here $\chi_{BH} \sim \mathcal{N}(\mu,
+                \sigma)$, but samples outside of [0, 1) are not considered. Here, $\mu,
+                \sigma$ represent the mean and standard deviation, respectively, of the
+                Gaussian distribution. For simplicity and to cover a representative
+                number out of all the possible distributions, samples were taken from
+                $\mathcal{N}(0.2, 0.2)$, $\mathcal{N}(0.5, 0.2)$ and $\mathcal{N}(0.7,
+                0.2)$. These represent distributions concentrated around low, medium and
+                high spins respectively.
 
                 \begin{figure}[H]
                     \centering
@@ -114,15 +119,15 @@
 
 \section{Neutron Star Population Models}\label{sec:ns_pop}
 
-    In order to reduce the number of variables in the problem, the masses of all neutron
-    stars in the population was set to 1.4 M$_\odot$. This value corresponds to the
-    median neutron star mass as inferred from GW170817 (see \cite{abbott_2018}). Also,
-    the spins of all neutron stars was set to 0, since it is assumed that sufficient
-    amount of time would have passed between the formation of the binary and merger,
-    allowing for the neutron star to spin down such that $\chi_{NS} \sim 0$.\\
-    Additionally, the tidal deformability of the neutron stars was set using the C-love
-    relation (see \cite{yagi_2017}). First, the radii of the neutron stars were set to
-    11 km, which is the median neutron star radius inferred for GW170817. Then, the
+    In order to reduce the number of variables in the problem, the masses and radii of
+    all neutron stars in the population was set to 1.4 M$_\odot$ and 11 km respectively.
+    These values correspond to the median values inferred for GW170817 (see
+    \cite{abbott_2018}). Also, the spins of all neutron stars synthesized was set to 0,
+    since it is assumed that sufficient amount of time would have passed between the
+    formation of the binary and merger, allowing for the neutron star to spin down such
+    that $\chi_{NS} \sim 0$.\\
+    Additionally, the tidal deformability of the neutron stars, $\Lambda_{NS}$ was set
+    using the C-love relation (see \cite{yagi_2017}). In order to do this, the
     compactness of the neutron stars, $C_{NS}$ was computed using the relation :
 
     \begin{equation}
@@ -140,33 +145,37 @@
     where $\Lambda_{NS}$ is the tidal deformability of the neutron star, and $a_k$ are
     the fit coefficients as given in \cite{yagi_2017}.
 
-\section{Spatial Distribution and Orientation of events}\label{sec:space_dist}
+\section{Spatial Distribution and Orientation of Samples}\label{sec:space_dist}
 
     \subsection{Constant comoving volume distribution}
 
-        The events whose component mass and spin distributions were described in
-        \ref{sec:bh_pop}-\ref{sec:ns_pop} are distributed in 3D space such that their
-        number density is constant in comoving volume.\\
-        For this, firstly the latitudinal ($\theta$) and longitudinal ($\phi$) angles
-        are sampled such that $\cos \theta \sim \mathcal{U}(-1, 1)$ and $\phi \in
-        \mathcal{U}(0, 2\pi)$, i.e. they are sampled such that they are uniform on a
-        unit sphere. As for the comoving distance distribution $\mathcal{P}(D_c)$,
-        consider the probability of an event lying in an infinitesimal shell of width
-        d$D_c$ at a comoving distance $D_c$.  Then it can be seen that:
+        The simulated events whose component mass and spin distributions were described
+        in \S\ref{sec:bh_pop}--\ref{sec:ns_pop} are distributed in 3D space such that
+        their number density is constant in comoving volume.\\ For this, firstly the
+        latitudinal ($\theta$) and longitudinal ($\phi$) angles are sampled such that
+        $\cos \theta \sim \mathcal{U}(-1, 1)$ and $\phi \in \mathcal{U}(0, 2\pi)$, i.e.
+        such that they are uniform on a unit sphere. As for the comoving distance
+        distribution $\mathcal{P}(D_c)$, consider the probability of an event lying in
+        an infinitesimal shell of width d$D_c$ at a comoving distance $D_c$.  Then it
+        can be seen that:
+
         \begin{equation}
             \mathcal{P}(D_c) dD_c \propto D_c^2 dD_c \Rightarrow
                 \boxed{\mathcal{P}(D_c) = \alpha D_c^2}
         \end{equation}
+
         where $\alpha$ is the constant of proportionality. In the local universe, it can
         be safely assumed that $D_c \approx D_L$, where the latter is the luminosity
-        distance.  However, from the fact that the GW SNR $\rho \propto D_L^{-1}$ it can
-        also be seen that:
+        distance.  However from the fact that the GW network SNR $\rho \propto
+        D_L^{-1}$, it can also be seen that:
 
         \begin{align}
             \mathcal{P}(\rho) &= \mathcal{P}(D_L)
-                                  \Big \lvert \dfrac{dD_L}{d\rho} \Big \rvert \\
+                                  \Big \lvert \dfrac{dD_L}{d\rho} \Big \rvert
+                                  \nonumber\\
                               &= \mathcal{P}({D_c})
-                                  \Big \lvert \dfrac{dD_c}{d\rho} \Big \rvert \\
+                                  \Big \lvert \dfrac{dD_c}{d\rho} \Big \rvert
+                                  \nonumber\\
                               &\propto \dfrac{1}{\rho^2} \dfrac{1}{\rho^2}
                                   = \dfrac{1}{\rho^4} \nonumber\\
             \Rightarrow \mathcal{P} (\rho) &= \dfrac{\beta}{\rho^4}
@@ -195,9 +204,9 @@
         \end{align}
 
         where $D_{L, max}$ is the luminosity distance corresponding to the detection
-        threshold. As an example, for the Advanced LIGO/VIRGO configuration and a SNR
-        threshold of 10, $D_{L, max} \approx 1123$ Mpc.\\
-        Using Eq.\ref{eq:lum_dist}, samples are drawn from the luminosity distance
+        threshold. As an example, for the Advanced LIGO/VIRGO design configuration and a
+        network SNR threshold of 10, $D_{L, max} \approx 1123$ Mpc.\\
+        Using Eq. \ref{eq:lum_dist}, samples are drawn from the luminosity distance
         distribution and using the previous samples for $\theta$ and $\phi$, events are
         distributed in 3D space such that the number density of events is constant in
         the comoving volume.
@@ -206,16 +215,16 @@
 
         The orientation of NSBH binaries with respect to the line-of-sight is prescribed
         using the inclination angle, $\iota$ and the polarization angle of the incoming
-        GW signal, $\psi$. These are distributed for the population such that $\cos\iota
-        \sim \mathcal{U}(-1, 1)$ and $\psi \sim \mathcal{U}(0, 2\pi)$, from which
-        samples are drawn for individual events.
+        GW signal, $\psi$. These are distributed in the population synthesis such that
+        $\cos\iota \sim \mathcal{U}(-1, 1)$ and $\psi \sim \mathcal{U}(0, 2\pi)$, from
+        which samples are drawn for individual events.
 
 \section{Validation of Population Synthesis Code}\label{sec:popsyn_validation}
 
     With the population models for the binary component parameters as described in the
-    previous section, 10$^5$ samples are drawn from each model to generate a population.
-    These populations will majorly differ in the black hole spin distribution and are
-    thus distinguished by that very factor.\\
+    previous sections, 10$^5$ samples are drawn from each model to generate a
+    population.  These populations will majorly differ in the black hole spin
+    distribution and are thus distinguished by that very factor.\\
     Given these populations, several checks were carried out to confirm the consistency
     of the underlying models and the population generated, with the use of (both EM and
     GW) theoretical results. The rationale behind these checks and the results are given
@@ -226,8 +235,8 @@
         Firstly, for the samples generated, the optimal GW SNR corresponding to the
         binary parameter combinations was computed. This was done by using the
         restricted post-Newtonian (PN) waveform (RWF; see \cite{cutler_1994}) as the GW
-        template for the expected GW strain signal from an actual merger event. For this
-        case, the template is given using the frequency domain representation:
+        template for the expected strain signal corresponding to an actual merger event.
+        For this case, the template is given using the frequency domain representation:
 
         \begin{equation}
             \tilde{h}(f) = \mathcal{A}f^{-7/6}e^{i\phi(f)}
@@ -236,12 +245,15 @@
 
         where $\mathcal{A} = \sqrt{5/96}\pi^{-2/3} \mathcal{M}$ is the amplitude,
         $\mathcal{M} = M \eta^{5/3}$ is the chirp mass, $M$ is the total mass, $\eta =
-        \dfrac{m_1 m_2}{M}$ is the symmetric mass ratio, and $\phi(f)$ is the frequency
+        \frac{m_1 m_2}{M}$ is the symmetric mass ratio, and $\phi(f)$ is the frequency
         domain GW phase function. With the RWF template, the PN approximations made
         ensure maximum accuracy with respect to the phase but ignore the PN corrections
-        to the amplitude of the gravitational waveform.\\
-        For such a template, the optimal SNR at a  detector with a noise power spectral
-        density (PSD) $S_h(f)$, is computed as:
+        to the amplitude of the gravitational waveform. However, this tradeoff is
+        beneficial since accurately tracking the phase evolution is vital for
+        inferring the binary masses (\cite{poisson_1995}), which helps in classifying
+        which type of compact binary coalescence (CBC) the incoming signal corresponds
+        to. For such a template, the optimal SNR at a detector with a noise power
+        spectral density (PSD) $S_h(f)$, is computed as:
 
         \begin{equation}
             \rho = \sqrt{
@@ -254,16 +266,18 @@
 
         Substituting the form of $\tilde{h}(f)$ from Eq. \ref{eq:rwf}, one obtains:
 
-        \begin{equation}
-            \rho(m_1, m_2, D_L, \theta, \phi, \psi, \iota) = \sqrt{
-                4 \dfrac{\mathcal{A}^2}{D_L^2}
-                \left[
-                    F_{+}^2(\theta, \phi, \psi)(1 + \cos^2 \iota)^2 +
-                    4 F_{\times}^2(\theta, \phi, \psi) \cos^2 \iota
-                \right]
-                 I(M)
-                }
-        \end{equation}
+        \begin{multline}
+            \label{eq:rwf_optsnr}
+            \rho(m_1, m_2, D_L, \theta, \phi, \psi, \iota) =
+                \Big\{
+                    4 \dfrac{\mathcal{A}^2}{D_L^2}
+                    \Big[
+                        F_{+}^2(\theta, \phi, \psi)(1 + \cos^2 \iota)^2 + \\
+                        4 F_{\times}^2(\theta, \phi, \psi) \cos^2 \iota
+                    \Big]
+                     I(M)
+                 \Big\}^{1/2}
+        \end{multline}
 
         where $F_{+, \times}(\theta, \phi, \psi)$ are the antenna pattern functions for
         the `plus' and `cross' GW polarizations, and the four angles $\{\theta, \phi,
@@ -277,49 +291,54 @@
         \end{align}
 
         where $f_{low}$ corresponds to the seismic cutoff in the detector noise PSD
-        curve, and $f_{LSO}$ corresponds to the frequency at the last stable orbit,
-        which under the PN approximation is $f_{LSO} = (6^{3/2} \pi M)^{-1}$ for a given
-        total mass M.\\
+        curve, and $f_{LSO}$ corresponds to the frequency at the last stable orbit for a
+        black hole of total mass M, which under the PN approximation is $f_{LSO} =
+        (6^{3/2} \pi M)^{-1}$.\\
         For each sample in the various populations, the optimal SNR was computed using
-        the above formulae with the aid of the PyCBC (\cite{pycbc}) and LALSimulation
-        (\cite{lalsuite}) libraries. Using this, it was verified that the events
-        \textit{are} distributed in luminosity distance (and thus SNR) as expected from
-        \ref{eq:lum_dist}. This is given in Fig.\ref{fig:rho_dist}. Note that
-        in order to verify this relation, one must only consider the events whose
-        network SNR is above the threshold SNR chosen (in this case, 10).\\
+        the above formulae with the aid of the PyCBC (\cite{pycbc}) Python package along
+        with the LALSimulation C libraries (\cite{lalsuite}). Using the computed SNRs,
+        it was verified that the events \textit{are} distributed in luminosity distance
+        (and thus SNR) as expected from \ref{eq:lum_dist}. This is given in
+        Fig. \ref{fig:rho_dist}. Note that in order to verify this relation, one must
+        only consider the events whose network SNR is above the threshold SNR chosen (in
+        this case, 10).\\
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.8\linewidth]{rho_dist}
-            \caption[Distribution of GW network SNR]{
+            \caption[Distribution of GW network SNR]
+            {
                 Distribution of GW network SNR, from a particular realisation of a
-                population (specifically one with standard assumpations about binary
-                parameters, except that the spin distribution is uniform). The red line
-                is the curve given by theoretical considerations, which for a threshold
-                SNR of 10, corresponds to $f(\rho) = 3\rho_{th}^3 / \rho^4 = 3000 /
-                \rho^4$.
+                population with standard assumpations about binary parameters, and a
+                uniform spin distribution. The red line is the curve given by
+                theoretical considerations, which for a threshold SNR of 10, corresponds
+                to $f(\rho) = 3\rho_{th}^3 / \rho^4 = 3000 / \rho^4$.
             }
             \label{fig:rho_dist}
         \end{figure}
 
 
-        Furthermore, for these samples, the GW network SNR is higher in value if:
+        Furthermore, from Eq. \ref{eq:rwf_optsnr}, the GW network SNR is higher in value
+        if:
 
         \begin{itemize}
 
-            \item The `event' is closer by, i.e. $D_L$ is low.
+            \item The merger `event' is closer by, i.e. $D_L$ is low.
 
             \item The binary merges with the orbital plane face on, i.e. $\iota$ is low
 
-            \item Both $D_L$ and $\iota$ are low, although this is a small part of the
-                $D_L-\iota$ parameter space, and hence is less probable.
+            \item \emph{Both} $D_L$ and $\iota$ are low, although this is a small part
+                of the $D_L-\iota$ parameter space and hence is less probable.
 
         \end{itemize}
 
         This implies a connection between the two parameters, and indeed this $D_L-\iota
         $ connection is well studied in the literature (see \cite{schutz_2011} \&
-        \cite{seto_2015} for discussions on the same). This relation was also verified
-        to hold within the population generated, which is shown in figure
+        \cite{seto_2015} for discussions on the same). This relation is also important
+        for joint EM-GW observations since the EM signals are inversely proportional to
+        the distance to a binary merger which may produce the prompt emission, whereas
+        the GW signal is sensitive to the inclination angle. This behaviour of the GW
+        SNR was verified to hold within the population generated, which is shown in Fig.
         \ref{fig:dl_iota_correlation}. Note that some parts of the $D_L - \iota$
         parameter space are not at all populated by the samples, which reaffirms the
         fact that distant, edge-on mergers are disfavoured when such systems are being
@@ -340,24 +359,25 @@
     \subsection{EM Checks}\label{sub:em_checks}
 
     The only EM component which has to be validated is the code which imposes the jet
-    structure (Eq. \ref{eq:dE_dOmega}-\ref{eq:eiso}), once the energetics of the jet are
-    computed via Eq. \ref{eq:e_kin_jet}-\ref{eq:Omega_h}.\\
+    structure (Eq. \ref{eq:dE_dOmega} -- \ref{eq:eiso}), once the energetics of the jet
+    are computed via Eq. \ref{eq:e_kin_jet} -- \ref{eq:Omega_h}.\\
     In order do this, one extracts the $\theta_v$ samples from the generated population,
     which can be done using the relation $\theta_v = \min(\iota, \pi - \iota)$. Then, a
     common baseline is achieved by setting the value of $E_{kin, jet} = 10^{49} \text{
     erg}$ for all samples, regardless of the actual value if the binary parameters were
-    to be taken into consideration. This is necessary to remove the variation of the
-    structure with the intrinsic jet energetics, which is intimately related to the
+    to be taken into consideration. This is necessary to \emph{remove} the variation of
+    the structure with the intrinsic jet energetics, which is intimately related to the
     binary parameters.\\
     Then with this constraint applied, the value of $E_{iso}(\theta_v)$ is computed
-    using Eq.  \ref{eq:dE_dOmega}-\ref{eq:eiso}. It is seen from Fig.
+    using Eq.  \ref{eq:dE_dOmega} -- \ref{eq:eiso}. It is seen from Fig.
     \ref{fig:jet_struct} that jet structure is being imposed correctly and according to
     what is expected from theory.
 
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\linewidth]{jet_struct}
-        \caption[Validation of the jet structure code]{
+        \caption[Validation of the jet structure code]
+        {
             Validation of the jet structure code, using the process mentioned in text.
             The blue scatter points are the values computed for $E_{iso}(\theta_v)$ for
             parameters from a population with $E_{kin, jet}$ set to $10^{49}$ erg,
@@ -367,20 +387,17 @@
         \label{fig:jet_struct}
     \end{figure}
 
-    One additional check was performed to confirm the distribution of simulated binary
-    mergers which led to jets. The number of  mergers which launched a jet with a
-    fluence greater than some particular value was plotted, as a function of the
-    particular fluence value. In other words, if $\mathcal{N}(>\mathcal{F})$ is the
-    number of simulated mergers with a fluence greater than $\mathcal{F}$, then the
-    behaviour of $\mathcal{N}(> \mathcal{F})$ was investigated in the simulated
-    population.\\
+    One additional check was performed to confirm the distribution of simulated, jet
+    launching binary mergers. The number of mergers which launched a jet with a fluence
+    greater than some particular value ($\mathcal{N}(>\mathcal{F})$) was plotted, as a
+    function of the particular fluence value($\mathcal{F}$).\\
     If the jet structure and spatial distribution codes were working to mimic what is
     observed in reality, the resulting structure should be isotropic but inhomogenous,
-    as the sources would be cosmological in nature but appear isotropically distributed
-    in the local universe. As for the expected behaviour of $\mathcal{N}(>
-    \mathcal{F})$, this would mean that for large values of $\mathcal{F}$ it would
-    behave as $\mathcal{F}^{-1.5}$ but would significantly deviate from this behaviour
-    for lower values of $\mathcal{F}$.
+    since the sources would be cosmological in nature but appear isotropically
+    distributed in the local universe. As for the expected behaviour of $\mathcal{N}(>
+    \mathcal{F})$, it would behave as $\mathcal{F}^{-1.5}$ for large values of
+    $\mathcal{F}$, but would significantly deviate from this behaviour
+    for smaller values of $\mathcal{F}$.
 
     \begin{figure}[H]
         \centering
@@ -393,23 +410,27 @@
         \label{fig:number_fluence}
     \end{figure}
 
-    From Fig.\ref{fig:number_fluence}, it is seen that the distribution of simulated
+    From Fig. \ref{fig:number_fluence}, it is seen that the distribution of simulated
     mergers which launch a jet mimics the observed distribution of SGRBs in the
-    Universe, and so the jet structure and source distribution codes are satisfactory.
+    Universe, and so the jet structure and spatial distribution codes are satisfactory.
 
-    As an additional check for the jet structure imposition, a few prototypical binary
-    mergers are considered, where each prototype is identified by the mass ratio,
-    $\mathcal{Q}$, varied as $\mathcal{Q} = \frac{3}{1.4}, \frac{5}{1.4},
+    As an additional check for the jet structure and energetics code, a few prototypical
+    binary mergers are considered, where each prototype is identified by the mass ratio,
+    $\mathcal{Q}$, which is varied as $\mathcal{Q} = \frac{3}{1.4}, \frac{5}{1.4},
     \frac{10}{1.4}$. The variation of the fluence with the black hole spin, $\chi_{BH}$
     and the viewing angle, $\theta_v$ is what is studied in each prototypical case.
-    These are given in Figs.\ref{fig:fluence_thetav+spin(3)} --
+    These are given in Figs. \ref{fig:fluence_thetav+spin(3)} --
     \ref{fig:fluence_thetav+spin(5)}.
 
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\linewidth]{fluence_thetav+spin(3)}
-        \caption[Variation of $\mathcal{F}(\chi_{BH}, \theta_{v})$ for a
-        $\mathcal{Q}=3:1.4$ NSBH binary merger]{
+        \caption
+        [
+            Variation of $\mathcal{F}(\chi_{BH}, \theta_{v})$ for a $\mathcal{Q}=3:1.4$
+            NSBH binary merger
+        ]
+        {
             The variation of fluence with the viewing angle and the black hole spin for
             a binary merger with a mass ratio of $\mathcal{Q}=3:1.4$. Here the regions
             of the $\chi_{BH}-\theta_v$ parameter space in white are those regions where
@@ -418,7 +439,9 @@
         \label{fig:fluence_thetav+spin(3)}
     \end{figure}
 
-    As can be seen from these figures:
+    A few important points are readily visible from careful observation of the Figs.
+    \ref{fig:fluence_thetav+spin(3)} -- \ref{fig:fluence_thetav+spin(5)}, which will be
+    useful for the discussion in subsequent chapters:
 
     \begin{itemize}
 
@@ -440,8 +463,12 @@
     \begin{figure}[H]
         \centering
         \includegraphics[width=0.8\linewidth]{fluence_thetav+spin(5)}
-        \caption[Variation of $\mathcal{F}(\chi_{BH}, \theta_{v})$ for a
-        $\mathcal{Q}=5:1.4$ NSBH binary merger]{
+        \caption
+        [
+            Variation of $\mathcal{F}(\chi_{BH}, \theta_{v})$ for a $\mathcal{Q}=5:1.4$
+            NSBH binary merger
+        ]
+        {
             The variation of fluence with the viewing angle and the black hole spin for
             a binary merger with a mass ratio of $\mathcal{Q}=5:1.4$. Note that in this
             case the region where a disc is not produced is a much larger fraction of
@@ -454,22 +481,26 @@
     \ref{fig:fluence_thetav+spin(5)}, it can be seen that symmetric binary mergers will
     produce much brighter jets for a given black hole spin, and these jets will be seen
     out to higher viewing angles. This fact will be useful while discussing the analysis
-    of the various populations synthesized, their EM/GW/joint detectabilities.
-    Furthermore, from these figures, it is also verified that the code which imposes the
-    jet structure and energetics is working correctly, since these conclusions about the
-    EM detectabilities of NSBH binary mergers are the ones reached in literature as
-    well (see \ref{sec:nsbh} for a brief overview of the literature discussing
-    these results)
+    of the various populations synthesized, along with their EM/GW/joint
+    detectabilities.  Furthermore, from these figures, it is also verified that the code
+    which imposes the jet structure and energetics is working correctly, since these
+    conclusions about the EM detectabilities of NSBH binary mergers are the ones
+    corroborated by literature as well (see \ref{sec:nsbh} for a brief overview of the
+    literature discussing these results).
 
     \begin{figure}[ht]
         \centering
         \includegraphics[width=0.8\linewidth]{fluence_thetav+spin(10)}
-        \caption[Variation of $\mathcal{F}(\chi_{BH}, \theta_{v})$ for a
-        $\mathcal{Q}=10:1.4$ NSBH binary merger]{
+        \caption
+        [
+            Variation of $\mathcal{F}(\chi_{BH}, \theta_{v})$ for a $\mathcal{Q}=10:1.4$
+            NSBH binary merger
+        ]
+        {
             The variation of fluence with the viewing angle and the black hole spin for
             a binary merger with a mass ratio of $\mathcal{Q}=10:1.4$. Here the region
             of parameter space where the jet is launched is extremely restricted, as the
-            NSBH binary in question is very asymmetric in its masses.
+            NSBH binary in question is extremely asymmetric in its masses.
         }
         \label{fig:fluence_thetav+spin(10)}
     \end{figure}
@@ -477,12 +508,12 @@
 \section{Summary}
 
     In this chapter, the various populations that will be used to probe the EM
-    counterparts of NSBH mergers were briefly explained. Along with this exposition, a
-    summary of the various tests carried out was given, wherein the tests made sure that
-    the internal code that computes the GW SNR, calculates jet energetics (from formulae
-    derived as fits to numerical relativity simulations), imposes jet structures etc.,
-    gave preliminary results which align with the theoretical results.\\
+    counterparts of NSBH mergers were introduced. Along with this, a summary of the
+    various tests carried out was given, wherein the tests made sure that the internal
+    codes that compute GW SNRs, calculate jet energetics (from formulae derived as fits
+    to numerical relativity simulations), impose jet structures etc., gave preliminary
+    results which align with the theoretical results.\\
     In the coming chapters, the framework set up in this and the previous chapters for
-    the synthesis and analysis of the populations and NSBH merger events will be used to
-    derive results about the properties of NSBH binary mergers and their subsequent EM
-    prompt counterparts.
+    the synthesis of the populations, will be used to analyse the generated populations
+    and the resulting NSBH merger events will be used to derive results about the
+    properties of these binary mergers, and their subsequent prompt EM counterparts.
