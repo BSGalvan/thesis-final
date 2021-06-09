@@ -471,9 +471,11 @@
         \item The tidal deformability of the neutron star is given by $\Lambda_{NS}$ and
             $\rho = (15 \Lambda_{NS})^{-1/5}$. It is also related to the compactness of
             the neutron star via the C--Love relation (see \cite{yagi_2017}):
+
             \begin{equation}
                 C_{NS} = \sum_{k=0}^{2} a_k (\ln \Lambda_{NS})^k
             \end{equation}
+
             where $a_0 = 0.360, a_1 = -0.0335, a_2 = 0.000705$.
 
         \item $\eta$ is the symmetric mass ratio, given by $ \eta =
@@ -482,6 +484,7 @@
         \item $\hat{R}_{ISCO} = c^2 R_{ISCO} / GM_{BH}$ is the normalized ISCO radius
             for a spinning black hole, given in \cite{bardeen_1972} as :
             \begin{align}
+                \label{eq:r_isco}
                 \hat{R}_{ISCO} &=
                     3 +
                     Z_2 -
@@ -517,6 +520,7 @@
                a_4, 0
            \biggr\}
     \end{multline}
+
     where the symbols have their usual meanings, and additionally:
 
     \begin{align*}
@@ -526,10 +530,12 @@
     \end{align*}
 
     From these two quantities, one can derive the disc mass $M_{\mathrm{disc}}$ as :
+
     \begin{equation}
         M_{\mathrm{disc}} = \max\{M_{\mathrm{out}} - M_{\mathrm{dyn}}, 0\}
         \label{eq:disc_mass}
     \end{equation}
+
     However, due to the fact that these two fits are derived from simulations over
     different regions of the input parameter space, care must be taken while applying
     them together. This is to ensure that $M_{\mathrm{dyn}} \leq M_{\mathrm{out}}$
@@ -549,6 +555,7 @@
 
     Additionally, the masses of the other wind ejecta, namely the neutrino-driven and
     viscosity-driven wind ejecta, are derived from that of the disc mass:
+
     \begin{align}
         \begin{split}
             M_{\mathrm{vis}} &=
@@ -563,27 +570,33 @@
     To model the SGRB jet, the procedure of \cite{zhu_2020} is followed. The
     kinetic energy of the jet is decided by the disc mass and the black hole spin as
     follows:
+
     \begin{equation}
         E_{\mathrm{K, jet}} =
             \epsilon(1 - \xi_{\mathrm{vis}} - \xi_{\nu})
             M_{\mathrm{disc}} c^2 \Omega_H^2 f(\Omega_H)
         \label{eq:e_kin_jet}
     \end{equation}
+
     where:
 
     \begin{itemize}
 
         \item The dimensionless angular velocity at the horizon of the black hole is
             given by:
+
             \begin{equation}
                 \Omega_H = \dfrac{\chi_{BH}}{2(1 + \sqrt{1 + \chi_{BH}^2}}
+                \label{eq:omega_func}
             \end{equation}
 
         \item $f(\Omega_H)$ is a high-spin correction factor given by:
+
             \begin{equation}
                f(\Omega_H) = 1 + 1.38\Omega_H^2 - 9.2 \Omega_H^4
                \label{eq:Omega_h}
             \end{equation}
+
         \item $\epsilon$ is a fudge factor which depends on the large-scale geometry of
             the magnetic field, disc aspect ratio and the ratio of the magnetic field
             energy density to disc pressure at saturation.\\ In order to set it to a
@@ -599,8 +612,132 @@
 
     \end{itemize}
 
-    Using this one can define the structure of the SGRB jet, given by the following
-    equations:
+    However, note that in Eq. \ref{eq:omega_func}, the value of $\chi_{BH}$ is the
+    \emph{spin of the remnant BH}, which can be computed solving the following implicit
+    equation (\cite{pannarale_2013}):
+
+    \begin{equation}
+        \chi_{BH, f} = \dfrac
+            {
+                \chi_{BH, i}M_{BH}^2 + l_z(\hat{R}_{ISCO, f}, \chi_{BH, f}) M_{BH}
+                [ (1 - f(\eta))M_{NS} + f(\eta) M_{b, NS} - M_{out}) ]
+            }
+            {
+                [M (1 - ( 1 - e(\hat{R}_{ISCO, i}, \chi_{BH, i}) ) \eta ) -
+                e(\hat{R}_{ISCO, i}, \chi_{BH, i}) M_{out}]
+            }
+    \end{equation}
+
+    for $\chi_{BH, f}$, where:
+
+    \begin{itemize}
+
+        \item $\chi_{BH, i}$ and $\chi_{BH, f}$ are the initial and final spins of the
+            BH and BH remnant respectively.
+
+        \item $M_{BH}$ and $M_{NS}$ are the masses of the BH and NS respectively. $M_{b,
+            NS}$ and $M_{out}$ are the baryonic mass of the NS and the remnant mass for
+            the particular NSBH merger calculated using Eq. \ref{eq:m_out} respectively.
+            Finally, $M$ is the total (initial) mass of the binary, and $\eta =
+            \frac{\mathcal{Q}}{(1 + \mathcal{Q})^2}$ is the initial symmetric mass
+            ratio. All mass quantities are expressed in geometrized units, i.e. where $G
+            = c = 1$.
+
+        \item $l_z(\hat{R}_{ISCO, f}, \chi_{BH, f})$ is the orbital angular momentum per
+            unit mass of a test particle orbiting the remnant BH at the ISCO. Note that
+            here $\hat{R}_{ISCO}$ plays the role of the (dimensionless) radial
+            Boyer-Lindquist coordinate, useful for describing the orbits in the Kerr
+            spacetime around this rotating BH remnant. Additionally, $\hat{R}_{ISCO, f}$
+            refers to the value computed by using the final BH spin in Eq.
+            \ref{eq:r_isco}. Also for a given radial coordinate, $\hat{R}$ and a BH
+            spin, $\chi$ this orbital angular momentum is given as:
+
+            \begin{equation}
+                l_z(\hat{R}, \chi) = \mathrm{sgn}(\chi)
+                    \left[
+                        \dfrac
+                        {
+                            \hat{R}^2 - \mathrm{sgn}(\chi) \cdot 2 \chi \sqrt{\hat{R}} +
+                            \chi^2
+                        }
+                        {
+                            \sqrt{\hat{R}}
+                            (
+                                \hat{R}^2 - 3\hat{R} + \mathrm{sgn}(\chi) \cdot 2 \chi
+                                \sqrt{\hat{R}}
+                            )^{1/2}
+                        }
+                    \right]
+                \label{eq:AM_boyerlindquist}
+            \end{equation}
+
+            where $\mathrm{sgn}(\chi)$ is positive/negative for prograde/retrograde
+            orbits.
+
+        \item $e(\hat{R}_{ISCO}, \chi_{BH, f})$ is the energy per unit mass of a test
+            particle orbiting the remnant BH at the ISCO. For equatorial Kerr orbits at
+            a radial coordinate, $\hat{R}$ around a BH with a spin, $\chi$ it
+            is given as:
+
+            \begin{equation}
+                e_z(\hat{R}, \chi) =
+                    \dfrac
+                    {
+                        \hat{R}^2 - 2 \hat{R} + \mathrm{sgn}(\chi) \cdot \chi
+                        \sqrt{\hat{R}}
+                    }
+                    {
+                        \hat{R}
+                        (
+                            \hat{R}^2 - 3\hat{R} + \mathrm{sgn}(\chi) \cdot 2 \chi
+                            \sqrt{\hat{R}}
+                        )^{1/2}
+                    }
+                \label{eq:E_boyerlindquist}
+            \end{equation}
+
+        \item $f(\eta)$ is a transition function to smooth the behaviour of this
+            equation in the transition from large ($\mathcal{Q} \geq 4$) mass ratio
+            mergers to smaller ($\mathcal{Q} \in (2, 4]$) mass ratio mergers. This
+            function is not uniquely defined, but \cite{pannarale_2013} defines it using
+            the following properties which are validated by comparing with numerical
+            relativity simulations:
+
+            \begin{itemize}
+
+                \item $f(\eta \geq 2/9) = 1$ and $f(\eta \leq 0.16) = 0$. This means
+                    that for mergers with relatively large mass ratios ($\mathcal{Q}
+                    \geq 4 \Leftrightarrow \eta \leq 0.16$) the function `switches off'
+                    and for lower mass ratios ($\mathcal{Q} \leq 2 \Leftrightarrow
+                    \eta \geq 2/9$) the function `switches on'.
+
+                \item  $\dfrac{df}{d\eta} \geq 0 \quad \forall \eta \in (0, 0.25]
+                    \Leftrightarrow \mathcal{Q} \in (1, \infty) $. This means that the
+                    transition function is monotonically increasing. Additionally
+                    for simplicity, it is assumed to be $C^\infty$.
+
+            \end{itemize}
+
+            With these constraints in mind, the transition function is defined as:
+
+            \begin{equation}
+                f(\eta) =
+                \begin{cases}
+                    0, & \eta \leq 0.16 \\
+                    \dfrac{1}{2}\left[
+                                    1 - \cos\left(
+                                                \dfrac{\pi(\eta - 0.16)}{2/9 - 0.16}
+                                            \right)
+                                \right], & 0.16 < \eta < 2/9 \\
+                    1, & 2/9 \leq \eta \leq 0.25
+                \end{cases}
+                \label{eq:transition_func}
+            \end{equation}
+
+    \end{itemize}
+
+    Now, given the jet energetics using the equations above,  one can define the
+    structure of the SGRB jet, given by the following equations:
 
     \begin{equation}
         \dfrac{dE(\theta)}{d\Omega} =

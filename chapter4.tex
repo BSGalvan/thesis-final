@@ -97,8 +97,9 @@
     \end{enumerate}
 
     These numbers are collected together in Table \ref{tab:popln_numbers} for each
-    population class. From this table it is evident that the spin distribution heavily
-    affects the number of EM-only events, and by extension the number of joint events.\\
+    population class. From this table it is evident that nature of the spin distribution
+    heavily affects the number of EM-only events, and by extension the number of joint
+    events.\\
     This can be explained by looking at the dependence of $M_{disc}$ on the BH
     spin, from Eq.\ref{eq:disc_mass}, for a fixed mass ratio. Since a highly spinning
     black hole produces more tidally disrupted material for a given mass ratio than a
@@ -117,16 +118,16 @@
             $\mathcal{N}_{EM}$ &
             $\mathcal{N}_{EM+GW}$ \\
 
-            Class I & 26 & 12283 & 0 \\
+            Class I & 28 & 12283 & 9 \\
 
-            Class II & 640 & 12283 & 88 \\
+            Class II & 666 & 11274 & 241 \\
 
             Class III$_{\mu = 0.2}$ &
-            19 & 12283 & 0 \\
+            25 & 11250 & 6 \\
             Class III$_{\mu = 0.5}$ &
-            266 & 12283 & 26 \\
+            290 & 11690 & 93 \\
             Class III$_{\mu = 0.7}$ &
-            882 & 12283 & 118 \\
+            932 & 11468 & 330 \\
             \bottomrule
         \end{tabular}
         \label{tab:popln_numbers}
@@ -145,7 +146,7 @@
         \label{fig:m_disc}
     \end{figure}
 
-    This then means that because populations with igh spin' distributions (such as
+    This then means that because populations with `high spin' distributions (such as
     Class I or Class III$_{\mu = 0.7}$) have a higher proportion of high spin binaries,
     they have a higher number of EM and joint detections, since a more massive disc
     produces a more energetic jet from Eq.\ref{eq:eiso}, and thus increases the
@@ -174,23 +175,24 @@
         particular set of samples, there is no possibility of detecting a jet from this
         particular binary.\\
         Fig. \ref{fig:mdisc_q_190426} is the result of this analysis in the
-        $\chi_{BH}-\mathcal{Q}$ plane. From that figure, it is seen that a very small
-        fraction of posterior samples actually fall within the section of the parameter
-        space where $M_{disc} \neq 0$. This means correspondingly that the
-        probability of the NSBH event GW190426 launching a SGRB jet at all is very low.
-        This can be interpreted trivially to conclude that the event was of terrestrial
-        origin, and thus it follows that it would not be compatible with the launching
-        of an astrophysical jet. But non-trivially, one can also conclude that one of
-        the following is true:
+        $\chi_{BH}-\mathcal{Q}$ plane. From this figure, it is seen that a minor but
+        non-negligible fraction of posterior samples (~32\%) actually falls within the
+        section of the parameter space where $M_{disc} \neq 0$. This means
+        correspondingly that the probability of the \emph{NSBH} event GW190426 launching
+        a SGRB jet at all is disfavoured. This can be interpreted trivially to conclude
+        that the event was of terrestrial origin, and thus it follows that it would not
+        be compatible with the launching of an astrophysical jet. But non-trivially, one
+        can also conclude that one of the following is true:
 
         \begin{itemize}
 
-            \item The event GW190426 was a BNS merger event, which had a jet that was
-                launched via other mechanisms.
+            \item The event GW190426\_152155 was a BNS merger event, which had a jet
+                that was launched via other mechanisms.
 
-            \item The event GW190426 was an NSBH merger event, but the jet was launched
-                via a mechanism that is unknown. This means that the current analysis is
-                invalid, and the true nature of the jet launching mechanism is unknown.
+            \item The event GW190426\_152155 was an NSBH merger event, but the jet was
+                launched via a mechanism that is unknown. This means that the current
+                analysis is invalid, and the true nature of the jet launching mechanism
+                is unknown.
 
         \end{itemize}
 
@@ -202,16 +204,16 @@
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.9\linewidth]{mdisc_q_190426}
+            \includegraphics[width=\linewidth]{190426_in_q-chi_high}
             \caption[GW190426 in the $\chi_{BH}-\mathcal{Q}$ plane]
             {
-                GW190426 in the $\chi_{BH}-\mathcal{Q}$ plane. The color coding at a
-                point in the plane indicates the value of $M_{disc}$
-                corresponding to that particular $\chi_{BH}$ and $\mathcal{Q}$.
-                Unfilled circles with a black outline correspond to samples from the
-                posterior distributions for GW190426, which have $M_{disc} =
-                0$, and so cannot support jet launching, and filled black circles are
-                those with $M_{disc} \neq 0$.
+                GW190426\_152155 in the $\chi_{BH}-\mathcal{Q}$ plane. The color coding
+                at a point in the plane indicates the value of $M_{disc}$ corresponding
+                to that particular $\chi_{BH}$ and $\mathcal{Q}$.  Unfilled circles with
+                a black outline correspond to samples from the posterior distributions
+                for GW190426\_152155, which have $M_{disc} = 0$, and so cannot support
+                jet launching, and filled black circles are those with $M_{disc} \neq
+                0$.
             }
             \label{fig:mdisc_q_190426}
         \end{figure}
@@ -250,9 +252,9 @@
         \texttt{IMRPhenomPv2NRT\_highSpin\_posterior}\footnote
         {
             \texttt{IMRPhenomPv2NRT} is the LAL C routine that models the
-            phenomenological inspiral-merger-ringdown GW waveform for a spinning,
-            precessing binary with numerical relativity-tuned tidal effects (see
-            \cite{lalsuite}).
+            phenomenological inspiral-merger-ringdown gravitational waveform for a
+            spinning, precessing binary with numerical relativity-tuned tidal effects
+            (see \cite{lalsuite}, and \cite{dietrich_2019}).
         }
         whereas the second is termed \texttt{IMRPhenomPv2NRT\_lowSpin\_posterior}, and
         both are considered in the current analysis.\\
@@ -260,22 +262,8 @@
         NS, the mass ratios, corresponding spins and tidal deformabilities are extracted
         from the posterior samples.  This was used to compute the $M_{disc}$
         corresponding to each set of samples, and the results for each flavour of
-        the posterior distribution is shown below in Figs. \ref{fig:170817_low} --
-        \ref{fig:170817_high}.
-
-        \begin{figure}[ht]
-            \centering
-            \includegraphics[width=\linewidth]{170817_in_q-chi-high}
-            \caption[$M_{disc}$ for GW170817's High Spin Posterior Distribution]
-            {
-                Samples from the high spin posterior distribution for GW170817, in the
-                $\mathcal{Q}-\chi_{BH}$ plane. The color coding for a point in the plane
-                is the $M_{disc}$ computed for that $\mathcal{Q}$ and $\chi_{BH}$, and
-                unfilled (white) circles represent posterior samples which have
-                $M_{disc} = 0$.
-            }
-            \label{fig:170817_high}
-        \end{figure}
+        the posterior distribution is shown in Figs. \ref{fig:170817_low} --
+        \ref{fig:170817_high} below.
 
         \begin{figure}[ht]
             \centering
@@ -284,38 +272,107 @@
             {
                 Samples from the low spin posterior distribution for GW170817, in the
                 $\mathcal{Q}-\chi_{BH}$ plane. The color coding for a point in the plane
-                is computed similar to the process followed in Fig.
-                \ref{fig:170817_high}.
+                is the $M_{disc}$ computed for that $\mathcal{Q}$ and $\chi_{BH}$, and
+                unfilled (white) circles represent posterior samples which have
+                $M_{disc} = 0$.
             }
             \label{fig:170817_low}
+        \end{figure}
+
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=\linewidth]{170817_in_q-chi-high}
+            \caption[$M_{disc}$ for GW170817's High Spin Posterior Distribution]
+            {
+                Samples from the high spin posterior distribution for GW170817, in the
+                $\mathcal{Q}-\chi_{BH}$ plane. The color coding for a point in the plane
+                is computed similar to the process followed in Fig.
+                \ref{fig:170817_low}.
+            }
+            \label{fig:170817_high}
         \end{figure}
 
     As can be seen from Figs. \ref{fig:170817_low} -- \ref{fig:170817_high}, more than
     50\% of the posterior sample sets produce a disc mass (i.e. $M_{disc} \neq 0$), and
     thus can support jet launching given the right black hole spin and energy extraction
-    conditions. Specifically, for the high-spin posterior, around 82\% of the samples
-    produce a disc whereas in the case of the low-spin posterior, around 72\% of the
+    conditions. Specifically, for the high-spin posterior, around 57.1\% of the samples
+    produce a disc whereas in the case of the low-spin posterior, around 55.9\% of the
     samples produce a disc.\\
-    Furthermore, from continued EM follow-up analysis, estimates have been obtained for
-    the viewing angle, $\theta_v$ at which GW170817 was seen (see \cite{finstad_2018}).
-    This value has been constrained to be $\theta_v \sim 20^{\circ}$. Using this, the
-    value of the apparent isotropic equivalent energies for the posterior samples is
-    calculated, which show that the median value of $E_{iso}(20^{\circ}) \approx 7.756
-    \times 10^{45}$ erg for the high-spin prior whereas the same value is
-    $E_{iso}(20^{\circ}) \approx 6.311 \times 10^{43}$ erg for the low-spin prior, which
-    is considerably lower than the observed isotropic equivalent energies for
-    cosmological SGRBs (see Table \ref{tab:typical_grbs}), but comparable with the
+    Furthermore, from EM follow-up observations and analysis, estimates have been
+    obtained for the viewing angle, $\theta_v$ at which GW170817 was seen (see
+    \cite{finstad_2018}). This value has been constrained to be $\theta_v \sim
+    20^{\circ}$. Using this, the value of the apparent isotropic equivalent energies for
+    the posterior samples is calculated, which show a median value of
+    $E_{iso}(20^{\circ}) \approx 1.21 \times 10^{47}$ erg for the high-spin prior
+    whereas the same value is $E_{iso}(20^{\circ}) \approx 8.06 \times 10^{46}$ erg for
+    the low-spin prior, which is lower than the observed isotropic equivalent energies
+    for cosmological SGRBs (see Table \ref{tab:typical_grbs}), but comparable with the
     $E_{iso}(\theta_v)$ that is obtained when treating GW170817 as a BNS merger.
+
+    \subsection{GW190425}\label{ssec:nsbh_190425}
+
+        For completeness, the analysis carried out for GW170817 and GW190426\_152155 is
+        also carried out for GW190425. A similar process is carried out and the
+        posteriors samples released for the component masses, component spins etc., are
+        used to compute the disc mass using the current framework. The result of doing
+        this analysis is shown Figs. \ref{fig:190425_low} -- \ref{fig:190425_high}.\\
+        As can be seen from these figures, most of the samples support the formation of
+        a disc around the remnant black hole. In fact, for the high-spin posterior,
+        around 92\% of the samples have a $M_{disc} > 0$ whereas in the case of
+        the low-spin posterior, almost 33\% of the samples have a $M_{disc} > 0$.
+        This can be interpreted as indicating the fact that it is wholly possible that
+        190425 was an NSBH event which launched a SGRB jet which was missed because of
+        it being off-axis to observers on the Earth, although the degree to which it is
+        probable depends on the black hole spin prior distribution used.\\
+        Since there were no EM observations which would help constrain the viewing
+        angle of the event, the apparent on-axis isotropic equivalent energy is taken as
+        the next best measure which can shed more light on the energetics of the SGRB
+        jet. Assuming a Gaussian structured jet, it is seen that the median value of
+        $E_{iso}(0) \approx 3.765 \times 10^{51}$ erg for the high-spin posteriors
+        whereas that for the low-spin posterior is $E_{iso}(0) \approx 1.607 \times
+        10^{51}$ erg. This puts this event in the energy range of cosmological SGRBs,
+        further evidencing the possibility of GW190425 as a low mass BH, high mass NS
+        merger event which led to an SGRB jet.
+
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=\linewidth]{190425_in_q-chi-low}
+            \caption[$M_{disc}$ for GW190425's Low Spin Posterior Distribution]
+            {
+                Samples from the low spin posterior distribution for GW190425, in the
+                $\mathcal{Q}-\chi_{BH}$ plane. The color coding for a point in the plane
+                is the $M_{disc}$ computed for that $\mathcal{Q}$ and $\chi_{BH}$, and
+                unfilled (white) circles represent posterior samples which have
+                $M_{disc} = 0$.
+            }
+            \label{fig:190425_low}
+        \end{figure}
+
+        \begin{figure}[ht]
+            \centering
+            \includegraphics[width=\linewidth]{190425_in_q-chi-high}
+            \caption[$M_{disc}$ for GW190425's High Spin Posterior Distribution]
+            {
+                Samples from the high spin posterior distribution for GW190425, in the
+                $\mathcal{Q}-\chi_{BH}$ plane.  The color coding for a point in the
+                plane is computed similar to the process followed in Fig.
+                \ref{fig:190425_low}.
+            }
+            \label{fig:190425_high}
+        \end{figure}
 
 \section{Summary}
 
     In this chapter, the populations synthesized using codes described in Chapter
     \ref{ch:synthesis} and events of interest introduced in Chapter \ref{ch:candidates}
-    are analysed more carefully. Specifically, in the case of GW190426, the hypothesis
-    that it could have been an NSBH merger event is carefully considered under the
-    current framework. Since it did not fit in with said framework, alternatives
-    hypotheses are proposed, although more work needs to be done in terms of verifying
-    these alternative hypotheses.\\
+    are analysed more carefully. Specifically, in the case of GW190426\_152155, the
+    hypothesis that it could have been an NSBH merger event is carefully considered
+    under the current framework. Since it did not fit in well with the current
+    framework, alternatives hypotheses are proposed, although more work needs to be done
+    in terms of verifying these alternative hypotheses.\\
+    Similar analyses was also carried out for the events GW170817 and GW190425, which
+    are currently classified as BNS mergers to a high degree of confidence, but still
+    admit non-neglible possibility to launching a jet within the current framework.\\
     As for the population analysis, it was ascertained that the EM outflows from NSBH
     mergers with the currently assumed population parameters strongly depends on the
     black hole spin prior distribution. In the absence of any strong indication to
