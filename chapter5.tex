@@ -19,28 +19,32 @@
 
     \end{itemize}
 
-    and simulates the EM counterparts using just these equations. Additionally, these
-    events are also analysed from the GW side of things, with the corresponding GW
-    optimal SNR also being computed under this framework.\\
+    By using these inputs, the framework simulates the EM counterparts using the
+    equations described in \ref{sec:ns_in_gw}.  Additionally, these events are also
+    analysed from the GW side of things, with the corresponding GW optimal SNR also
+    being computed under this framework.\\
     From these simulations, it is seen that under the assumption that NSBH mergers are
-    disruptive (which may be a strong assumption to make, given the mass ratio
+    disruptive (which may be a strong assumption to make given the mass ratio
     distributions seen by Advanced LIGO/VIRGO), in order to have bright SGRB jets the
     binary must have a low mass black hole that is spinning rapidly. This conclusion is
     seen from considering the effect of the BH spin distribution on the number of EM
-    detected events in \ref{tab:popln_numbers}. Furthermore this also implies that from
-    the observed number of SGRB jets, one can infer the nature of the BH spin
-    distribution in an NSBH merger, and compare it to more physically motivated
-    distributions, say those derived from stellar population synthesis codes.\\
+    detected events in \ref{tab:popln_numbers}. Furthermore this also implies that by
+    comparing the observed number of SGRB jets which are also detected in the GW regime
+    as a NS merger, one can make guesses about the nature of the BH spin distribution in
+    an NSBH binary. One can also compare the predictions that more physically motivated
+    spin distributions (say, those derived from stellar population synthesis codes) give
+    for the observed SGRB rates.\\
     As for the events from GWTC-1 and 2 which were considered here, it is seen that for
-    all these events, namely GW170817, GW190425 and GW 190426\_152155, which were
+    all these events, namely GW170817, GW190425 and GW190426\_152155, which were
     observed in the GW regime, there is a non-negligible possibility that the event was
-    an NSBH event which produced an SGRB jet (along with the other EM counterparts, in
-    the case of GW170817). Only in the case of GW170817 and GW190425 were the jets
-    actually observed as detections, although all their apparent isotropic equivalent
-    energies are relatively lower when compared to the typical cosmological population
-    This observation is explained if the events were observed off-axis, although only
-    for GW170817 has afterglow modelling constrained the off-axis viewing angle
-    well enough.\\
+    an NSBH event which could have produced an SGRB jet (along with the other EM
+    counterparts, in the case of GW170817), although only in the case of GW170817 and
+    GW190425 were the jets actually observed as detections.\\
+    % In all cases the apparent isotropic
+    %equivalent energies computed are relatively lower when compared to the typical
+    %cosmological population This observation is explained if the events were observed
+    %off-axis, although only for GW170817 has afterglow modelling constrained the
+    %off-axis viewing angle well enough.\\
     With these conclusions in mind, the directions in which this work will be taken in
     the future is explored in the next section. These directions are directly related to
     loosening the assumptions made in this work in order to simplify the problem and
@@ -50,18 +54,19 @@
 
         \begin{enumerate}
 
-            \item In this work, the spin of the black hole is assumed to be aligned to
-                the angular momentum of the binary system, and also it is assumed that
-                the system is non-precessing. The former assumption is valid to make for
-                the computation of the masses left outside the BH apparent horizon,
-                since retrograde spins disfavour disruption nonetheless. However, the BH
-                spins which are tilted with respect to the angular momentum of the
-                binary can still disrupt inspiralling NS matter (although to a lesser
-                amount that aligned spin) and is an assumption that must be relaxed as
-                much as possible. The relaxation of the latter assumption will introduce
-                complications, since for a precessing binary system the definition of
-                the inclination angle changes with time, and so the entire framework
-                will have to be revamped in order to take care of that new definition.
+            \item In the framework developed here, the spin of the black hole is
+                assumed to be aligned to the angular momentum of the binary system, and
+                also it is assumed that the system is non-precessing. The former
+                assumption is valid to make for the computation of the masses left
+                outside the BH apparent horizon, since retrograde spins disfavour
+                disruption nonetheless. However, the BH spins which are tilted with
+                respect to the angular momentum of the binary can still disrupt
+                inspiralling NS matter (although to a lesser amount than aligned spins)
+                and is an assumption that must be relaxed as much as possible. The
+                relaxation of the latter assumption will introduce complications, since
+                for a precessing binary system the definition of the inclination angle
+                changes with time, and so the entire framework will have to be revamped
+                in order to take care of that new definition.
 
             \item Here, the microphysics behind the NS Equation of State (EoS) and the
                 resulting effect it can have on the EM counterparts is not considered.
@@ -72,14 +77,14 @@
                 be the SFHo EoS (see \cite{hempel_2010}, \cite{hempel_2012}) which
                 predicts a NS radius of $\sim 11$ km and a tidal deformability of around
                 330 for the NS mass of $1.4$ M$_\odot$, which is the median mass for
-                GW170817 considered as a BNS merger.  However, from the posterior
+                GW170817 considered as a BNS merger. However, from the posterior
                 distributions on tidal deformability for GW170817 in combination with
                 the constraints on the same from EM observations of AT2017gfo, a wide
                 range of EoS can explain the observed properties. Thus, this is a vital
                 area of the parameter space that must be explored more deeply.
 
             \item The framework in its current state, only computes the properties of
-                a possible SGRB jet from an NSBH merger using the aformentioned fit
+                a possible SGRB jet from an NSBH merger using the aforementioned fit
                 formulae. However, as seen from \ref{fig:nsbh_outflows}, there are other
                 outflows as well which arise from NSBH mergers such as the optical
                 kilonova and the jet afterglow. These are non-relativistic outflows and
@@ -100,7 +105,7 @@
                 remnant matter accretes around the remnant BH. However, this may not be
                 the case, and alternative mechanisms have been proposed which do not
                 rely on tidal disruption of the NS, such as the mechanism in
-                \cite{east_2020}. Such alternative mechanisms, though exotic, may
+                \cite{east_2021}. Such alternative mechanisms, though exotic, may
                 explain why EM outflows from NSBH mergers have not been distinctly
                 observed yet.
 
@@ -108,11 +113,11 @@
                 to infer the jet and kilonova structure parameters. This can be done by
                 using GWBENCH or a similar tool which computes the FIM for a particular
                 set of GW network and source parameters. The FIM can then be used to
-                forecase the parameter estimates for the component masses, spins,
+                forecast the parameter estimates for the component masses, spins,
                 luminosity distances etc., which will then translate into fluences (for
                 the associated prompt emission) and magnitudes (for the associated
                 kilonova) using the underlying fit formulae for each component. Thus, by
-                comparing these observed quantitites with what is predicted, one should
+                comparing these observed quantities with what is predicted, one should
                 be able to constrain the structure parameters. However, note that this
                 comes with the caveat that the corresponding NSBH merger must have a
                 high enough SNR ($\gtrsim 20$) for the analysis in \ref{sec:ns_in_gw} to
