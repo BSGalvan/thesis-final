@@ -4,7 +4,7 @@
     the properties of NSBH mergers as seen in the GW and EM regimes.
     Specifically, an important aspect of NSBH mergers is what fraction of mergers
     actually produce a prompt component which will be detectable by present-day
-    gamma-ray detectors, such as INTEGRAL. A related aspect is the dependence of this
+    gamma-ray detectors, such as \textit{FERMI}. A related aspect is the dependence of this
     fraction on the priors which go into creating these populations. Specifically,
     different black hole spin prior distributions would affect the number of detectable
     prompt emissions, and so this behaviour is worth investigating. Furthermore, this
@@ -61,13 +61,11 @@
         \label{eq:fluence}
     \end{equation}
 
-    This is done in order to ascertain the detectability of the prompt emission, with a
-    typical gamma-ray detector, such as the INTEGRAL satellite, as a reference. The
-    INTEGRAL satellite has a lower fluence cut-off of $2 \times 10^{-7}$ erg, and so with
-    respect to this detector, any event with a fluence lower than this value will be
-    considered a non-detection. Albeit this is a tight and somewhat ephemeral
+    This is done in order to ascertain the detectability of the prompt emission with a
+    reference gamma-ray detector, such as the \textit{FERMI-GBM}. Additionally, a fluence cutoff of $2 \times 10^{-7}$ erg/cm$^2$ is assumed, which is a typical number observed for the fluence of cosmological SGRBs. Any event with a fluence lower than this value will be
+    considered as a non-detection. Albeit this is a tight and somewhat ephemeral
     restriction, it helps to ascertain the rough number of detections versus
-    non-detections.\\
+    non-detections in the absence of more rigorous cut-offs for such detectors (see \cite{bhat_2016}).\\
     Similarly, with the binary parameters set by the sampling process, the GW network
     SNR is computed with the RWF as the GW template, using Eqs. \ref{eq:rho} --
     \ref{eq:freq_integral}. The detector network configuration consisting of Advanced
@@ -88,7 +86,7 @@
             10.
 
         \item The EM regime alone, $\boxed{\mathcal{N}_{EM}}$ -- these are events whose
-            simulated gamma-ray fluence is calculated to be above the INTEGRAL fluence
+            simulated gamma-ray fluence is calculated to be above the fluence
             limit of $2 \times 10^{-7}$ erg.
 
         \item The GW \textit{and} EM regimes both, $\boxed{\mathcal{N}_{EM+GW}}$ --
@@ -159,7 +157,7 @@
 
         This event, as described in GWTC-2 and in \S\ref{sec:190426}, has an
         astronomical source probability of 42\% and a terrestrial event possibility of
-        ~52\%. Even though this is the case, there is still speculation on whether this
+        $\sim$52\%. Even though this is the case, there is still speculation on whether this
         event could be an NS merger event.  This is still possible since the priors used
         for the classification mechanism depend sensitively on knowledge about the
         stochastic GW background and the source classification may very well change in
@@ -177,19 +175,19 @@
         particular binary.\\
         Fig. \ref{fig:mdisc_q_190426} is the result of this analysis in the
         $\chi_{BH}-\mathcal{Q}$ plane. From this figure, it is seen that a minor but
-        non-negligible fraction of posterior samples (~32\%) actually falls within the
+        non-negligible fraction of posterior samples ($\sim$32\%) actually falls within the
         section of the parameter space where $M_{disc} \neq 0$. Furthermore, using the
         posterior samples for the inclination angle $\iota$ and the luminosity distance
         $D_L$, the fluence for each sample set is computed using Eq. \ref{eq:fluence}.
         This distribution is shown in Fig. \ref{fig:fluence_190426}.\\
 
-        \begin{figure}[H]
+        \begin{figure}[ht]
             \centering
-            \includegraphics[width=\linewidth]{fluence_190426}
+            \includegraphics[width=0.8\linewidth]{fluence_190426}
             \caption[Fluence distribution for GW190426, from LSC Posteriors]
             {
                 The distribution of fluence computed from the posterior samples released
-                by the LSC for GW190426, using \ref{eq:fluence}.
+                by the LSC for GW190426, using Eq. \ref{eq:fluence}.
             }
             \label{fig:fluence_190426}
         \end{figure}
@@ -197,14 +195,14 @@
         From this analysis, it is seen that out of a total of 4796 samples, 1580 samples
         formed a disc with non-zero mass. Out of these 1580 samples, 1344 samples formed
         a jet with a fluence lesser than $1.7 \times 10^{-7}$ erg/cm$^2$, which is what
-        was observed by INTEGRAL around the time of merger. So overall, operating under
+        was observed by \textit{INTEGRAL} around the time of merger. So overall, operating under
         the assumption that the \emph{NSBH} event GW190426 launched a SGRB jet, roughly
-        $~ 30$\% (= 1344/4796) agree with the observations.  This means correspondingly
+        $\sim 30$\% (= 1344/4796) agree with the observations.  This means correspondingly
         that the scenario where the \emph{NSBH} event GW190426 launches a SGRB jet is
         disfavoured, but non-negligible.\\
         This can be interpreted trivially to conclude that the event was of terrestrial
         origin (as is evidenced by the large classification probability assigned to
-        $\mathcal{P}$(\textbf{Terr.} in \ref{tab:p_astro})), and thus it follows that it
+        $\mathcal{P}$(\textbf{Terr.}) in \ref{tab:p_astro}), and thus it follows that it
         would not be compatible with the launching of an astrophysical jet. But
         non-trivially, one can also conclude that the event:
         \begin{itemize}
@@ -214,17 +212,18 @@
             \item Could have been an NSBH merger event whose jet energetics was
                 decided by equations different to the ones used here. For example, the
                 value of $\epsilon$ used to calculate the kinetic energy of the jet (see
-                \ref{eq:e_kin_jet}) is not constrained well enough, and a large enough
+                Eq. \ref{eq:e_kin_jet}) is not constrained well enough, and a large enough
                 variation in its value could affect the simulated fluences to increase
                 the odds of GW190426 being an NSBH event.
 
         \end{itemize}
 
         The actual non-detection of such a jet (if launched under these alternative
-        conditions) could be either due to the inefficiency of the internal engine of
-        such alternative jet launching mechanisms, or due to a viewing angle large
+        conditions) could be either due to the inefficiency of the internal engine for
+        such jet launching mechanisms, or due to a viewing angle large
         enough that the jet was relativistically deboosted to below the thresholds of
-        current-day gamma-ray observatories.
+        current-day gamma-ray observatories, which were observing 100\% of the
+        localization region.
 
         \begin{figure}[H]
             \centering
@@ -317,7 +316,7 @@
     the posterior samples is calculated, which show a median value of
     $E_{iso}(20^{\circ}) \approx 1.21 \times 10^{47}$ erg for the high-spin posterior.
     This number is comparable to that derived from the gamma-ray observations of
-    GRB170817A by FERMI-GBM. Although this argument suffices to show what was intended,
+    GRB170817A by \textit{FERMI-GBM}. Although this argument suffices to show what was intended,
     more work is being done to take into account the actual constraints derived
     for the viewing angle.
 
@@ -325,7 +324,7 @@
 
         For completeness, the analysis carried out for GW170817 and GW190426\_152155 is
         also carried out for GW190425. A similar process is performed and the
-        posteriors samples released for the component masses, component spins etc., are
+        posterior samples released for the component masses, component spins etc., are
         used to compute the disc mass using the current framework. The result of doing
         this analysis is shown in Fig. \ref{fig:190425_high}.\\
         As can be seen from this figure, most of the samples support the formation of
@@ -334,7 +333,7 @@
         were computed for the posterior sample sets for this event. Out of a total of
         226598 posterior samples, of which 163443 samples form a disc, only 2072 samples
         launch a jet with a fluence that is compatible with the fluence measured by
-        INTEGRAL at the time of the merger (which is $(1.6 \pm 0.4) \times 10^{-7}$
+        \textit{INTEGRAL} at the time of the merger (which is $(1.6 \pm 0.4) \times 10^{-7}$
         erg/cm$^2$). Thus, less than 1\% of the total samples are compatible with the
         observations. This can be interpreted as indicating the fact that GW190425 was
         in fact not an NSBH event.\\
