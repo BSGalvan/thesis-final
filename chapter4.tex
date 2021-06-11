@@ -43,7 +43,7 @@
         \item \textbf{Class III} -- here, the BH spin is a "restricted" Gaussian
             distribution between [0, 1), which means that samples between [0, 1) are
             taken as is but samples outside of this range are discarded.  For the
-            purposes of being general, samples are drawn from distributions with stanard
+            purposes of being general, samples are drawn from distributions with standard
             deviation, $\sigma = 0.2$ and mean, $\mu = 0.2, 0.5, 0.7$.  The rest of the
             binary parameter distributions are the same as in classes I and II.
 
@@ -58,11 +58,12 @@
 
     \begin{equation}
         \mathcal{F} = \dfrac{E_{iso}(\theta_v)}{4\pi d_L^2}
+        \label{eq:fluence}
     \end{equation}
 
     This is done in order to ascertain the detectability of the prompt emission, with a
     typical gamma-ray detector, such as the INTEGRAL satellite, as a reference. The
-    INTEGRAL satellite has a lower fluence cutoff of $2 \times 10^{-7}$ erg, and so with
+    INTEGRAL satellite has a lower fluence cut-off of $2 \times 10^{-7}$ erg, and so with
     respect to this detector, any event with a fluence lower than this value will be
     considered a non-detection. Albeit this is a tight and somewhat ephemeral
     restriction, it helps to ascertain the rough number of detections versus
@@ -91,7 +92,7 @@
             limit of $2 \times 10^{-7}$ erg.
 
         \item The GW \textit{and} EM regimes both, $\boxed{\mathcal{N}_{EM+GW}}$ --
-            these are events which satisfy both the GW and EM `cutoffs', and thus
+            these are events which satisfy both the GW and EM `cut-offs', and thus
             represent joint detections.
 
     \end{enumerate}
@@ -171,33 +172,66 @@
         samples from the posterior distributions for $M_{BH}, M_{NS}$ etc., the disc
         mass was computed for each set of binary parameters. Computing the disc mass is
         expeditious since it directly gives an estimate of how many sets of samples will
-        be able to \textit{atleast launch} a jet, since if $M_{disc} = 0$ for a
+        be able to \textit{at least launch} a jet, since if $M_{disc} = 0$ for a
         particular set of samples, there is no possibility of detecting a jet from this
         particular binary.\\
         Fig. \ref{fig:mdisc_q_190426} is the result of this analysis in the
         $\chi_{BH}-\mathcal{Q}$ plane. From this figure, it is seen that a minor but
         non-negligible fraction of posterior samples (~32\%) actually falls within the
-        section of the parameter space where $M_{disc} \neq 0$. This means
-        correspondingly that the scenario where the \emph{NSBH} event GW190426 launches
-        a SGRB jet is disfavoured, but non-negligible. This can be interpreted trivially
-        to conclude that the event was of terrestrial origin (as is evidenced by the
-        large classification probability assigned to $\mathcal{P}(\textbf{Terr.} in
-        \ref{tab:p_astro})$), and thus it follows that it would not be compatible with
-        the launching of an astrophysical jet. But non-trivially, one can also conclude
-        that the event could have been an NSBH/BNS merger event which had a jet that was
-        launched via other mechanisms. The actual non-detection of such a jet (if
-        launched under these alternative conditions) could be either due to the
-        inefficiency of the internal engine of such alternative jet launching
-        mechanisms, or due to a viewing angle large enough that the jet was
-        relativistically deboosted to below the thresholds of current-day gamma-ray
-        observatories.
+        section of the parameter space where $M_{disc} \neq 0$. Furthermore, using the
+        posterior samples for the inclination angle $\iota$ and the luminosity distance
+        $D_L$, the fluence for each sample set is computed using Eq. \ref{eq:fluence}.
+        This distribution is shown in Fig. \ref{fig:fluence_190426}.\\
+
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=\linewidth]{fluence_190426}
+            \caption[Fluence distribution for GW190426, from LSC Posteriors]
+            {
+                The distribution of fluence computed from the posterior samples released
+                by the LSC for GW190426, using \ref{eq:fluence}.
+            }
+            \label{fig:fluence_190426}
+        \end{figure}
+
+        From this analysis, it is seen that out of a total of 4796 samples, 1580 samples
+        formed a disc with non-zero mass. Out of these 1580 samples, 1344 samples formed
+        a jet with a fluence lesser than $1.7 \times 10^{-7}$ erg/cm$^2$, which is what
+        was observed by INTEGRAL around the time of merger. So overall, operating under
+        the assumption that the \emph{NSBH} event GW190426 launched a SGRB jet, roughly
+        $~ 30$\% (= 1344/4796) agree with the observations.  This means correspondingly
+        that the scenario where the \emph{NSBH} event GW190426 launches a SGRB jet is
+        disfavoured, but non-negligible.\\
+        This can be interpreted trivially to conclude that the event was of terrestrial
+        origin (as is evidenced by the large classification probability assigned to
+        $\mathcal{P}$(\textbf{Terr.} in \ref{tab:p_astro})), and thus it follows that it
+        would not be compatible with the launching of an astrophysical jet. But
+        non-trivially, one can also conclude that the event:
+        \begin{itemize}
+            \item  Could have been an BNS merger event which had a jet that was launched
+                via mechanisms other than the Blandford-Znajek mechanism.
+
+            \item Could have been an NSBH merger event whose jet energetics was
+                decided by equations different to the ones used here. For example, the
+                value of $\epsilon$ used to calculate the kinetic energy of the jet (see
+                \ref{eq:e_kin_jet}) is not constrained well enough, and a large enough
+                variation in its value could affect the simulated fluences to increase
+                the odds of GW190426 being an NSBH event.
+
+        \end{itemize}
+
+        The actual non-detection of such a jet (if launched under these alternative
+        conditions) could be either due to the inefficiency of the internal engine of
+        such alternative jet launching mechanisms, or due to a viewing angle large
+        enough that the jet was relativistically deboosted to below the thresholds of
+        current-day gamma-ray observatories.
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=\linewidth]{190426_in_q-chi_high}
             \caption[GW190426 in the $\chi_{BH}-\mathcal{Q}$ plane]
             {
-                GW190426\_152155 in the $\chi_{BH}-\mathcal{Q}$ plane. The color coding
+                GW190426\_152155 in the $\chi_{BH}-\mathcal{Q}$ plane. The colour coding
                 at a point in the plane indicates the value of $M_{disc}$ corresponding
                 to that particular $\chi_{BH}$ and $\mathcal{Q}$.  Unfilled circles with
                 a black outline correspond to samples from the posterior distributions
@@ -234,7 +268,7 @@
 
         In order to better understand this event, an analysis similar to that in
         \S\S\ref{ssec:nsbh_190426} was carried out. The LSC data release for GW170817
-        (part of the GWTC-1 catalog data release; see \cite{gwtc1_DR}) was used from
+        (part of the GWTC-1 catalogue data release; see \cite{gwtc1_DR}) was used from
         which the binary system parameters were extracted. Note that for this data
         release, there are two `flavours' of posterior distributions which are supplied
         by the LSC data product, classified by the spin priors using in the Bayesian
@@ -263,7 +297,7 @@
             \caption[$M_{disc}$ for GW170817's High Spin Posterior Distribution]
             {
                 Samples from the high spin posterior distribution for GW170817, in the
-                $\mathcal{Q}-\chi_{BH}$ plane. The color coding for a point in the plane
+                $\mathcal{Q}-\chi_{BH}$ plane. The colour coding for a point in the plane
                 is the $M_{disc}$ computed for that $\mathcal{Q}$ and $\chi_{BH}$, and
                 unfilled (white) circles represent posterior samples which have
                 $M_{disc} = 0$.
@@ -296,19 +330,14 @@
         this analysis is shown in Fig. \ref{fig:190425_high}.\\
         As can be seen from this figure, most of the samples support the formation of
         a disc around the remnant black hole. In fact, for the high-spin posterior,
-        around 72.1\% of the samples have a $M_{disc} > 0$. This can be interpreted
-        as indicating the fact that it is wholly possible that 190425 was an NSBH event
-        which launched a SGRB jet which was missed because of it being off-axis to
-        observers on the Earth.\\
-        %Since there were no EM observations which would help constrain the viewing
-        %angle of the event, the apparent on-axis isotropic equivalent energy is taken as
-        %the next best measure which can shed more light on the energetics of the SGRB
-        %jet. Assuming a Gaussian structured jet, it is seen that the median value of
-        %$E_{iso}(0) \approx 3.765 \times 10^{51}$ erg for the high-spin posteriors
-        %whereas that for the low-spin posterior is $E_{iso}(0) \approx 1.607 \times
-        %10^{51}$ erg. This puts this event in the energy range of cosmological SGRBs,
-        %further evidencing the possibility of GW190425 as a low mass BH, high mass NS
-        %merger event which led to an SGRB jet.
+        around 72.1\% of the samples have a $M_{disc} > 0$. Additionally, the fluences
+        were computed for the posterior sample sets for this event. Out of a total of
+        226598 posterior samples, of which 163443 samples form a disc, only 2072 samples
+        launch a jet with a fluence that is compatible with the fluence measured by
+        INTEGRAL at the time of the merger (which is $(1.6 \pm 0.4) \times 10^{-7}$
+        erg/cm$^2$). Thus, less than 1\% of the total samples are compatible with the
+        observations. This can be interpreted as indicating the fact that GW190425 was
+        in fact not an NSBH event.\\
 
         \begin{figure}[ht]
             \centering
@@ -316,7 +345,7 @@
             \caption[$M_{disc}$ for GW190425's High Spin Posterior Distribution]
             {
                 Samples from the high spin posterior distribution for GW190425, in the
-                $\mathcal{Q}-\chi_{BH}$ plane. The color coding for a point in the plane
+                $\mathcal{Q}-\chi_{BH}$ plane. The colour coding for a point in the plane
                 is the $M_{disc}$ computed for that $\mathcal{Q}$ and $\chi_{BH}$, and
                 unfilled (white) circles represent posterior samples which have
                 $M_{disc} = 0$.
@@ -335,7 +364,7 @@
     in terms of verifying these alternative hypotheses.\\
     Similar analyses was also carried out for the events GW170817 and GW190425, which
     are currently classified as BNS mergers to a high degree of confidence, but still
-    admit non-neglible possibility to launching a jet within the current framework.\\
+    admit non-negligible possibility to launching a jet within the current framework.\\
     As for the population analysis, it was ascertained that the EM outflows from NSBH
     mergers with the currently assumed population parameters strongly depends on the
     black hole spin prior distribution. In the absence of any strong indication to
