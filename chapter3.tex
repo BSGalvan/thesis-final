@@ -270,51 +270,6 @@
         \item Then, the optimal SNR is computed for each realisation using the
             restricted post-Newtonian (PN) waveform (RWF) (see \cite{cutler_1994},
             \cite{kastha_2020}), and the Eqs. \ref{eq:rwf} -- \ref{eq:freq_integral}.
-            %Usually, the process of matched filtering is
-            %done to detect GW signals amongst background noise, where various template
-            %waveforms are cross-correlated with the observed data. These templates all
-            %correspond to mergers with various signal parameters such as masses, spins
-            %etc., and the template which maximizes the SNR is the optimal template, with
-            %the corresponding SNR being the optimal SNR, defined as :
-            %\begin{equation}
-                %\rho = \sqrt{4 \int_0^\infty \dfrac{|\tilde{h}(f)|^2}{S_h(f)} df}
-            %\end{equation}
-            %where $S_h(f)$ is the detector's power spectral density (PSD) and
-            %$\tilde{h}(f)$ is the frequency domain gravitational waveform.  For the RWF,
-            %this is given as $\tilde{h}(f) = \mathcal{A} f^{-7/6} e^{i \psi(f)}$, where
-            %$\mathcal{A}$ is the amplitude and $\psi(f)$ is the frequency domain GW
-            %phase.  In this scheme, the PN corrections to the amplitude of the waveform
-            %are ignored but the phase is accurately accounted for, since GW parameter
-            %estimations are most sensitive to the phase of the waveform
-            %(\cite{poisson_1995}). Using the RWF, the optimal SNR for compact binary
-            %coalescences can be written as :
-            %\begin{equation}
-                %\rho(m_1, m_2, D_L, \theta, \phi, \psi, \iota) =
-                    %\sqrt{
-                        %4 \dfrac{\mathcal{A}^2}{D_L^2}
-                        %\left[
-                                 %F_{+}^2(\theta, \phi, \psi)(1 + \cos^2\iota)^2 +
-                                 %4F_{\times}^2(\theta, \phi, \psi)\cos^2\iota
-                        %\right]
-                        %I(M)
-                    %}
-            %\end{equation}
-            %where $F_{+, \times}(\theta, \phi, \psi)$ are the antenna pattern functions
-            %for the 'plus' and 'cross' polarisations, $\mathcal{A} = \sqrt{5/96}
-            %\pi^{-2/3} \mathcal{M}^{5/6}$. Here, $\mathcal{M}$ is the chirp mass, which
-            %is related to the total mass M by $\mathcal{M} = M \eta^{3/5}$, where $\eta
-            %= \frac{m_1 m_2}{M^2}$ is the symmetric mass ratio of the system and $m_1,
-            %m_2$ are the component masses. The four angles $(\theta, \phi, \psi, \iota)$
-            %describe the location and orientation of the source with respect to the
-            %detector. $I(M)$ is the frequency integral defined as :
-            %\begin{equation}
-                %I(M) =
-                    %\int_0^\infty \dfrac{f^{-7/3}}{S_h(f)} df \approx
-                    %\int_{f_{low}}^{f_{LSO}} \dfrac{f^{-7/3}}{S_h(f)}
-            %\end{equation}
-            %where, $f_{low}$ is the lower seismic cut-off for the detectors and $f_{LSO}
-            %= \dfrac{1}{6^{3/2}\pi M}$, which is the GW frequency at the last stable
-            %orbit for a BBH merger with total mass M.
             To compute the optimal SNR in L1 and V1, the best reported O2 sensitivities
             were used as conservative O3 sensitivities, as an input for $S_h(f)$.  As
             the trigger is an L1 single-detector trigger, the conditions that SNR < 4 at
@@ -376,9 +331,9 @@
 
         \item $\theta_{max}$ is the upper cut-off of polar integration\footnote
             {
-                Such a cut-off can occur because the edge of the jet has been reached, or
-                that the gamma-ray emission efficiency is lowered above a threshold, and
-                so emission is negligible beyond $\theta_{max}$.
+                Such a cut-off can occur because the edge of the jet has been reached,
+                or that the gamma-ray emission efficiency is lowered above a threshold,
+                and so emission is negligible beyond $\theta_{max}$.
             }.
 
     \end{itemize}
