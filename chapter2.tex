@@ -31,7 +31,8 @@
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.8\linewidth]{bh_mass}
+            \def\svgwidth{0.8\linewidth}
+            \input{figures/bh_mass.pdf_tex}
             \caption[Black hole mass distribution with upper limit]
             {
                 Black hole mass distribution as used in the current report, with an
@@ -349,7 +350,7 @@
 
         \begin{figure}[htpb]
             \centering
-            \def\svgwidth{0.9\linewidth}
+            \def\svgwidth{\linewidth}
             \input{figures/iota_dl_colorcoded.pdf_tex}
             \caption[$D_L-\iota$ correlation in the population]{
                 Plot of the luminosity distance v/s the inclination angle for events in
@@ -405,11 +406,13 @@
 
     \begin{figure}[H]
         \centering
-        \includegraphics[width=0.9\linewidth]{number_fluence}
+        \def\svgwidth{0.9\linewidth}
+        \input{figures/number_fluence.pdf_tex}
         \caption[Variation of $\mathcal{N}(> \mathcal{F})$ with $\mathcal{F}$]{
             Variation of $\mathcal{N}(> \mathcal{F})$ with the fluence $\mathcal{F}$.
-            Note the significant deviation of this function from the $\sim
-            \mathcal{F}^{-1.5}$ behaviour at lower values of the fluence.
+            The dashed black line is $f(\mathcal{F}) \sim \mathcal{F}^{-1.5}$. Note the
+            significant deviation from the $\sim \mathcal{F}^{-1.5}$ behaviour at lower
+            values of the fluence.
         }
         \label{fig:number_fluence}
     \end{figure}
