@@ -1,6 +1,6 @@
 \chapter{Results and Future Work}\label{ch:results-future}
 
-    In this report, a framework was developed to compute the EM counterparts produced
+    In this report, a framework was developed to compute the EM counterpart produced
     when an NSBH binary with a given set of parameters merges. This framework takes as
     inputs:
 
@@ -11,38 +11,38 @@
             population models are physically motivated and some are empirical guesses
             in situations where a physical model has many complications to consider.
 
-        \item The functions used to compute the counterpart energetics and structure. In
-            the case of the SGRB jet, the former are the functions given in
+        \item The functions used to compute the jet energetics and intrinsic structure.
+            In the case of the SGRB jet, the former are the functions given in
             \cite{kawaguchi_2016} and \cite{foucart_2018} to compute the dynamic and
             remnant masses, whereas the latter is the Gaussian structured jet model from
             \cite{salafia_2015}, \cite{saleem_2020B}.
 
     \end{itemize}
 
-    By using these inputs, the framework simulates the EM counterparts using the
-    equations described in \ref{sec:ns_in_gw}.  Additionally, these events are also
-    analysed from the GW side of things, with the corresponding GW optimal SNR also
-    being computed under this framework.\\
+    By using these inputs, the framework simulates the EM counterpart using the
+    equations described in \ref{sec:ns_in_gw}.  Additionally, these events are analysed
+    from the GW side of things, with the corresponding GW optimal SNR also being
+    computed under this framework.\\
     From these simulations, it is seen that under the assumption that NSBH mergers are
     disruptive (which may be a strong assumption to make given the mass ratio
-    distributions seen by Advanced LIGO/VIRGO), in order to have bright SGRB jets the
+    distribution seen by Advanced LIGO/VIRGO), in order to have bright SGRB jets the
     binary must have a low mass black hole that is spinning rapidly. This conclusion is
     seen from considering the effect of the BH spin distribution on the number of EM
-    detected events in \ref{tab:popln_numbers}. Furthermore this also implies that by
-    comparing the observed number of SGRB jets which are also detected in the GW regime
-    as a NS merger, one can make guesses about the nature of the BH spin distribution in
-    an NSBH binary. One can also compare the predictions that more physically motivated
-    spin distributions (say, those derived from stellar population synthesis codes) give
-    for the observed SGRB rates.\\
+    detected events in Table \ref{tab:popln_numbers}. Furthermore this also implies that
+    by comparing the observed number of SGRB jets which are also detected in the GW
+    regime as a NS merger, one can make guesses about the nature of the BH spin
+    distribution in an NSBH binary. One can also compare the predictions that more
+    physically motivated spin distributions (say, those derived from stellar population
+    synthesis codes) give for the observed SGRB rates.\\
     As for the events from GWTC-1 and 2 which were considered here, it is seen that for
     GW190425 and GW190426\_152155, there is a negligible possibility that the event was
     an NSBH event which could have produced an SGRB jet consistent with what was
     observed by gamma-ray instruments. In the case of GW170817, the posteriors show that
     it is probable that the event was an NSBH merger which gave rise to a jet compatible
     with what was observed by space-based gamma-ray detectors.\\
-    With these conclusions in mind, the directions in which this work will be taken in
-    the future is explored in the next section. These directions are directly related to
-    loosening the assumptions made in this work in order to simplify the problem and
+    With these conclusions in mind, the directions in which this work could be taken in
+    the future is explored in the next section, in no particular order. These directions
+    are directly related to loosening the simplifying assumptions made in this work and
     serve as a reminder to the applicability of the work.
 
     \section{Future Directions}
@@ -60,32 +60,33 @@
                 and is an assumption that must be relaxed as much as possible. The
                 relaxation of the latter assumption will introduce complications, since
                 for a precessing binary system the definition of the inclination angle
-                changes with time, and so the entire framework will have to be revamped
+                changes with time, and so the entire framework will have to be reworked
                 in order to take care of that new definition.
 
-            \item Here, the microphysics behind the NS Equation of State (EoS) and the
-                resulting effect it can have on the EM counterparts is not considered.
-                As was mentioned, it is known qualitatively that `softer' equations of
-                state can disfavour disruption whereas the `harder' equations of state
-                aid disruption, and thus would support more energetic jets. For the
-                purposes of computation within the framework, the NS EoS is assumed to
-                be the SFHo EoS (see \cite{hempel_2010}, \cite{hempel_2012}) which
-                predicts a NS radius of $\sim 11$ km and a tidal deformability of around
-                330 for the NS mass of $1.4$ M$_\odot$, which is the median mass for
-                GW170817 considered as a BNS merger. However, from the posterior
-                distributions on tidal deformability for GW170817 in combination with
-                the constraints on the same from EM observations of AT2017gfo, a wide
-                range of EoS can explain the observed properties. Thus, this is a vital
-                area of the parameter space that must be explored more deeply.
+            \item Currently, the microphysics behind the NS Equation of State (EoS) and
+                the resulting effect it can have on the EM counterpart is not
+                considered.  As was mentioned, it is known qualitatively that `softer'
+                equations of state can disfavour disruption whereas the `harder'
+                equations of state aid disruption, and thus would support more energetic
+                jets. For the purposes of computation within the framework, the NS EoS
+                is assumed to be the SFHo EoS (see \cite{hempel_2010},
+                \cite{hempel_2012}) which predicts a NS radius of $\sim 11$ km and a
+                tidal deformability of around 330 for the NS mass of $1.4$ M$_\odot$,
+                which is the median mass for GW170817 considered as a BNS merger.
+                However, from the posterior distributions on tidal deformability for
+                GW170817 in combination with the constraints on the same from EM
+                observations of AT2017gfo, a wide range of EoS can explain the observed
+                properties. Thus, this is a vital area of the parameter space that must
+                be explored more deeply.
 
-            \item The framework in its current state, only computes the properties of
-                a possible SGRB jet from an NSBH merger using the aforementioned fit
-                formulae. However, as seen from \ref{fig:nsbh_outflows}, there are other
-                outflows as well which arise from NSBH mergers such as the optical
+            \item The framework in its current state only computes the properties of a
+                possible SGRB jet from an NSBH merger using the aforementioned fit
+                formulae. However, as seen from Fig. \ref{fig:nsbh_outflows}, there are
+                other outflows as well which arise from NSBH mergers such as the optical
                 kilonova and the jet afterglow. These are non-relativistic outflows and
                 are thus not affected as drastically by off-axis viewing, unlike the
                 SGRB jet. Furthermore, for black holes in the `mass gap' region (i.e.
-                $M_{BH} \sim (3, 5)$ M$_\odot$), the brightness of the kilonova may even
+                $M_{BH} \sim [3, 5]$ M$_\odot$), the brightness of the kilonova may even
                 be used to distinguish between NSBH merger events and BNS merger events
                 (see \cite{barbieri_2019b}). Thus, this component of the EM outflows is
                 another vital piece of information that is being modelled, and will be
@@ -96,11 +97,12 @@
 
             \item It is also assumed currently that the only mechanism for the
                 extraction of the SGRB jet is via the Blandford-Znajek mechanism, which
-                kicks in once the disruption of the inspiralling NS occurs and the
-                remnant matter accretes around the remnant BH. However, this may not be
-                the case, and alternative mechanisms have been proposed which do not
-                rely on tidal disruption of the NS, such as the mechanism in
-                \cite{east_2021}. Such alternative mechanisms, though exotic, may
+                kicks in once the disruption of the inspiralling NS occurs, the
+                remnant matter accretes around the remnant BH, and the magnetic field
+                around the BH is sufficiently high enough to launch a jet . However,
+                this may not be the case, and alternative mechanisms have been proposed
+                which do not rely on tidal disruption of the NS, such as the mechanism
+                in \cite{east_2021}. Such alternative mechanisms, though exotic, may
                 explain why EM outflows from NSBH mergers have not been distinctly
                 observed yet.
 

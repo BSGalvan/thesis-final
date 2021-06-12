@@ -31,10 +31,13 @@
         \item \textbf{Class I} -- this uses the standard \textsc{truncated} BH mass
             distribution with a constant NS mass of 1.4 M$_\odot$. The BH spin
             distribution is the beta distribution from \cite{abbott_2020B}, and the NS
-            spin is set identically to 0 for all samples (see \S\ref{sec:ns_pop}
-            for reasons on why this assumption is valid). The remaining NS parameters
-            and their computation (such as the NS compactness, tidal deformability etc.)
-            are described in \S\ref{sec:ns_pop}, and thus omitted for brevity.
+            spin is set identically to 0 for all samples\footnote
+            {
+                See \S\ref{sec:ns_pop} for reasons on why this assumption is valid.
+            }
+            The remaining NS parameters and their computation (such as the NS
+            compactness, tidal deformability etc.) are described in \S\ref{sec:ns_pop},
+            and thus omitted for brevity.
 
         \item \textbf{Class II} -- here, the BH spin distribution is assumed to be
             uniform between [0, 1). The rest of the binary parameter distributions are
@@ -52,10 +55,10 @@
 
     For each population, 10$^5$ samples are drawn from the relevant populations. Using
     the samples, the various mass parameters required to compute the energetics of the
-    jet are calculated using Eqs. \ref{eq:m_out} -- \ref{eq:constraint}. Then, using Eq.
-    \ref{eq:e_kin_jet} -- \ref{eq:eiso}, the jet structure is imposed and for each event
-    the value of $E_{iso}(\theta_v)$ is computed. These are then converted into fluences
-    using the equation:
+    jet are calculated using Eqs. \ref{eq:m_out} -- \ref{eq:constraint}. Then, using
+    Eqs.  \ref{eq:e_kin_jet} -- \ref{eq:eiso}, the jet structure is imposed and for each
+    event the value of $E_{iso}(\theta_v)$ is computed. These are then converted into
+    fluences using the equation:
 
     \begin{equation}
         \mathcal{F} = \dfrac{E_{iso}(\theta_v)}{4\pi d_L^2}
@@ -104,7 +107,7 @@
     heavily affects the number of EM-only events, and by extension the number of joint
     events.\\
     This can be explained by looking at the dependence of $M_{disc}$ on the BH
-    spin, from Eq.\ref{eq:disc_mass}, for a fixed mass ratio. Since a highly spinning
+    spin, from Eq. \ref{eq:disc_mass}, for a fixed mass ratio. Since a highly spinning
     black hole produces more tidally disrupted material for a given mass ratio than a
     low spinning black hole, binaries with a higher black hole spin are more likely to
     produce a more massive disc (assuming not much mass is lost as dynamical mass).
@@ -152,7 +155,7 @@
     This then means that because populations with `high spin' distributions (such as
     Class I or Class III$_{\mu = 0.7}$) have a higher proportion of high spin binaries,
     they have a higher number of EM and joint detections, since a more massive disc
-    produces a more energetic jet from Eq.\ref{eq:eiso}, and thus increases the
+    produces a more energetic jet from Eq. \ref{eq:eiso}, and thus increases the
     possibility of detections.
 
 \section{Event Analysis}\label{sec:event_analysis}

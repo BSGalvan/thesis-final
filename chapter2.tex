@@ -47,8 +47,8 @@
             \caption[Black hole mass distributions from GWTC-2]
             {
                 Black Hole Mass Distributions from \cite{abbott_2020B}. In the current
-                study, the \textsc{truncated} mass distribution with an upper limit at
-                20 M$_\odot$, since more massive black holes would not produce
+                study, the \textsc{truncated} mass distribution is used with an upper
+                limit at 20 M$_\odot$, since more massive black holes would not produce
                 significant EM emission when in a merging NSBH binary.
             }
             \label{fig:bh_mass_gwtc2}
@@ -69,7 +69,7 @@
             \centering
             \includegraphics[width=0.8\linewidth]{bh_spin_gwtc2}
             \caption[Black hole spin distribution from GWTC-2]{
-                Beta distribution for the  black hole spin from \cite{abbott_2020B}.
+                Beta distribution for the black hole spin from \cite{abbott_2020B}.
                 Here the light traces are samples from the posterior distribution,
                 whereas the solid black line is the posterior probability distribution
                 for $\chi_{BH}$. Dashed black lines mark the 90\% quantiles for the
@@ -99,12 +99,12 @@
 
             \item Gaussian spin distributions: here $\chi_{BH} \sim \mathcal{N}(\mu,
                 \sigma)$, but samples outside of [0, 1) are not considered. Here, $\mu,
-                \sigma$ represent the mean and standard deviation, respectively, of the
-                Gaussian distribution. For simplicity and to cover a representative
-                number out of all the possible distributions, samples were taken from
-                $\mathcal{N}(0.2, 0.2)$, $\mathcal{N}(0.5, 0.2)$ and $\mathcal{N}(0.7,
-                0.2)$. These represent distributions concentrated around low, medium and
-                high spins respectively.
+                \sigma$ represent the mean and standard deviation respectively, of this
+                truncated Gaussian distribution. For simplicity and to cover a
+                representative number out of all the possible distributions, samples
+                were taken from $\mathcal{N}(0.2, 0.2)$, $\mathcal{N}(0.5, 0.2)$ and
+                $\mathcal{N}(0.7, 0.2)$. These represent distributions concentrated
+                around low, medium and high spins respectively.
 
                 \begin{figure}[H]
                     \centering
@@ -139,14 +139,7 @@
 
     Where $M_{NS}$, $R_{NS}$ are the mass and radius of the neutron star, G is the
     universal gravitational constant and c is the speed of light.  Finally, the tidal
-    deformability is computed by solving the C-Love relation :
-
-    \begin{equation}
-        C_{NS} = \sum_{k=0}^{2} a_k (\ln \Lambda_{NS})^k
-    \end{equation}
-
-    Where $\Lambda_{NS}$ is the tidal deformability of the neutron star, and $a_k$ are
-    the fit coefficients as given in \cite{yagi_2017}.
+    deformability is computed by solving the C-Love relation from Eq. \ref{eq:c_love}.
 
 \section{Spatial Distribution and Orientation of Samples}\label{sec:space_dist}
 
@@ -174,12 +167,11 @@
 
         \begin{align}
             \mathcal{P}(\rho) &= \mathcal{P}(D_L)
-                                  \Big \lvert \dfrac{dD_L}{d\rho} \Big \rvert
-                                  \nonumber\\
-                              &= \mathcal{P}({D_c})
-                                  \Big \lvert \dfrac{dD_c}{d\rho} \Big \rvert
-                                  \nonumber\\
-                              &\propto \dfrac{1}{\rho^2} \dfrac{1}{\rho^2}
+                                    \bigg \lvert \dfrac{dD_L}{d\rho} \bigg \rvert
+                                    = \mathcal{P}({D_c})
+                                    \bigg \lvert \dfrac{dD_c}{d\rho} \bigg \rvert
+                                    \nonumber \\
+                              &\propto \dfrac{1}{\rho^2} \cdot \dfrac{1}{\rho^2}
                                   = \dfrac{1}{\rho^4} \nonumber\\
             \Rightarrow \mathcal{P} (\rho) &= \dfrac{\beta}{\rho^4}
         \end{align}
@@ -192,7 +184,7 @@
         \begin{align}
             \int_0^{D_{c, max}}
                 \mathcal{P}(D_c) dD_c &= \int_0^{D_{L, max}} \mathcal{P}(D_L) dD_L \\
-                                      &= \int_\infty^{\rho_{th}} \mathcal{P}(\rho)
+                                      = \int_\infty^{\rho_{th}} \mathcal{P}(\rho)
                                           d\rho \\
                                       &= 1
         \end{align}
@@ -365,7 +357,7 @@
 
     The only EM component which has to be validated is the code which imposes the jet
     structure (Eq. \ref{eq:dE_dOmega} -- \ref{eq:eiso}), once the energetics of the jet
-    are computed via Eq. \ref{eq:e_kin_jet} -- \ref{eq:Omega_h}.\\
+    are computed via Eqs. \ref{eq:e_kin_jet} -- \ref{eq:Omega_h}.\\
     In order do this, one extracts the $\theta_v$ samples from the generated population,
     which can be done using the relation $\theta_v = \min(\iota, \pi - \iota)$. Then, a
     common baseline is achieved by setting the value of $E_{kin, jet} = 10^{49} \text{
@@ -486,7 +478,7 @@
         \label{fig:fluence_thetav+spin(5)}
     \end{figure}
 
-    Thus, from Figs.\ref{fig:fluence_thetav+spin(3)} --
+    Thus, from Figs. \ref{fig:fluence_thetav+spin(3)} --
     \ref{fig:fluence_thetav+spin(5)}, it can be seen that symmetric binary mergers will
     produce much brighter jets for a given black hole spin, and these jets will be seen
     out to higher viewing angles. This fact will be useful while discussing the analysis
@@ -494,7 +486,7 @@
     detectability.  Furthermore, from these figures, it is also verified that the code
     which imposes the jet structure and energetics is working correctly, since these
     conclusions about the EM detectability of NSBH binary mergers are the ones
-    corroborated by literature as well (see \ref{sec:nsbh} for a brief overview of the
+    corroborated by literature as well (see \S\ref{sec:nsbh} for a brief overview of the
     literature discussing these results).
 
     \begin{figure}[ht]
@@ -520,8 +512,8 @@
     In this chapter, the various populations that will be used to probe the EM
     counterparts of NSBH mergers were introduced. Along with this, a summary of the
     various tests carried out was given, wherein the tests made sure that the internal
-    codes that compute GW SNRs, calculate jet energetics (from formulae derived as fits
-    to numerical relativity simulations), impose jet structures etc., gave preliminary
+    codes that compute GW SNRs, calculate jet energetics from formulae derived as fits
+    to numerical relativity simulations, impose jet structures etc., gave preliminary
     results which align with the theoretical results.\\
     In the coming chapters, the framework set up in this and the previous chapters for
     the synthesis of the populations, will be used to analyse the generated populations

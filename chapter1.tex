@@ -5,9 +5,9 @@
     event GW1701817 (see \cite{abbott_2018}), there has been renewed interest in SGRBs.
     Specifically, this detection gives credence to the claim that the central engines of
     SGRBs may be binary neutron star mergers (see \cite{narayan_1992}). There are
-    however other aspects of the process that are not as clear. In particular, several
-    aspects of GW170817 have not been completely explained. The main concerns are as
-    follows (\cite{lazzati_2020}):
+    however other aspects of the process that are not clear, and several properties of
+    GW170817 have not been completely explained. The main concerns are as follows
+    (\cite{lazzati_2020}):
 
     \begin{itemize}
 
@@ -314,7 +314,7 @@
     f(\chi_{BH}) G M_{BH}/c^2$ (where f is a function ranging from 1 to 9, decreasing
     for increasing (prograde) spins; see \cite{bardeen_1972}) and the radius at which
     the tidal disruption of the neutron star occurs, $r_{dis}$ scales as $r_{dis} \sim k
-    (M_{BH/M_{BNS}})^{1/3} R_{NS}$ (where k is a constant with a dependence on the black
+    (M_{BH}/M_{BNS})^{1/3} R_{NS}$ (where k is a constant with a dependence on the black
     hole spin and the equation of state). Only requiring that $r_{dis} \gtrsim
     r_{ISCO}$, as a rough requirement that disruption should occur before the neutron
     star plunges into the black hole, leads to the conclusion that for disruption, one
@@ -322,10 +322,10 @@
 
     \begin{enumerate}[label=\alph*.)]
 
-        \item Low-mass black holes, since $r_{dis} \propto M_{BH}$.
+        \item Low-mass black holes, since $r_{dis}/r_{ISCO} \propto M_{BH}^{-2/3}$.
 
-        \item Larger NS radii, since $r_{dis} \propto M_{NS}^{-1}$. This also implies
-            that the 'softer' equations of state can disfavour tidal disruptions. This
+        \item Larger NS radii, since $r_{dis} \propto R_{NS}$. This also implies
+            that the `softer' equations of state can disfavour tidal disruptions. This
             is because a softer equation of state will lead to smaller NS radii, and
             thus not much disruption would occur before the NS plunges into the black
             hole.
@@ -474,6 +474,7 @@
             the neutron star via the C--Love relation (see \cite{yagi_2017}):
 
             \begin{equation}
+                \label{eq:c_love}
                 C_{NS} = \sum_{k=0}^{2} a_k (\ln \Lambda_{NS})^k
             \end{equation}
 
@@ -545,14 +546,13 @@
     imposed, which is motivated by the fact that NSBH simulations carried out by
     \cite{foucart_2019} in the near-equal mass ratio regime found an unbound component
     no more massive than roughly 30\% of the total remnant mass (note that one expects
-    maximal tidal disruption in this regime, given a fast spinning black hole). Thus we
-    set:
+    maximal tidal disruption in this regime, given a fast spinning black hole). Thus one
+    sets:
 
     \begin{equation}
         \label{eq:constraint}
         M_{\mathrm{dyn, max}} = f \cdot M_{\mathrm{rem}} = 0.3 \cdot M_{\mathrm{rem}}
     \end{equation}
-
 
     Additionally, the masses of the other wind ejecta, namely the neutrino-driven and
     viscosity-driven wind ejecta, are derived from that of the disc mass:
@@ -782,21 +782,21 @@
     masses, component spins, the binary's luminosity distance, the inclination angle
     of the orbital plane with respect to the line of sight, and two constants of
     integration: the time and phase of coalescence, respectively.\\
-    A detector's response is recorded as the GW strain such waves produce, but in the
-    frequency domain and so the input signals are Fourier transformed before processing.
-    Also the detector's antenna patterns (sensitivity as a function of the source
-    location on the sky) and location phase factor (effect of the earth's rotation) play
-    a role in the response. Thus, the detector response to these gravitational waves is
-    of the form:
+    A detector's response is recorded as the GW strain such waves produce, but this is
+    done in the frequency domain and so the input signals are Fourier transformed before
+    processing. Also the detector's antenna patterns (sensitivity as a function of the
+    source location on the sky) and location phase factor (effect of the earth's
+    rotation) play a role in the response. Thus, the detector response to these
+    gravitational waves is of the form:
 
-    \begin{equation}
+    \begin{multline}
         H(f; \mathbf{\Theta}) =
             F_{lp}(f; \alpha, \delta) \cdot
             [
-                H_{+}(f; \mathbf{\Theta}_{GW}) F_{+}(f; \alpha, \delta, \psi) +
+                H_{+}(f; \mathbf{\Theta}_{GW}) F_{+}(f; \alpha, \delta, \psi) + \\
                 H_{\times}(f; \mathbf{\Theta}_{GW}) F_{\times}(f; \alpha, \delta, \psi)
             ]
-    \end{equation}
+    \end{multline}
 
     Where $F_{lp}$ is the location phase factor as a function of the frequency and the
     source right-ascension and declination, $H_{+/\times}$ are the frequency domain
